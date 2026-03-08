@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calice — Il social del vino</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --wine: #A0293B;
+            --wine-light: #C4495E;
+            --wine-pale: #F9EDEF;
+            --terra: #C4693A;
+            --terra-light: #F0D5C4;
+            --sage: #5C7A5A;
+            --sage-light: #D8E8D6;
+            --ink: #1A1A2E;
+            --ink-soft: #3D3D52;
+            --gray: #6B6B7E;
+            --silver: #E8E8F0;
+            --bg: #FAFAF8;
+            --white: #FFFFFF;
+            --gold: #B8860B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--silver);
+            padding: 0 48px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            height: 64px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .nav-search {
+            flex: 1;
+            max-width: 420px;
+            display: flex;
+            align-items: center;
+            background: var(--bg);
+            border: 1.5px solid var(--silver);
+            border-radius: 24px;
+            padding: 8px 16px;
+            gap: 8px;
+            transition: border-color 0.2s;
+        }
+
+        .nav-search:focus-within {
+            border-color: var(--wine);
+        }
+
+        .nav-search input {
+            flex: 1;
+            border: none;
+            background: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            color: var(--ink);
+            outline: none;
+        }
+
+        .nav-search input::placeholder {
+            color: var(--gray);
+        }
+
+        .search-icon {
+            color: var(--gray);
+            font-size: 16px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            margin-left: auto;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--wine);
+        }
+
+        .nav-links a.active {
+            font-weight: 600;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn-outline {
+            border: 1.5px solid var(--silver);
+            background: none;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ink-soft);
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--wine);
+            color: var(--wine);
+        }
+
+        .btn-wine {
+            background: var(--wine);
+            border: none;
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .btn-wine:hover {
+            background: var(--wine-light);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: var(--white);
+            padding: 72px 80px 0;
+            display: grid;
+            grid-template-columns: 1fr 480px;
+            gap: 64px;
+            align-items: end;
+            overflow: hidden;
+            border-bottom: 1px solid var(--silver);
+        }
+
+        .hero-left {
+            padding-bottom: 72px;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--wine-pale);
+            color: var(--wine);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 28px;
+        }
+
+        .hero-pill::before {
+            content: '●';
+            font-size: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0.3
+            }
+        }
+
+        .hero-h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            line-height: 1.08;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 24px;
+        }
+
+        .hero-h1 em {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .hero-h1 .underline-word {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-h1 .underline-word::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--terra);
+            border-radius: 2px;
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--gray);
+            max-width: 460px;
+            margin-bottom: 40px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .btn-hero {
+            background: var(--wine);
+            color: var(--white);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 20px rgba(160, 41, 59, 0.3);
+        }
+
+        .btn-hero:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(160, 41, 59, 0.4);
+        }
+
+        .btn-scan {
+            border: 1.5px solid var(--silver);
+            background: var(--white);
+            color: var(--ink);
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-scan:hover {
+            border-color: var(--terra);
+            color: var(--terra);
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .trust-avatars {
+            display: flex;
+        }
+
+        .trust-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--white);
+            background: var(--wine-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin-left: -8px;
+        }
+
+        .trust-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .trust-text {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .trust-text strong {
+            color: var(--ink);
+        }
+
+        .hero-right {
+            position: relative;
+            align-self: stretch;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .hero-card-stack {
+            width: 100%;
+            position: relative;
+            height: 420px;
+        }
+
+        .hero-floating-card {
+            position: absolute;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(26, 26, 46, 0.12);
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .hero-floating-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .hfc-main {
+            width: 260px;
+            bottom: 0;
+            right: 40px;
+            border: 1px solid var(--silver);
+            animation: floatA 4s ease-in-out infinite;
+        }
+
+        .hfc-secondary {
+            width: 200px;
+            top: 40px;
+            right: 0;
+            border: 1px solid var(--silver);
+            animation: floatB 5s ease-in-out infinite;
+        }
+
+        .hfc-tertiary {
+            width: 180px;
+            top: 80px;
+            left: 20px;
+            border: 1px solid var(--silver);
+            animation: floatC 6s ease-in-out infinite;
+        }
+
+        @keyframes floatA {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-8px)
+            }
+        }
+
+        @keyframes floatB {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-12px)
+            }
+        }
+
+        @keyframes floatC {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-6px)
+            }
+        }
+
+        .fc-wine-emoji {
+            font-size: 48px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .fc-region {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--wine);
+        }
+
+        .fc-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--ink);
+            margin: 4px 0 2px;
+        }
+
+        .fc-vintage {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .fc-score-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--silver);
+        }
+
+        .fc-score {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--wine);
+        }
+
+        .fc-stars {
+            color: var(--gold);
+            font-size: 13px;
+        }
+
+        .fc-price {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        /* ── CATEGORIE ── */
+        .categories {
+            padding: 48px 80px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            border-bottom: 1px solid var(--silver);
+            background: var(--white);
+            overflow-x: auto;
+        }
+
+        .cat-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray);
+            white-space: nowrap;
+            margin-right: 8px;
+        }
+
+        .cat-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg);
+            border: 1.5px solid var(--silver);
+            padding: 10px 18px;
+            border-radius: 10px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink-soft);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .cat-chip:hover {
+            border-color: var(--wine);
+            color: var(--wine);
+            background: var(--wine-pale);
+        }
+
+        .cat-chip.active {
+            border-color: var(--wine);
+            background: var(--wine);
+            color: var(--white);
+        }
+
+        .cat-chip .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot-red {
+            background: #8B1A2A;
+        }
+
+        .dot-white {
+            background: #F0D070;
+            border: 1px solid #ccc;
+        }
+
+        .dot-rose {
+            background: #E88080;
+        }
+
+        .dot-sparkling {
+            background: #A0C0E0;
+        }
+
+        .dot-sweet {
+            background: #C080A0;
+        }
+
+        /* ── LAYOUT PRINCIPALE: feed + sidebar ── */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 0;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 48px 80px;
+            align-items: start;
+        }
+
+        .feed {
+            padding-right: 48px;
+            border-right: 1px solid var(--silver);
+        }
+
+        .feed-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .feed-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .feed-title span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .sort-btn {
+            border: 1.5px solid var(--silver);
+            background: var(--white);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: var(--gray);
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Wine Card Feed */
+        .feed-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .wine-card {
+            background: var(--white);
+            border: 1.5px solid var(--silver);
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .wine-card:hover {
+            border-color: var(--wine-light);
+            box-shadow: 0 6px 24px rgba(160, 41, 59, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .wc-img {
+            height: 160px;
+            background: linear-gradient(135deg, var(--wine-pale) 0%, var(--terra-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            position: relative;
+        }
+
+        .wc-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.03em;
+        }
+
+        .badge-top {
+            background: var(--wine);
+            color: var(--white);
+        }
+
+        .badge-new {
+            background: var(--sage);
+            color: var(--white);
+        }
+
+        .badge-offer {
+            background: var(--terra);
+            color: var(--white);
+        }
+
+        .wc-save {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .wc-save:hover {
+            background: var(--wine-pale);
+        }
+
+        .wc-body {
+            padding: 16px;
+        }
+
+        .wc-region {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--terra);
+        }
+
+        .wc-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 600;
+            margin: 4px 0 2px;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+
+        .wc-producer {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .wc-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--silver);
+        }
+
+        .wc-rating {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .wc-score {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--wine);
+            line-height: 1;
+        }
+
+        .wc-stars {
+            font-size: 11px;
+            color: var(--gold);
+            display: block;
+        }
+
+        .wc-count {
+            font-size: 11px;
+            color: var(--gray);
+        }
+
+        .wc-price {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .wc-price small {
+            font-size: 11px;
+            color: var(--gray);
+            font-weight: 400;
+        }
+
+        .wc-add {
+            display: block;
+            width: 100%;
+            margin-top: 12px;
+            background: var(--wine-pale);
+            border: 1.5px solid transparent;
+            color: var(--wine);
+            padding: 9px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .wc-add:hover {
+            background: var(--wine);
+            color: var(--white);
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            padding-left: 40px;
+            position: sticky;
+            top: 80px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 36px;
+        }
+
+        .ss-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ss-title-icon {
+            font-size: 16px;
+        }
+
+        /* Activity Feed */
+        .activity-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--silver);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .act-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--wine-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .act-content {
+            flex: 1;
+        }
+
+        .act-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .act-wine {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .act-wine strong {
+            color: var(--wine);
+            font-weight: 500;
+        }
+
+        .act-stars {
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        .act-time {
+            font-size: 11px;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        .act-note {
+            font-size: 12px;
+            color: var(--ink-soft);
+            line-height: 1.6;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* Trending */
+        .trend-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--silver);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .trend-item:last-child {
+            border-bottom: none;
+        }
+
+        .trend-item:hover {
+            transform: translateX(4px);
+        }
+
+        .trend-rank {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--silver);
+            width: 28px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .trend-rank.top {
+            color: var(--wine);
+        }
+
+        .trend-info {
+            flex: 1;
+        }
+
+        .trend-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .trend-region {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .trend-score {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--wine);
+        }
+
+        .trend-up {
+            font-size: 11px;
+            color: var(--sage);
+            font-weight: 600;
+        }
+
+        /* Abbinamenti */
+        .pairing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .pairing-card {
+            background: var(--bg);
+            border: 1.5px solid var(--silver);
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pairing-card:hover {
+            border-color: var(--terra);
+            background: var(--terra-light);
+        }
+
+        .pairing-icon {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .pairing-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ink-soft);
+        }
+
+        .pairing-count {
+            font-size: 11px;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        /* ── COMMUNITY BANNER ── */
+        .community-banner {
+            margin: 0 80px 48px;
+            background: linear-gradient(135deg, var(--ink) 0%, #2D1B2E 100%);
+            border-radius: 20px;
+            padding: 56px 64px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .community-banner::before {
+            content: '🍷';
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            font-size: 180px;
+            opacity: 0.05;
+            transform: rotate(15deg);
+        }
+
+        .cb-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(196, 105, 58, 0.2);
+            color: var(--terra-light);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cb-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .cb-title em {
+            color: #E8A080;
+            font-style: italic;
+        }
+
+        .cb-desc {
+            font-size: 15px;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .cb-right {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cb-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .cb-stat {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .cb-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .cb-stat-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 4px;
+        }
+
+        .btn-community {
+            background: var(--terra);
+            color: var(--white);
+            border: none;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+            width: 100%;
+        }
+
+        .btn-community:hover {
+            background: #D47840;
+        }
+
+        /* ── REGIONI ── */
+        .regions-section {
+            padding: 48px 80px;
+        }
+
+        .section-hdr {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .section-hdr h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .section-hdr h2 span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .section-hdr a {
+            font-size: 13px;
+            color: var(--wine);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+
+        .region-card {
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.25s;
+            position: relative;
+            aspect-ratio: 3/4;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .region-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26, 26, 46, 0.85) 0%, rgba(26, 26, 46, 0.1) 60%);
+        }
+
+        .region-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .rc-bg-1 {
+            background: linear-gradient(135deg, #8B3A2A, #C4693A);
+        }
+
+        .rc-bg-2 {
+            background: linear-gradient(135deg, #5C3A6B, #8B5A9A);
+        }
+
+        .rc-bg-3 {
+            background: linear-gradient(135deg, #2A5C3A, #4A8B5C);
+        }
+
+        .rc-bg-4 {
+            background: linear-gradient(135deg, #3A4A6B, #5A6A9A);
+        }
+
+        .rc-bg-5 {
+            background: linear-gradient(135deg, #6B3A2A, #9A5A3A);
+        }
+
+        .rc-emoji {
+            font-size: 40px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .rc-info {
+            position: relative;
+            z-index: 1;
+        }
+
+        .rc-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .rc-count {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 2px;
+        }
+
+        .rc-wines {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--ink);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 64px 80px 32px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 32px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 14px;
+        }
+
+        .footer-logo span {
+            color: var(--wine-light);
+            font-style: italic;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            line-height: 1.75;
+            max-width: 280px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .social-btn:hover {
+            background: var(--wine);
+        }
+
+        .footer-col h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul a {
+            text-decoration: none;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            transition: color 0.2s;
+        }
+
+        .footer-col ul a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ── FLOATING SCAN ── */
+        .fab {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 200;
+            background: var(--wine);
+            color: var(--white);
+            border: none;
+            border-radius: 16px;
+            padding: 14px 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            box-shadow: 0 8px 28px rgba(160, 41, 59, 0.45);
+            transition: all 0.3s;
+        }
+
+        .fab:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px rgba(160, 41, 59, 0.55);
+        }
+
+        @media (max-width: 1024px) {
+            nav {
+                padding: 0 24px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 48px 24px 0;
+            }
+
+            .hero-right {
+                display: none;
+            }
+
+            .categories,
+            .regions-section,
+            footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+                padding: 32px 24px;
+            }
+
+            .feed {
+                padding-right: 0;
+                border-right: none;
+            }
+
+            .sidebar {
+                padding-left: 0;
+                position: static;
+                margin-top: 48px;
+            }
+
+            .community-banner {
+                margin: 0 24px 48px;
+                padding: 40px 32px;
+                grid-template-columns: 1fr;
+            }
+
+            .regions-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .feed-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-h1 {
+                font-size: 44px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="logo">Ca<span>lice</span></a>
+        <div class="nav-search">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Cerca vino, cantina, regione…">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Scopri</a></li>
+            <li><a href="#">Cantine</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Abbinamenti</a></li>
+        </ul>
+        <div class="nav-cta">
+            <button class="btn-outline">Accedi</button>
+            <button class="btn-wine">Registrati gratis</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-left">
+            <div class="hero-pill">🍷 Oltre 2 milioni di vini</div>
+            <h1 class="hero-h1">
+                Scopri, assaggia,<br>
+                <em>condividi</em> ogni<br>
+                <span class="underline-word">sorso.</span>
+            </h1>
+            <p class="hero-sub">Scansiona l'etichetta, leggi recensioni reali, trova il vino perfetto per ogni
+                occasione. La community italiana del vino.</p>
+            <div class="hero-actions">
+                <button class="btn-hero">📱 Scarica l'app gratis</button>
+                <button class="btn-scan">📷 Scansiona etichetta</button>
+            </div>
+            <div class="hero-trust">
+                <div class="trust-avatars">
+                    <div class="trust-avatar">👨</div>
+                    <div class="trust-avatar">👩</div>
+                    <div class="trust-avatar">🧑</div>
+                    <div class="trust-avatar">👴</div>
+                </div>
+                <p class="trust-text"><strong>840.000+ degustatori</strong> già su Calice</p>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-card-stack">
+                <div class="hero-floating-card hfc-tertiary">
+                    <span class="fc-wine-emoji">🥂</span>
+                    <div class="fc-region">Lombardia</div>
+                    <div class="fc-name">Franciacorta</div>
+                    <div class="fc-vintage">Bellavista · NV</div>
+                    <div class="fc-score-row">
+                        <div class="fc-score">93</div>
+                        <div class="fc-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="hero-floating-card hfc-secondary">
+                    <span class="fc-wine-emoji">🍾</span>
+                    <div class="fc-region">Piemonte · DOCG</div>
+                    <div class="fc-name">Barolo Cannubi</div>
+                    <div class="fc-vintage">Sandrone · 2018</div>
+                    <div class="fc-score-row">
+                        <div class="fc-score">96</div>
+                        <div class="fc-price">€95</div>
+                    </div>
+                </div>
+                <div class="hero-floating-card hfc-main">
+                    <span class="fc-wine-emoji">🍷</span>
+                    <div class="fc-region">Toscana · DOCG</div>
+                    <div class="fc-name">Brunello di Montalcino Riserva</div>
+                    <div class="fc-vintage">Biondi Santi · 2019</div>
+                    <div class="fc-score-row">
+                        <div>
+                            <div class="fc-score">97</div>
+                            <div class="fc-stars">★★★★★</div>
+                        </div>
+                        <div class="fc-price">€138</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATEGORIE -->
+    <div class="categories">
+        <span class="cat-label">Filtra:</span>
+        <button class="cat-chip active"><span class="dot dot-red"></span> Rosso</button>
+        <button class="cat-chip"><span class="dot dot-white"></span> Bianco</button>
+        <button class="cat-chip"><span class="dot dot-rose"></span> Rosé</button>
+        <button class="cat-chip"><span class="dot dot-sparkling"></span> Spumante</button>
+        <button class="cat-chip"><span class="dot dot-sweet"></span> Dolce</button>
+        <button class="cat-chip">🌿 Bio & Naturale</button>
+        <button class="cat-chip">🏆 Premiati 2025</button>
+        <button class="cat-chip">💰 Qualità/Prezzo</button>
+    </div>
+
+    <!-- MAIN LAYOUT: FEED + SIDEBAR -->
+    <div class="main-layout">
+
+        <!-- FEED -->
+        <div class="feed">
+            <div class="feed-header">
+                <h2 class="feed-title">Più amati <span>questa settimana</span></h2>
+                <button class="sort-btn">Ordina ↕</button>
+            </div>
+            <div class="feed-grid">
+
+                <div class="wine-card">
+                    <div class="wc-img">🍷
+                        <span class="wc-badge badge-top">TOP 2025</span>
+                        <button class="wc-save">🤍</button>
+                    </div>
+                    <div class="wc-body">
+                        <div class="wc-region">Toscana · DOCG</div>
+                        <div class="wc-name">Brunello di Montalcino Riserva</div>
+                        <div class="wc-producer">Biondi Santi · 2019</div>
+                        <div class="wc-footer">
+                            <div class="wc-rating">
+                                <span class="wc-score">97</span>
+                                <div>
+                                    <span class="wc-stars">★★★★★</span>
+                                    <span class="wc-count">4.2k voti</span>
+                                </div>
+                            </div>
+                            <div class="wc-price">€138 <small>/bt</small></div>
+                        </div>
+                        <button class="wc-add">+ Aggiungi alla mia cantina</button>
+                    </div>
+                </div>
+
+                <div class="wine-card">
+                    <div class="wc-img">🍾
+                        <button class="wc-save">🤍</button>
+                    </div>
+                    <div class="wc-body">
+                        <div class="wc-region">Piemonte · DOCG</div>
+                        <div class="wc-name">Barolo Cannubi Boschis</div>
+                        <div class="wc-producer">Sandrone · 2018</div>
+                        <div class="wc-footer">
+                            <div class="wc-rating">
+                                <span class="wc-score">96</span>
+                                <div>
+                                    <span class="wc-stars">★★★★★</span>
+                                    <span class="wc-count">3.8k voti</span>
+                                </div>
+                            </div>
+                            <div class="wc-price">€95 <small>/bt</small></div>
+                        </div>
+                        <button class="wc-add">+ Aggiungi alla mia cantina</button>
+                    </div>
+                </div>
+
+                <div class="wine-card">
+                    <div class="wc-img" style="background: linear-gradient(135deg,#F0E8D0,#E8D0B0)">🥂
+                        <span class="wc-badge badge-new">NOVITÀ</span>
+                        <button class="wc-save">🤍</button>
+                    </div>
+                    <div class="wc-body">
+                        <div class="wc-region">Lombardia · DOCG</div>
+                        <div class="wc-name">Franciacorta Prestige Cuvée</div>
+                        <div class="wc-producer">Bellavista · NV</div>
+                        <div class="wc-footer">
+                            <div class="wc-rating">
+                                <span class="wc-score">93</span>
+                                <div>
+                                    <span class="wc-stars">★★★★★</span>
+                                    <span class="wc-count">2.1k voti</span>
+                                </div>
+                            </div>
+                            <div class="wc-price">€42 <small>/bt</small></div>
+                        </div>
+                        <button class="wc-add">+ Aggiungi alla mia cantina</button>
+                    </div>
+                </div>
+
+                <div class="wine-card">
+                    <div class="wc-img" style="background: linear-gradient(135deg,#EAD0C8,#D4A898)">🍷
+                        <span class="wc-badge badge-offer">OFFERTA</span>
+                        <button class="wc-save">❤️</button>
+                    </div>
+                    <div class="wc-body">
+                        <div class="wc-region">Veneto · DOCG</div>
+                        <div class="wc-name">Amarone della Valpolicella</div>
+                        <div class="wc-producer">Dal Forno Romano · 2017</div>
+                        <div class="wc-footer">
+                            <div class="wc-rating">
+                                <span class="wc-score">95</span>
+                                <div>
+                                    <span class="wc-stars">★★★★★</span>
+                                    <span class="wc-count">5.6k voti</span>
+                                </div>
+                            </div>
+                            <div class="wc-price">€210 <small>/bt</small></div>
+                        </div>
+                        <button class="wc-add">+ Aggiungi alla mia cantina</button>
+                    </div>
+                </div>
+
+                <div class="wine-card">
+                    <div class="wc-img" style="background: linear-gradient(135deg,#D8EAD0,#B8D0A8)">🌿
+                        <button class="wc-save">🤍</button>
+                    </div>
+                    <div class="wc-body">
+                        <div class="wc-region">Sicilia · DOC</div>
+                        <div class="wc-name">Nero d'Avola Riserva</div>
+                        <div class="wc-producer">Donnafugata · 2020</div>
+                        <div class="wc-footer">
+                            <div class="wc-rating">
+                                <span class="wc-score">91</span>
+                                <div>
+                                    <span class="wc-stars">★★★★☆</span>
+                                    <span class="wc-count">1.9k voti</span>
+                                </div>
+                            </div>
+                            <div class="wc-price">€28 <small>/bt</small></div>
+                        </div>
+                        <button class="wc-add">+ Aggiungi alla mia cantina</button>
+                    </div>
+                </div>
+
+                <div class="wine-card">
+                    <div class="wc-img" style="background: linear-gradient(135deg,#D8D0E8,#B8A8D0)">🍷
+                        <button class="wc-save">🤍</button>
+                    </div>
+                    <div class="wc-body">
+                        <div class="wc-region">Sardegna · DOC</div>
+                        <div class="wc-name">Cannonau di Sardegna</div>
+                        <div class="wc-producer">Argiolas · 2021</div>
+                        <div class="wc-footer">
+                            <div class="wc-rating">
+                                <span class="wc-score">89</span>
+                                <div>
+                                    <span class="wc-stars">★★★★☆</span>
+                                    <span class="wc-count">1.2k voti</span>
+                                </div>
+                            </div>
+                            <div class="wc-price">€18 <small>/bt</small></div>
+                        </div>
+                        <button class="wc-add">+ Aggiungi alla mia cantina</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+
+            <div class="sidebar-section">
+                <div class="ss-title"><span class="ss-title-icon">🔥</span> Attività recente</div>
+                <div>
+                    <div class="activity-item">
+                        <div class="act-avatar">👩</div>
+                        <div class="act-content">
+                            <div class="act-name">Giulia R.</div>
+                            <div class="act-wine">ha degustato <strong>Barolo Sandrone</strong></div>
+                            <div class="act-stars">★★★★★</div>
+                            <div class="act-note">"Tannini setosi, finale lunghissimo. Capolavoro."</div>
+                            <div class="act-time">2 minuti fa</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="act-avatar">👨</div>
+                        <div class="act-content">
+                            <div class="act-name">Marco T.</div>
+                            <div class="act-wine">ha aggiunto <strong>Sassicaia 2020</strong> alla cantina</div>
+                            <div class="act-time">18 minuti fa</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="act-avatar">🧑</div>
+                        <div class="act-content">
+                            <div class="act-name">Luca M.</div>
+                            <div class="act-wine">ha recensito <strong>Brunello Biondi Santi</strong></div>
+                            <div class="act-stars">★★★★★</div>
+                            <div class="act-note">"Un privilegio. Da bere tra 10 anni."</div>
+                            <div class="act-time">1 ora fa</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="ss-title"><span class="ss-title-icon">📈</span> In tendenza</div>
+                <div>
+                    <div class="trend-item">
+                        <div class="trend-rank top">1</div>
+                        <div class="trend-info">
+                            <div class="trend-name">Brunello Riserva</div>
+                            <div class="trend-region">Toscana · Biondi Santi</div>
+                        </div>
+                        <div>
+                            <div class="trend-score">97</div>
+                            <div class="trend-up">↑ +12%</div>
+                        </div>
+                    </div>
+                    <div class="trend-item">
+                        <div class="trend-rank top">2</div>
+                        <div class="trend-info">
+                            <div class="trend-name">Sassicaia 2020</div>
+                            <div class="trend-region">Toscana · Tenuta San Guido</div>
+                        </div>
+                        <div>
+                            <div class="trend-score">98</div>
+                            <div class="trend-up">↑ +8%</div>
+                        </div>
+                    </div>
+                    <div class="trend-item">
+                        <div class="trend-rank">3</div>
+                        <div class="trend-info">
+                            <div class="trend-name">Barolo Cannubi</div>
+                            <div class="trend-region">Piemonte · Sandrone</div>
+                        </div>
+                        <div>
+                            <div class="trend-score">96</div>
+                            <div class="trend-up">↑ +5%</div>
+                        </div>
+                    </div>
+                    <div class="trend-item">
+                        <div class="trend-rank">4</div>
+                        <div class="trend-info">
+                            <div class="trend-name">Amarone Dal Forno</div>
+                            <div class="trend-region">Veneto · Dal Forno Romano</div>
+                        </div>
+                        <div>
+                            <div class="trend-score">95</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="ss-title"><span class="ss-title-icon">🍽️</span> Abbinamenti del giorno</div>
+                <div class="pairing-grid">
+                    <div class="pairing-card">
+                        <div class="pairing-icon">🥩</div>
+                        <div class="pairing-label">Carni rosse</div>
+                        <div class="pairing-count">124 vini</div>
+                    </div>
+                    <div class="pairing-card">
+                        <div class="pairing-icon">🐟</div>
+                        <div class="pairing-label">Pesce</div>
+                        <div class="pairing-count">98 vini</div>
+                    </div>
+                    <div class="pairing-card">
+                        <div class="pairing-icon">🧀</div>
+                        <div class="pairing-label">Formaggi</div>
+                        <div class="pairing-count">87 vini</div>
+                    </div>
+                    <div class="pairing-card">
+                        <div class="pairing-icon">🍝</div>
+                        <div class="pairing-label">Pasta</div>
+                        <div class="pairing-count">210 vini</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- COMMUNITY BANNER -->
+    <div class="community-banner">
+        <div>
+            <div class="cb-tag">🌍 Community globale</div>
+            <h2 class="cb-title">Unisciti alla<br>community dei<br><em>veri appassionati.</em></h2>
+            <p class="cb-desc">Condividi le tue degustazioni, costruisci la tua cantina digitale, segui sommelier e
+                produttori. Il vino è più bello insieme.</p>
+        </div>
+        <div class="cb-right">
+            <div class="cb-stats">
+                <div class="cb-stat">
+                    <div class="cb-stat-num">840K</div>
+                    <div class="cb-stat-label">Utenti attivi</div>
+                </div>
+                <div class="cb-stat">
+                    <div class="cb-stat-num">12M</div>
+                    <div class="cb-stat-label">Recensioni</div>
+                </div>
+                <div class="cb-stat">
+                    <div class="cb-stat-num">2.4M</div>
+                    <div class="cb-stat-label">Vini catalogati</div>
+                </div>
+                <div class="cb-stat">
+                    <div class="cb-stat-num">180+</div>
+                    <div class="cb-stat-label">Regioni vinicole</div>
+                </div>
+            </div>
+            <button class="btn-community">Crea il tuo profilo gratis →</button>
+        </div>
+    </div>
+
+    <!-- REGIONI -->
+    <div class="regions-section">
+        <div class="section-hdr">
+            <h2>Esplora per <span>regione</span></h2>
+            <a href="#">Vedi tutte le regioni →</a>
+        </div>
+        <div class="regions-grid">
+            <div class="region-card rc-bg-1">
+                <span class="rc-emoji">🌹</span>
+                <div class="rc-info">
+                    <div class="rc-name">Toscana</div>
+                    <div class="rc-count">42.100 vini</div>
+                    <div class="rc-wines">Brunello · Chianti · Sassicaia</div>
+                </div>
+            </div>
+            <div class="region-card rc-bg-2">
+                <span class="rc-emoji">🍇</span>
+                <div class="rc-info">
+                    <div class="rc-name">Piemonte</div>
+                    <div class="rc-count">38.560 vini</div>
+                    <div class="rc-wines">Barolo · Barbaresco · Moscato</div>
+                </div>
+            </div>
+            <div class="region-card rc-bg-3">
+                <span class="rc-emoji">🫧</span>
+                <div class="rc-info">
+                    <div class="rc-name">Veneto</div>
+                    <div class="rc-count">31.220 vini</div>
+                    <div class="rc-wines">Amarone · Prosecco · Soave</div>
+                </div>
+            </div>
+            <div class="region-card rc-bg-4">
+                <span class="rc-emoji">🌊</span>
+                <div class="rc-info">
+                    <div class="rc-name">Sicilia</div>
+                    <div class="rc-count">22.480 vini</div>
+                    <div class="rc-wines">Nero d'Avola · Marsala · Etna</div>
+                </div>
+            </div>
+            <div class="region-card rc-bg-5">
+                <span class="rc-emoji">☀️</span>
+                <div class="rc-info">
+                    <div class="rc-name">Sardegna</div>
+                    <div class="rc-count">14.320 vini</div>
+                    <div class="rc-wines">Cannonau · Vermentino · Carignano</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">Ca<span>lice</span></div>
+                <p class="footer-desc">La piattaforma italiana per scoprire, condividere e acquistare vino. Da
+                    appassionati, per appassionati.</p>
+                <div class="footer-socials">
+                    <div class="social-btn">📸</div>
+                    <div class="social-btn">🐦</div>
+                    <div class="social-btn">▶️</div>
+                    <div class="social-btn">💼</div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Scopri</h4>
+                <ul>
+                    <li><a href="#">Top Vini 2025</a></li>
+                    <li><a href="#">Per regione</a></li>
+                    <li><a href="#">Abbinamenti</a></li>
+                    <li><a href="#">Guide al vino</a></li>
+                    <li><a href="#">Cantine d'Italia</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Recensioni</a></li>
+                    <li><a href="#">La mia cantina</a></li>
+                    <li><a href="#">Degustazioni live</a></li>
+                    <li><a href="#">Sommelier</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Azienda</h4>
+                <ul>
+                    <li><a href="#">Chi siamo</a></li>
+                    <li><a href="#">Per le cantine</a></li>
+                    <li><a href="#">API per sviluppatori</a></li>
+                    <li><a href="#">Lavora con noi</a></li>
+                    <li><a href="#">Contatti</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Calice S.r.l. — Milano, Italia</span>
+            <span>Privacy · Termini · Cookie · Accessibilità</span>
+        </div>
+    </footer>
+
+    <!-- FAB SCAN -->
+    <button class="fab">📷 Scansiona etichetta</button>
+
+</body>
+
+</html>
