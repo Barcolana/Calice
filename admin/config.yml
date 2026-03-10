@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: Barcolana/Calice
+  branch: main
+
+media_folder: "images"
+
+collections:
+  - name: "vini"
+    label: "Vini"
+    folder: "_vini"
+    create: true
+    slug: "{{nome}}"
+    fields:
+      - { label: "Nome", name: "nome", widget: "string" }
+      - { label: "Produttore", name: "produttore", widget: "string" }
+      - { label: "Regione", name: "regione", widget: "string" }
+      - { label: "Tipo", name: "tipo", widget: "select", options: ["Rosso", "Bianco", "Rosé", "Spumante", "Dolce"] }
+      - { label: "Punteggio", name: "punteggio", widget: "number" }
+      - { label: "Prezzo", name: "prezzo", widget: "number" }
+      - { label: "Badge", name: "badge", widget: "string", required: false }
