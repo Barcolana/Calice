@@ -1,3 +1,5 @@
+site_url: https://calice-vino.netlify.app
+
 backend:
   name: github
   repo: Barcolana/Calice
