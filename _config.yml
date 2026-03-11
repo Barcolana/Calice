@@ -4,11 +4,12 @@ url: https://calice-vino.netlify.app
 
 collections:
   vini:
-    output: false
+    output: true
+    permalink: /vini/:name/
 
 defaults:
   - scope:
       path: ""
       type: "vini"
     values:
-      layout: null
+      layout: vino
