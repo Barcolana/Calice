@@ -1,0 +1,14 @@
+title: Calice
+description: Il social del vino italiano
+url: https://calice-vino.netlify.app
+
+collections:
+  vini:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "vini"
+    values:
+      layout: null
