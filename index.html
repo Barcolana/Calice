@@ -1452,15 +1452,15 @@
 
     <!-- CATEGORIE -->
     <div class="categories">
-        <span class="cat-label">Filtra:</span>
-        <button class="cat-chip active"><span class="dot dot-red"></span> Rosso</button>
-        <button class="cat-chip"><span class="dot dot-white"></span> Bianco</button>
-        <button class="cat-chip"><span class="dot dot-rose"></span> Rosé</button>
-        <button class="cat-chip"><span class="dot dot-sparkling"></span> Spumante</button>
-        <button class="cat-chip"><span class="dot dot-sweet"></span> Dolce</button>
+        <button class="cat-chip active" data-filtro="">⬤ Tutti</button>
+        <button class="cat-chip" data-filtro="Rosso"><span class="dot dot-red"></span> Rosso</button>
+        <button class="cat-chip" data-filtro="Bianco"><span class="dot dot-white"></span> Bianco</button>
+        <button class="cat-chip" data-filtro="Rosé"><span class="dot dot-rose"></span> Rosé</button>
+        <button class="cat-chip" data-filtro="Spumante"><span class="dot dot-sparkling"></span> Spumante</button>
+        <button class="cat-chip" data-filtro="Dolce"><span class="dot dot-sweet"></span> Dolce</button>
         <button class="cat-chip" data-filtro="Bio">🌿 Bio & Naturale</button>
-        <button class="cat-chip">🏆 Premiati 2025</button>
-        <button class="cat-chip">💰 Qualità/Prezzo</button>
+        <button class="cat-chip" data-filtro="Premiati">🏆 Premiati 2025</button>
+        <button class="cat-chip" data-filtro="Qualità/Prezzo">💰 Qualità/Prezzo</button>
     </div>
 
     <!-- MAIN LAYOUT: FEED + SIDEBAR -->
@@ -1763,14 +1763,13 @@
             chips.forEach(c => c.classList.remove('active'));
             chip.classList.add('active');
 
-            const filtro = chip.dataset.filtro || chip.textContent.trim().replace(/[^a-zA-ZàèéìòùÀÈÉÌÒÙ ]/g, '').trim();
+            const filtro = chip.dataset.filtro || null;
 
             cards.forEach(card => {
-                const tipo = card.getAttribute('data-tipo');
-                if (filtro === 'Rosso' || filtro === 'Bianco' || filtro === 'Rosé' || filtro === 'Spumante' || filtro === 'Dolce' || filtro === 'Bio & Naturale') {
-                    card.style.display = (tipo === filtro || (filtro === 'Bio & Naturale' && tipo === 'Bio')) ? 'block' : 'none';
-                } else {
+                if (!filtro) {
                     card.style.display = 'block';
+                } else {
+                    card.style.display = card.getAttribute('data-tipo') === filtro ? 'block' : 'none';
                 }
             });
         });
