@@ -1458,7 +1458,7 @@
         <button class="cat-chip"><span class="dot dot-rose"></span> Rosé</button>
         <button class="cat-chip"><span class="dot dot-sparkling"></span> Spumante</button>
         <button class="cat-chip"><span class="dot dot-sweet"></span> Dolce</button>
-        <button class="cat-chip">🌿 Bio & Naturale</button>
+        <button class="cat-chip" data-filtro="Bio">🌿 Bio & Naturale</button>
         <button class="cat-chip">🏆 Premiati 2025</button>
         <button class="cat-chip">💰 Qualità/Prezzo</button>
     </div>
@@ -1763,7 +1763,7 @@
             chips.forEach(c => c.classList.remove('active'));
             chip.classList.add('active');
 
-            const filtro = chip.textContent.trim().replace(/[^a-zA-ZàèéìòùÀÈÉÌÒÙ ]/g, '').trim();
+            const filtro = chip.dataset.filtro || chip.textContent.trim().replace(/[^a-zA-ZàèéìòùÀÈÉÌÒÙ ]/g, '').trim();
 
             cards.forEach(card => {
                 const tipo = card.getAttribute('data-tipo');
