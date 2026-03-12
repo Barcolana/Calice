@@ -1,6 +1,7 @@
 title: Calice
 description: Il social del vino italiano
-url: https://calice-vino.netlify.app
+url: https://barcolana.github.io
+baseurl: /Calice
 
 collections:
   vini:
