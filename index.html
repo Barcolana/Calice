@@ -1475,7 +1475,7 @@
             <div class="feed-grid">
 
                 {% for vino in site.vini %}
-                <div class="wine-card">
+                <div class="wine-card"> data-tipo="{{ vino.tipo }}">
                     <div class="wc-img">{{ vino.emoji }}
                         {% if vino.badge != "" %}
                         <span class="wc-badge badge-top">{{ vino.badge }}</span>
@@ -1754,5 +1754,31 @@
     <button class="fab">📷 Scansiona etichetta</button>
 
 </body>
+<script>
+    const chips = document.querySelectorAll('.cat-chip');
+    const cards = document.querySelectorAll('.wine-card');
+
+    chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            chips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+
+            const filtro = chip.textContent.trim().replace(/[^a-zA-ZàèéìòùÀÈÉÌÒÙ ]/g, '').trim();
+
+            cards.forEach(card => {
+                const tipo = card.getAttribute('data-tipo');
+                if (filtro === 'Rosso' || filtro === 'Bianco' || filtro === 'Rosé' || filtro === 'Spumante' || filtro === 'Dolce') {
+                    card.style.display = tipo === filtro ? 'block' : 'none';
+                } else {
+                    card.style.display = 'block';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+
+</html>
 
 </html>
