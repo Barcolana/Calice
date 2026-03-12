@@ -1767,8 +1767,8 @@
 
             cards.forEach(card => {
                 const tipo = card.getAttribute('data-tipo');
-                if (filtro === 'Rosso' || filtro === 'Bianco' || filtro === 'Rosé' || filtro === 'Spumante' || filtro === 'Dolce') {
-                    card.style.display = tipo === filtro ? 'block' : 'none';
+                if (filtro === 'Rosso' || filtro === 'Bianco' || filtro === 'Rosé' || filtro === 'Spumante' || filtro === 'Dolce' || filtro === 'Bio & Naturale') {
+                    card.style.display = (tipo === filtro || (filtro === 'Bio & Naturale' && tipo === 'Bio')) ? 'block' : 'none';
                 } else {
                     card.style.display = 'block';
                 }
