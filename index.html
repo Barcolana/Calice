@@ -1475,148 +1475,147 @@
             <div class="feed-grid">
 
                 {% for vino in site.vini %}
-                <div class="wine-card" data-tipo="{{ vino.tipo }}" data-punteggio="{{ vino.punteggio }}"
-                    data-badge="{{ vino.badge }}"></div>
-                <div class="wc-img">{{ vino.emoji }}
-                    {% if vino.badge != "" %}
-                    <span class="wc-badge badge-top">{{ vino.badge }}</span>
-                    {% endif %}
-                    <button class="wc-save">🤍</button>
-                </div>
-                <div class="wc-body">
-                    <div class="wc-region">{{ vino.regione }}</div>
-                    <div class="wc-name">{{ vino.nome }}</div>
-                    <div class="wc-producer">{{ vino.produttore }}</div>
-                    <div class="wc-footer">
-                        <div class="wc-rating">
-                            <span class="wc-score">{{ vino.punteggio }}</span>
-                            <div>
-                                <span class="wc-stars">★★★★★</span>
+                <div class="wine-card" data-tipo="{{ vino.tipo }}">
+                    <div class="wc-img">{{ vino.emoji }}
+                        {% if vino.badge != "" %}
+                        <span class="wc-badge badge-top">{{ vino.badge }}</span>
+                        {% endif %}
+                        <button class="wc-save">🤍</button>
+                    </div>
+                    <div class="wc-body">
+                        <div class="wc-region">{{ vino.regione }}</div>
+                        <div class="wc-name">{{ vino.nome }}</div>
+                        <div class="wc-producer">{{ vino.produttore }}</div>
+                        <div class="wc-footer">
+                            <div class="wc-rating">
+                                <span class="wc-score">{{ vino.punteggio }}</span>
+                                <div>
+                                    <span class="wc-stars">★★★★★</span>
+                                </div>
                             </div>
+                            <div class="wc-price">€{{ vino.prezzo }} <small>/bt</small></div>
                         </div>
-                        <div class="wc-price">€{{ vino.prezzo }} <small>/bt</small></div>
+                        <a href="/vini/{{ vino.slug }}" class="wc-add">→ Scopri questo vino</a>
                     </div>
-                    <a href="/vini/{{ vino.slug }}" class="wc-add">→ Scopri questo vino</a>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
 
-        </div>
-    </div>
-
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-
-        <div class="sidebar-section">
-            <div class="ss-title"><span class="ss-title-icon">🔥</span> Attività recente</div>
-            <div>
-                <div class="activity-item">
-                    <div class="act-avatar">👩</div>
-                    <div class="act-content">
-                        <div class="act-name">Giulia R.</div>
-                        <div class="act-wine">ha degustato <strong>Barolo Sandrone</strong></div>
-                        <div class="act-stars">★★★★★</div>
-                        <div class="act-note">"Tannini setosi, finale lunghissimo. Capolavoro."</div>
-                        <div class="act-time">2 minuti fa</div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <div class="act-avatar">👨</div>
-                    <div class="act-content">
-                        <div class="act-name">Marco T.</div>
-                        <div class="act-wine">ha aggiunto <strong>Sassicaia 2020</strong> alla cantina</div>
-                        <div class="act-time">18 minuti fa</div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <div class="act-avatar">🧑</div>
-                    <div class="act-content">
-                        <div class="act-name">Luca M.</div>
-                        <div class="act-wine">ha recensito <strong>Brunello Biondi Santi</strong></div>
-                        <div class="act-stars">★★★★★</div>
-                        <div class="act-note">"Un privilegio. Da bere tra 10 anni."</div>
-                        <div class="act-time">1 ora fa</div>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <div class="sidebar-section">
-            <div class="ss-title"><span class="ss-title-icon">📈</span> In tendenza</div>
-            <div>
-                <div class="trend-item">
-                    <div class="trend-rank top">1</div>
-                    <div class="trend-info">
-                        <div class="trend-name">Brunello Riserva</div>
-                        <div class="trend-region">Toscana · Biondi Santi</div>
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+
+            <div class="sidebar-section">
+                <div class="ss-title"><span class="ss-title-icon">🔥</span> Attività recente</div>
+                <div>
+                    <div class="activity-item">
+                        <div class="act-avatar">👩</div>
+                        <div class="act-content">
+                            <div class="act-name">Giulia R.</div>
+                            <div class="act-wine">ha degustato <strong>Barolo Sandrone</strong></div>
+                            <div class="act-stars">★★★★★</div>
+                            <div class="act-note">"Tannini setosi, finale lunghissimo. Capolavoro."</div>
+                            <div class="act-time">2 minuti fa</div>
+                        </div>
                     </div>
-                    <div>
-                        <div class="trend-score">97</div>
-                        <div class="trend-up">↑ +12%</div>
+                    <div class="activity-item">
+                        <div class="act-avatar">👨</div>
+                        <div class="act-content">
+                            <div class="act-name">Marco T.</div>
+                            <div class="act-wine">ha aggiunto <strong>Sassicaia 2020</strong> alla cantina</div>
+                            <div class="act-time">18 minuti fa</div>
+                        </div>
                     </div>
-                </div>
-                <div class="trend-item">
-                    <div class="trend-rank top">2</div>
-                    <div class="trend-info">
-                        <div class="trend-name">Sassicaia 2020</div>
-                        <div class="trend-region">Toscana · Tenuta San Guido</div>
-                    </div>
-                    <div>
-                        <div class="trend-score">98</div>
-                        <div class="trend-up">↑ +8%</div>
-                    </div>
-                </div>
-                <div class="trend-item">
-                    <div class="trend-rank">3</div>
-                    <div class="trend-info">
-                        <div class="trend-name">Barolo Cannubi</div>
-                        <div class="trend-region">Piemonte · Sandrone</div>
-                    </div>
-                    <div>
-                        <div class="trend-score">96</div>
-                        <div class="trend-up">↑ +5%</div>
-                    </div>
-                </div>
-                <div class="trend-item">
-                    <div class="trend-rank">4</div>
-                    <div class="trend-info">
-                        <div class="trend-name">Amarone Dal Forno</div>
-                        <div class="trend-region">Veneto · Dal Forno Romano</div>
-                    </div>
-                    <div>
-                        <div class="trend-score">95</div>
+                    <div class="activity-item">
+                        <div class="act-avatar">🧑</div>
+                        <div class="act-content">
+                            <div class="act-name">Luca M.</div>
+                            <div class="act-wine">ha recensito <strong>Brunello Biondi Santi</strong></div>
+                            <div class="act-stars">★★★★★</div>
+                            <div class="act-note">"Un privilegio. Da bere tra 10 anni."</div>
+                            <div class="act-time">1 ora fa</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="sidebar-section">
-            <div class="ss-title"><span class="ss-title-icon">🍽️</span> Abbinamenti del giorno</div>
-            <div class="pairing-grid">
-                <div class="pairing-card">
-                    <div class="pairing-icon">🥩</div>
-                    <div class="pairing-label">Carni rosse</div>
-                    <div class="pairing-count">124 vini</div>
-                </div>
-                <div class="pairing-card">
-                    <div class="pairing-icon">🐟</div>
-                    <div class="pairing-label">Pesce</div>
-                    <div class="pairing-count">98 vini</div>
-                </div>
-                <div class="pairing-card">
-                    <div class="pairing-icon">🧀</div>
-                    <div class="pairing-label">Formaggi</div>
-                    <div class="pairing-count">87 vini</div>
-                </div>
-                <div class="pairing-card">
-                    <div class="pairing-icon">🍝</div>
-                    <div class="pairing-label">Pasta</div>
-                    <div class="pairing-count">210 vini</div>
+            <div class="sidebar-section">
+                <div class="ss-title"><span class="ss-title-icon">📈</span> In tendenza</div>
+                <div>
+                    <div class="trend-item">
+                        <div class="trend-rank top">1</div>
+                        <div class="trend-info">
+                            <div class="trend-name">Brunello Riserva</div>
+                            <div class="trend-region">Toscana · Biondi Santi</div>
+                        </div>
+                        <div>
+                            <div class="trend-score">97</div>
+                            <div class="trend-up">↑ +12%</div>
+                        </div>
+                    </div>
+                    <div class="trend-item">
+                        <div class="trend-rank top">2</div>
+                        <div class="trend-info">
+                            <div class="trend-name">Sassicaia 2020</div>
+                            <div class="trend-region">Toscana · Tenuta San Guido</div>
+                        </div>
+                        <div>
+                            <div class="trend-score">98</div>
+                            <div class="trend-up">↑ +8%</div>
+                        </div>
+                    </div>
+                    <div class="trend-item">
+                        <div class="trend-rank">3</div>
+                        <div class="trend-info">
+                            <div class="trend-name">Barolo Cannubi</div>
+                            <div class="trend-region">Piemonte · Sandrone</div>
+                        </div>
+                        <div>
+                            <div class="trend-score">96</div>
+                            <div class="trend-up">↑ +5%</div>
+                        </div>
+                    </div>
+                    <div class="trend-item">
+                        <div class="trend-rank">4</div>
+                        <div class="trend-info">
+                            <div class="trend-name">Amarone Dal Forno</div>
+                            <div class="trend-region">Veneto · Dal Forno Romano</div>
+                        </div>
+                        <div>
+                            <div class="trend-score">95</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+            <div class="sidebar-section">
+                <div class="ss-title"><span class="ss-title-icon">🍽️</span> Abbinamenti del giorno</div>
+                <div class="pairing-grid">
+                    <div class="pairing-card">
+                        <div class="pairing-icon">🥩</div>
+                        <div class="pairing-label">Carni rosse</div>
+                        <div class="pairing-count">124 vini</div>
+                    </div>
+                    <div class="pairing-card">
+                        <div class="pairing-icon">🐟</div>
+                        <div class="pairing-label">Pesce</div>
+                        <div class="pairing-count">98 vini</div>
+                    </div>
+                    <div class="pairing-card">
+                        <div class="pairing-icon">🧀</div>
+                        <div class="pairing-label">Formaggi</div>
+                        <div class="pairing-count">87 vini</div>
+                    </div>
+                    <div class="pairing-card">
+                        <div class="pairing-icon">🍝</div>
+                        <div class="pairing-label">Pasta</div>
+                        <div class="pairing-count">210 vini</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <!-- COMMUNITY BANNER -->
@@ -1770,15 +1769,7 @@
                 if (!filtro) {
                     card.style.display = 'block';
                 } else {
-                    const tipo = card.getAttribute('data-tipo');
-                    const punteggio = parseInt(card.getAttribute('data-punteggio'));
-                    const badge = card.getAttribute('data-badge');
-
-                    if (filtro === 'Premiati') {
-                        card.style.display = (punteggio >= 93 && badge && badge !== '') ? 'block' : 'none';
-                    } else {
-                        card.style.display = tipo === filtro ? 'block' : 'none';
-                    }
+                    card.style.display = card.getAttribute('data-tipo') === filtro ? 'block' : 'none';
                 }
             });
         });
