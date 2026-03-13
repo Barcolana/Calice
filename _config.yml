@@ -6,7 +6,7 @@ baseurl: /Calice
 collections:
   vini:
     output: true
-    permalink: /Calice/vini/:name/
+    permalink: /vini/:name/
 
 defaults:
   - scope:
