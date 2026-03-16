@@ -105,8 +105,6 @@
             top: 80px;
         }
 
-        .scheda-info {}
-
         .scheda-region {
             font-size: 12px;
             font-weight: 600;
@@ -215,7 +213,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             transition: all 0.2s;
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 12px;
         }
 
         .btn-cantina:hover {
@@ -306,8 +304,8 @@
 <body>
 
     <nav>
-        <a href="/" class="logo">Ca<span>lice</span></a>
-        <a href="/" class="back-btn">← Torna ai vini</a>
+        <a href="{{ site.baseurl }}/" class="logo">Ca<span>lice</span></a>
+        <a href="{{ site.baseurl }}/" class="back-btn">← Torna ai vini</a>
     </nav>
 
     <div class="scheda">
@@ -332,6 +330,8 @@
 
             <button class="btn-acquista">🛒 Acquista ora</button>
             <button class="btn-cantina">🤍 Aggiungi alla mia cantina</button>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScc_q0_B5piFGWulCqtTTv_86eT3qA-Rb_S5ncJ-PyZxd_f2w/viewform"
+                target="_blank" class="btn-cantina" style="text-decoration:none;">📝 Condividi la tua degustazione</a>
 
             {% if page.descrizione %}
             <div class="scheda-section">
@@ -379,3 +379,4 @@
 </body>
 
 </html>
+<!--fine del file vino.html -->
