@@ -1,0 +1,381 @@
+---
+---
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.nome }} — Calice</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --wine: #A0293B;
+            --wine-light: #C4495E;
+            --wine-pale: #F9EDEF;
+            --terra: #C4693A;
+            --terra-light: #F0D5C4;
+            --ink: #1A1A2E;
+            --gray: #6B6B7E;
+            --silver: #E8E8F0;
+            --bg: #FAFAF8;
+            --white: #FFFFFF;
+            --gold: #B8860B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--silver);
+            padding: 0 48px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            height: 64px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .back-btn {
+            margin-left: auto;
+            border: 1.5px solid var(--silver);
+            background: none;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray);
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .back-btn:hover {
+            border-color: var(--wine);
+            color: var(--wine);
+        }
+
+        .scheda {
+            max-width: 1100px;
+            margin: 48px auto;
+            padding: 0 48px;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 64px;
+        }
+
+        .scheda-img {
+            background: linear-gradient(135deg, var(--wine-pale), var(--terra-light));
+            border-radius: 20px;
+            height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            border: 1px solid var(--silver);
+            position: sticky;
+            top: 80px;
+        }
+
+        .scheda-region {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--terra);
+            margin-bottom: 8px;
+        }
+
+        .scheda-nome {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        .scheda-produttore {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 32px;
+        }
+
+        .scheda-score-box {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: var(--white);
+            border: 1px solid var(--silver);
+            border-radius: 14px;
+            padding: 20px 28px;
+            margin-bottom: 28px;
+        }
+
+        .score-big {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--wine);
+            line-height: 1;
+        }
+
+        .score-stars {
+            font-size: 20px;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .score-label {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .score-divider {
+            width: 1px;
+            height: 60px;
+            background: var(--silver);
+        }
+
+        .prezzo-big {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .prezzo-label {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .btn-acquista {
+            display: block;
+            width: 100%;
+            background: var(--wine);
+            color: var(--white);
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .btn-acquista:hover {
+            background: var(--wine-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-cantina {
+            display: block;
+            width: 100%;
+            background: var(--wine-pale);
+            color: var(--wine);
+            border: 1.5px solid transparent;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .btn-cantina:hover {
+            border-color: var(--wine);
+        }
+
+        .scheda-section {
+            margin-bottom: 28px;
+        }
+
+        .scheda-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 12px;
+        }
+
+        .scheda-descrizione {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--ink);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .info-item {
+            background: var(--white);
+            border: 1px solid var(--silver);
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        .info-item-label {
+            font-size: 11px;
+            color: var(--gray);
+            margin-bottom: 4px;
+        }
+
+        .info-item-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .abbinamenti-list {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .abbinamento-chip {
+            background: var(--white);
+            border: 1px solid var(--silver);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--ink);
+        }
+
+        @media (max-width: 768px) {
+            .scheda {
+                grid-template-columns: 1fr;
+                padding: 0 24px;
+            }
+
+            .scheda-img {
+                height: 280px;
+                position: static;
+            }
+
+            .scheda-nome {
+                font-size: 32px;
+            }
+
+            nav {
+                padding: 0 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="{{ site.baseurl }}/" class="logo">Ca<span>lice</span></a>
+        <a href="{{ site.baseurl }}/" class="back-btn">← Torna ai vini</a>
+    </nav>
+
+    <div class="scheda">
+        <div class="scheda-img">{{ page.emoji }}</div>
+        <div class="scheda-info">
+            <div class="scheda-region">{{ page.regione }}</div>
+            <h1 class="scheda-nome">{{ page.nome }}</h1>
+            <div class="scheda-produttore">{{ page.produttore }}</div>
+
+            <div class="scheda-score-box">
+                <div>
+                    <div class="score-big">{{ page.punteggio }}</div>
+                    <span class="score-stars">★★★★★</span>
+                    <div class="score-label">Punteggio</div>
+                </div>
+                <div class="score-divider"></div>
+                <div>
+                    <div class="prezzo-big">€{{ page.prezzo }}</div>
+                    <div class="prezzo-label">per bottiglia</div>
+                </div>
+            </div>
+
+            <button class="btn-acquista">🛒 Acquista ora</button>
+            <button class="btn-cantina">🤍 Aggiungi alla mia cantina</button>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScc_q0_B5piFGWulCqtTTv_86eT3qA-Rb_S5ncJ-PyZxd_f2w/viewform"
+                target="_blank" class="btn-cantina" style="text-decoration:none;">📝 Condividi la tua degustazione</a>
+
+            {% if page.descrizione %}
+            <div class="scheda-section">
+                <div class="scheda-section-title">Descrizione</div>
+                <p class="scheda-descrizione">{{ page.descrizione }}</p>
+            </div>
+            {% endif %}
+
+            <div class="scheda-section">
+                <div class="scheda-section-title">Scheda tecnica</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-item-label">Tipo</div>
+                        <div class="info-item-value">{{ page.tipo }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-item-label">Regione</div>
+                        <div class="info-item-value">{{ page.regione }}</div>
+                    </div>
+                    {% if page.gradazione %}<div class="info-item">
+                        <div class="info-item-label">Gradazione</div>
+                        <div class="info-item-value">{{ page.gradazione }}%</div>
+                    </div>{% endif %}
+                    {% if page.annata %}<div class="info-item">
+                        <div class="info-item-label">Annata</div>
+                        <div class="info-item-value">{{ page.annata }}</div>
+                    </div>{% endif %}
+                </div>
+            </div>
+
+            {% if page.abbinamenti %}
+            <div class="scheda-section">
+                <div class="scheda-section-title">Abbinamenti consigliati</div>
+                <div class="abbinamenti-list">
+                    {% for abbinamento in page.abbinamenti %}
+                    <span class="abbinamento-chip">{{ abbinamento }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+</body>
+
+</html>
