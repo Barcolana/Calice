@@ -1,0 +1,462 @@
+---
+---
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regioni — Calice</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HW7E04GJP3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HW7E04GJP3');
+    </script>
+    <style>
+        :root {
+            --wine: #A0293B;
+            --wine-light: #C4495E;
+            --wine-pale: #F9EDEF;
+            --terra: #C4693A;
+            --terra-light: #F0D5C4;
+            --ink: #1A1A2E;
+            --ink-soft: #3D3D52;
+            --gray: #6B6B7E;
+            --silver: #E8E8F0;
+            --bg: #FAFAF8;
+            --white: #FFFFFF;
+            --gold: #B8860B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--silver);
+            padding: 0 48px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            height: 64px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .back-btn {
+            margin-left: auto;
+            border: 1.5px solid var(--silver);
+            background: none;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray);
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .back-btn:hover {
+            border-color: var(--wine);
+            color: var(--wine);
+        }
+
+        .page-header {
+            background: var(--white);
+            border-bottom: 1px solid var(--silver);
+            padding: 48px 80px 40px;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+
+        .page-header h1 span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: var(--gray);
+        }
+
+        .regioni-chips {
+            padding: 24px 80px;
+            background: var(--white);
+            border-bottom: 1px solid var(--silver);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .regione-chip {
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1.5px solid var(--silver);
+            background: var(--white);
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .regione-chip:hover {
+            border-color: var(--wine);
+            color: var(--wine);
+        }
+
+        .regione-chip.active {
+            background: var(--wine);
+            color: var(--white);
+            border-color: var(--wine);
+        }
+
+        .vini-section {
+            padding: 48px 80px;
+        }
+
+        .vini-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .vini-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .vini-header h2 span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .vini-count {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .vini-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .wine-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--silver);
+            overflow: hidden;
+            transition: all 0.25s;
+            cursor: pointer;
+        }
+
+        .wine-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(26, 26, 46, 0.1);
+        }
+
+        .wc-img {
+            height: 160px;
+            background: linear-gradient(135deg, var(--wine-pale), var(--terra-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            position: relative;
+        }
+
+        .wc-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .badge-top {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .badge-new {
+            background: var(--sage);
+            color: var(--white);
+        }
+
+        .badge-offer {
+            background: var(--terra);
+            color: var(--white);
+        }
+
+        .wc-body {
+            padding: 16px;
+        }
+
+        .wc-region {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--terra);
+        }
+
+        .wc-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 600;
+            margin: 4px 0 2px;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+
+        .wc-producer {
+            font-size: 12px;
+            color: var(--gray);
+            margin-bottom: 12px;
+        }
+
+        .wc-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .wc-score {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--wine);
+        }
+
+        .wc-price {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .wc-price small {
+            font-size: 11px;
+            color: var(--gray);
+            font-weight: 400;
+        }
+
+        .wc-link {
+            display: block;
+            width: 100%;
+            background: var(--wine-pale);
+            color: var(--wine);
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .wc-link:hover {
+            background: var(--wine);
+            color: var(--white);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--gray);
+        }
+
+        .empty-state h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: var(--ink);
+        }
+
+        @media (max-width: 1024px) {
+
+            nav,
+            .page-header,
+            .regioni-chips,
+            .vini-section {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .vini-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .vini-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="{{ site.baseurl }}/" class="logo">Ca<span>lice</span></a>
+        <a href="{{ site.baseurl }}/" class="back-btn">← Torna alla homepage</a>
+    </nav>
+
+    <div class="page-header">
+        <h1>Esplora per <span id="titolo-regione">regione</span></h1>
+        <p id="sottotitolo-regione">Seleziona una regione per scoprire i vini del territorio</p>
+    </div>
+
+    <div class="regioni-chips">
+        <button class="regione-chip" onclick="filtra('Toscana')">🌹 Toscana</button>
+        <button class="regione-chip" onclick="filtra('Piemonte')">🍇 Piemonte</button>
+        <button class="regione-chip" onclick="filtra('Veneto')">🍾 Veneto</button>
+        <button class="regione-chip" onclick="filtra('Lombardia')">🥂 Lombardia</button>
+        <button class="regione-chip" onclick="filtra('Sicilia')">🌊 Sicilia</button>
+        <button class="regione-chip" onclick="filtra('Sardegna')">☀️ Sardegna</button>
+        <button class="regione-chip" onclick="filtra('Lazio')">🏛️ Lazio</button>
+        <button class="regione-chip" onclick="filtra('Abruzzo')">🏔️ Abruzzo</button>
+        <button class="regione-chip" onclick="filtra('Trentino')">🏔️ Trentino</button>
+        <button class="regione-chip" onclick="filtra('Campania')">🌋 Campania</button>
+        <button class="regione-chip" onclick="filtra('Puglia')">☀️ Puglia</button>
+        <button class="regione-chip" onclick="filtra('Umbria')">🫒 Umbria</button>
+        <button class="regione-chip" onclick="filtra('Marche')">🌊 Marche</button>
+        <button class="regione-chip" onclick="filtra('Friuli')">🌊 Friuli</button>
+        <button class="regione-chip" onclick="filtra('Emilia')">🍝 Emilia-Romagna</button>
+        <button class="regione-chip" onclick="filtra('Basilicata')">🌋 Basilicata</button>
+        <button class="regione-chip" onclick="filtra('Calabria')">🌊 Calabria</button>
+        <button class="regione-chip" onclick="filtra('Liguria')">⚓ Liguria</button>
+        <button class="regione-chip" onclick="filtra('Valle d\'Aosta')">🏔️ Valle d'Aosta</button>
+        <button class="regione-chip" onclick="filtra('Molise')">🌾 Molise</button>
+    </div>
+
+    <div class="vini-section">
+        <div class="vini-header">
+            <h2>Vini <span id="nome-regione">selezionati</span></h2>
+            <span class="vini-count" id="vini-count"></span>
+        </div>
+
+        <div class="vini-grid" id="vini-grid">
+            {% for vino in site.vini %}
+            <div class="wine-card" data-regione="{{ vino.regione }}">
+                <div class="wc-img">{{ vino.emoji }}
+                    {% if vino.badge != "" %}
+                    <span class="wc-badge badge-top">{{ vino.badge }}</span>
+                    {% endif %}
+                </div>
+                <div class="wc-body">
+                    <div class="wc-region">{{ vino.regione }}</div>
+                    <div class="wc-name">{{ vino.nome }}</div>
+                    <div class="wc-producer">{{ vino.produttore }}</div>
+                    <div class="wc-footer">
+                        <span class="wc-score">{{ vino.punteggio }}</span>
+                        <div class="wc-price">€{{ vino.prezzo }} <small>/bt</small></div>
+                    </div>
+                    <a href="{{ site.baseurl }}/vini/{{ vino.slug }}" class="wc-link">→ Scopri questo vino</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="empty-state" id="empty-state" style="display:none;">
+            <h3>Nessun vino trovato</h3>
+            <p>Non ci sono ancora vini di questa regione in catalogo — segnalacelo!</p>
+        </div>
+    </div>
+
+    <script>
+        function filtra(regione) {
+            // Aggiorna chip attivo
+            document.querySelectorAll('.regione-chip').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Aggiorna titoli
+            document.getElementById('titolo-regione').textContent = regione;
+            document.getElementById('nome-regione').textContent = regione;
+            document.getElementById('sottotitolo-regione').textContent = 'Tutti i vini ' + regione + ' presenti in catalogo';
+
+            // Filtra le card
+            const cards = document.querySelectorAll('.wine-card');
+            let visibili = 0;
+            cards.forEach(card => {
+                const r = card.getAttribute('data-regione') || '';
+                if (r.includes(regione)) {
+                    card.style.display = 'block';
+                    visibili++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Mostra count o empty state
+            document.getElementById('vini-count').textContent = visibili + ' vini';
+            document.getElementById('empty-state').style.display = visibili === 0 ? 'block' : 'none';
+        }
+
+        // Leggi parametro URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const regione = urlParams.get('regione');
+        if (regione) {
+            const chip = Array.from(document.querySelectorAll('.regione-chip'))
+                .find(c => c.textContent.includes(regione));
+            if (chip) chip.click();
+        }
+    </script>
+
+</body>
+
+</html>
