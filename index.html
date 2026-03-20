@@ -1122,6 +1122,53 @@
             font-weight: 600;
         }
 
+        .regions-carousel {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            flex: 1;
+            padding: 8px 0;
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-track .region-card {
+            min-width: 200px;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn {
+            background: var(--white);
+            border: 1.5px solid var(--silver);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 22px;
+            cursor: pointer;
+            color: var(--ink);
+            flex-shrink: 0;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            border-color: var(--wine);
+            color: var(--wine);
+        }
+
         .regions-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -1670,170 +1717,60 @@
     <div class="regions-section">
         <div class="section-hdr">
             <h2>Esplora per <span>regione</span></h2>
-            <a href="#">Vedi tutte le regioni →</a>
+            <a href="{{ site.baseurl }}/regioni">Vedi tutte le regioni →</a>
         </div>
-        <div class="region-card rc-bg-1" onclick="window.location.href='{{ site.baseurl }}/regioni?regione=Toscana'"
-            style="cursor:pointer;"></div>
-        <span class="rc-emoji">🍷</span>
-        <div class="rc-info">
-            <div class="rc-name">Toscana</div>
-            <div class="rc-count">45.120 vini</div>
-            <div class="rc-wines">Chianti · Brunello · Super Tuscan</div>
+        <div class="regions-grid">
+            <div class="region-card rc-bg-1" onclick="window.location.href='{{ site.baseurl }}/regioni?regione=Toscana'"
+                style="cursor:pointer;">
+                <span class="rc-emoji">🌹</span>
+                <div class="rc-info">
+                    <div class="rc-name">Toscana</div>
+                    <div class="rc-count">42.100 vini</div>
+                    <div class="rc-wines">Brunello · Chianti · Sassicaia</div>
+                </div>
+            </div>
+            <div class="region-card rc-bg-2"
+                onclick="window.location.href='{{ site.baseurl }}/regioni?regione=Piemonte'" style="cursor:pointer;">
+                <span class="rc-emoji">🍇</span>
+                <div class="rc-info">
+                    <div class="rc-name">Piemonte</div>
+                    <div class="rc-count">38.560 vini</div>
+                    <div class="rc-wines">Barolo · Barbaresco · Moscato</div>
+                </div>
+            </div>
+            <div class="region-card rc-bg-3" onclick="window.location.href='{{ site.baseurl }}/regioni?regione=Veneto'"
+                style="cursor:pointer;">
+                <span class="rc-emoji">🍾</span>
+                <div class="rc-info">
+                    <div class="rc-name">Veneto</div>
+                    <div class="rc-count">31.220 vini</div>
+                    <div class="rc-wines">Amarone · Prosecco · Soave</div>
+                </div>
+            </div>
+            <div class="region-card rc-bg-4" onclick="window.location.href='{{ site.baseurl }}/regioni?regione=Sicilia'"
+                style="cursor:pointer;">
+                <span class="rc-emoji">🌊</span>
+                <div class="rc-info">
+                    <div class="rc-name">Sicilia</div>
+                    <div class="rc-count">22.480 vini</div>
+                    <div class="rc-wines">Nero d'Avola · Marsala · Etna</div>
+                </div>
+            </div>
+            <div class="region-card rc-bg-5"
+                onclick="window.location.href='{{ site.baseurl }}/regioni?regione=Sardegna'" style="cursor:pointer;">
+                <span class="rc-emoji">☀️</span>
+                <div class="rc-info">
+                    <div class="rc-name">Sardegna</div>
+                    <div class="rc-count">14.320 vini</div>
+                    <div class="rc-wines">Cannonau · Vermentino · Carignano</div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="region-card rc-bg-2">
-        <span class="rc-emoji">🍇</span>
-        <div class="rc-info">
-            <div class="rc-name">Piemonte</div>
-            <div class="rc-count">38.560 vini</div>
-            <div class="rc-wines">Barolo · Barbaresco · Moscato</div>
+        <div style="text-align:center; margin-top:24px;">
+            <a href="{{ site.baseurl }}/regioni"
+                style="font-size:14px; color:var(--wine); font-weight:600; text-decoration:none;">Esplora tutte le 20
+                regioni →</a>
         </div>
-    </div>
-    <div class="region-card rc-bg-3">
-        <span class="rc-emoji">🫧</span>
-        <div class="rc-info">
-            <div class="rc-name">Veneto</div>
-            <div class="rc-count">31.220 vini</div>
-            <div class="rc-wines">Amarone · Prosecco · Soave</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-4">
-        <span class="rc-emoji">🌊</span>
-        <div class="rc-info">
-            <div class="rc-name">Sicilia</div>
-            <div class="rc-count">22.480 vini</div>
-            <div class="rc-wines">Nero d'Avola · Marsala · Etna</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-5">
-        <span class="rc-emoji">☀️</span>
-        <div class="rc-info">
-            <div class="rc-name">Sardegna</div>
-            <div class="rc-count">14.320 vini</div>
-            <div class="rc-wines">Cannonau · Vermentino · Carignano</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-1">
-        <span class="rc-emoji">🥂</span>
-        <div class="rc-info">
-            <div class="rc-name">Lombardia</div>
-            <div class="rc-count">18.200 vini</div>
-            <div class="rc-wines">Franciacorta · Oltrepò · Valtellina</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-2">
-        <span class="rc-emoji">🏔️</span>
-        <div class="rc-info">
-            <div class="rc-name">Trentino</div>
-            <div class="rc-count">12.400 vini</div>
-            <div class="rc-wines">Teroldego · Marzemino · Pinot Grigio</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-3">
-        <span class="rc-emoji">🌊</span>
-        <div class="rc-info">
-            <div class="rc-name">Friuli</div>
-            <div class="rc-count">11.800 vini</div>
-            <div class="rc-wines">Friulano · Ribolla Gialla · Picolit</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-4">
-        <span class="rc-emoji">🏔️</span>
-        <div class="rc-info">
-            <div class="rc-name">Valle d'Aosta</div>
-            <div class="rc-count">2.100 vini</div>
-            <div class="rc-wines">Petit Rouge · Torrette · Blanc de Morgex</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-5">
-        <span class="rc-emoji">⚓</span>
-        <div class="rc-info">
-            <div class="rc-name">Liguria</div>
-            <div class="rc-count">3.200 vini</div>
-            <div class="rc-wines">Vermentino · Pigato · Rossese</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-1">
-        <span class="rc-emoji">🍝</span>
-        <div class="rc-info">
-            <div class="rc-name">Emilia-Romagna</div>
-            <div class="rc-count">15.600 vini</div>
-            <div class="rc-wines">Lambrusco · Sangiovese · Pignoletto</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-2">
-        <span class="rc-emoji">🌊</span>
-        <div class="rc-info">
-            <div class="rc-name">Marche</div>
-            <div class="rc-count">9.800 vini</div>
-            <div class="rc-wines">Verdicchio · Rosso Conero · Lacrima</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-3">
-        <span class="rc-emoji">🫒</span>
-        <div class="rc-info">
-            <div class="rc-name">Umbria</div>
-            <div class="rc-count">8.400 vini</div>
-            <div class="rc-wines">Sagrantino · Orvieto · Torgiano</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-4">
-        <span class="rc-emoji">🏛️</span>
-        <div class="rc-info">
-            <div class="rc-name">Lazio</div>
-            <div class="rc-count">10.200 vini</div>
-            <div class="rc-wines">Frascati · Est! Est! Est! · Aleatico</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-5">
-        <span class="rc-emoji">🏔️</span>
-        <div class="rc-info">
-            <div class="rc-name">Abruzzo</div>
-            <div class="rc-count">11.400 vini</div>
-            <div class="rc-wines">Montepulciano · Trebbiano · Cerasuolo</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-1">
-        <span class="rc-emoji">🌋</span>
-        <div class="rc-info">
-            <div class="rc-name">Campania</div>
-            <div class="rc-count">13.600 vini</div>
-            <div class="rc-wines">Aglianico · Fiano · Greco di Tufo</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-2">
-        <span class="rc-emoji">☀️</span>
-        <div class="rc-info">
-            <div class="rc-name">Puglia</div>
-            <div class="rc-count">19.800 vini</div>
-            <div class="rc-wines">Primitivo · Negroamaro · Salice Salentino</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-3">
-        <span class="rc-emoji">🌋</span>
-        <div class="rc-info">
-            <div class="rc-name">Basilicata</div>
-            <div class="rc-count">4.200 vini</div>
-            <div class="rc-wines">Aglianico del Vulture · Matera · Grottino</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-4">
-        <span class="rc-emoji">🌊</span>
-        <div class="rc-info">
-            <div class="rc-name">Calabria</div>
-            <div class="rc-count">5.800 vini</div>
-            <div class="rc-wines">Cirò · Gaglioppo · Greco di Bianco</div>
-        </div>
-    </div>
-    <div class="region-card rc-bg-5">
-        <span class="rc-emoji">🌾</span>
-        <div class="rc-info">
-            <div class="rc-name">Molise</div>
-            <div class="rc-count">1.800 vini</div>
-            <div class="rc-wines">Tintilia · Montepulciano · Falanghina</div>
-        </div>
-    </div>
-    </div>
     </div>
 
     <!-- FOOTER -->
@@ -1915,7 +1852,11 @@
             });
         });
     });
+    function scrollCarousel(dir) {
+        document.getElementById('carouselTrack').scrollBy({ left: dir * 220, behavior: 'smooth' });
+    }
 </script>
+
 
 </body>
 
