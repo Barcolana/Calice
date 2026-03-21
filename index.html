@@ -1091,6 +1091,64 @@
             background: #D47840;
         }
 
+        .blog-section {
+            padding: 48px 80px;
+        }
+
+        .blog-card {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            background: var(--white);
+            border: 1px solid var(--silver);
+            border-radius: 16px;
+            padding: 32px;
+            text-decoration: none;
+            transition: all 0.25s;
+            max-width: 700px;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(26, 26, 46, 0.1);
+            border-color: var(--wine);
+        }
+
+        .blog-card-emoji {
+            font-size: 64px;
+            flex-shrink: 0;
+        }
+
+        .blog-card-tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--terra);
+            margin-bottom: 8px;
+        }
+
+        .blog-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 10px;
+        }
+
+        .blog-card-desc {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .blog-card-cta {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--wine);
+        }
+
         /* ── REGIONI ── */
         .regions-section {
             padding: 48px 80px;
@@ -1713,6 +1771,24 @@
         </div>
     </div>
 
+    <!-- BLOG -->
+    <div class="blog-section">
+        <div class="section-hdr">
+            <h2>Dal nostro <span>blog</span></h2>
+            <a href="{{ site.baseurl }}/storia-del-vino">Leggi tutti gli articoli →</a>
+        </div>
+        <a href="{{ site.baseurl }}/storia-del-vino" class="blog-card">
+            <div class="blog-card-emoji">📖</div>
+            <div class="blog-card-body">
+                <div class="blog-card-tag">La Storia</div>
+                <div class="blog-card-title">Otto mila anni di vino</div>
+                <div class="blog-card-desc">Dalla Georgia antica agli Etruschi, da Roma ai monaci medievali fino ai
+                    giorni nostri — il viaggio del vino attraverso le civiltà.</div>
+                <div class="blog-card-cta">Leggi l'articolo →</div>
+            </div>
+        </a>
+    </div>
+
     <!-- REGIONI -->
     <div class="regions-section">
         <div class="section-hdr">
@@ -1795,6 +1871,7 @@
                     <li><a href="#">Abbinamenti</a></li>
                     <li><a href="#">Guide al vino</a></li>
                     <li><a href="#">Cantine d'Italia</a></li>
+                    <li><a href="{{ site.baseurl }}/storia-del-vino">La storia del vino</a></li>
                 </ul>
             </div>
             <div class="footer-col">
