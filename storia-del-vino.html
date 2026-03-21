@@ -1,0 +1,290 @@
+---
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Storia del Vino — Calice</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HW7E04GJP3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HW7E04GJP3');
+</script>
+<style>
+  :root {
+    --wine: #A0293B; --wine-light: #C4495E; --wine-pale: #F9EDEF;
+    --terra: #C4693A; --terra-light: #F0D5C4;
+    --ink: #1A1A2E; --gray: #6B6B7E; --silver: #E8E8F0;
+    --bg: #FAFAF8; --white: #FFFFFF; --gold: #B8860B;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--ink); }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white); border-bottom: 1px solid var(--silver);
+    padding: 0 48px; display: flex; align-items: center; gap: 40px; height: 64px;
+  }
+  .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--ink); text-decoration: none; }
+  .logo span { color: var(--wine); font-style: italic; }
+  .back-btn {
+    margin-left: auto; border: 1.5px solid var(--silver); background: none;
+    padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 500;
+    color: var(--gray); cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .back-btn:hover { border-color: var(--wine); color: var(--wine); }
+
+  .article-hero {
+    background: var(--ink); color: var(--white);
+    padding: 80px 80px 64px; position: relative; overflow: hidden;
+  }
+  .article-hero::before {
+    content: '🍷'; font-size: 300px; position: absolute;
+    right: -40px; top: -40px; opacity: 0.05; line-height: 1;
+  }
+  .article-tag {
+    display: inline-block; background: var(--wine); color: var(--white);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 6px 14px; border-radius: 6px;
+    margin-bottom: 24px;
+  }
+  .article-hero h1 {
+    font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 700;
+    line-height: 1.1; margin-bottom: 20px; max-width: 700px;
+  }
+  .article-hero h1 em { color: var(--wine-light); font-style: italic; }
+  .article-meta { font-size: 14px; color: rgba(255,255,255,0.5); }
+  .article-meta strong { color: rgba(255,255,255,0.8); }
+
+  .article-body {
+    max-width: 780px; margin: 0 auto; padding: 64px 48px;
+  }
+
+  .article-intro {
+    font-size: 20px; line-height: 1.8; color: var(--ink-soft);
+    border-left: 3px solid var(--wine); padding-left: 24px;
+    margin-bottom: 48px; font-style: italic;
+  }
+
+  .epoch {
+    margin-bottom: 56px;
+  }
+  .epoch-header {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+  }
+  .epoch-emoji { font-size: 36px; }
+  .epoch-period {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--terra); display: block; margin-bottom: 4px;
+  }
+  .epoch-title {
+    font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--ink);
+  }
+  .epoch p {
+    font-size: 16px; line-height: 1.85; color: var(--gray); margin-bottom: 16px;
+  }
+  .epoch p strong { color: var(--ink); }
+
+  .quote-block {
+    background: var(--wine-pale); border-left: 4px solid var(--wine);
+    padding: 24px 28px; border-radius: 0 12px 12px 0; margin: 32px 0;
+  }
+  .quote-block p {
+    font-family: 'Playfair Display', serif; font-size: 18px; font-style: italic;
+    color: var(--wine); line-height: 1.6; margin: 0;
+  }
+  .quote-block cite {
+    display: block; font-size: 12px; color: var(--gray);
+    margin-top: 8px; font-style: normal; font-weight: 600;
+  }
+
+  .timeline-divider {
+    display: flex; align-items: center; gap: 16px; margin: 40px 0;
+  }
+  .timeline-divider::before, .timeline-divider::after {
+    content: ''; flex: 1; height: 1px; background: var(--silver);
+  }
+  .timeline-divider span { color: var(--wine); font-size: 20px; }
+
+  .article-cta {
+    background: var(--ink); color: var(--white); border-radius: 20px;
+    padding: 48px; text-align: center; margin-top: 64px;
+  }
+  .article-cta h3 {
+    font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .article-cta p { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+  .btn-cta {
+    display: inline-block; background: var(--wine); color: var(--white);
+    padding: 14px 32px; border-radius: 10px; font-size: 15px; font-weight: 600;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .btn-cta:hover { background: var(--wine-light); transform: translateY(-2px); }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .article-hero { padding: 48px 24px 40px; }
+    .article-hero h1 { font-size: 36px; }
+    .article-body { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="{{ site.baseurl }}/" class="logo">Ca<span>lice</span></a>
+  <a href="{{ site.baseurl }}/" class="back-btn">← Torna ai vini</a>
+</nav>
+
+<div class="article-hero">
+  <div class="article-tag">📖 La Storia</div>
+  <h1>Otto mila anni di <em>vino</em></h1>
+  <div class="article-meta">
+    <strong>Emiliano Fabrizi</strong> · Enotecario · Calice
+  </div>
+</div>
+
+<div class="article-body">
+
+  <p class="article-intro">
+    Il vino non è una bevanda. È una civiltà. Prima ancora che esistessero le scritture, gli alfabeti, le leggi — esisteva il vino. Questo è il suo viaggio attraverso i millenni.
+  </p>
+
+  <div class="epoch">
+    <div class="epoch-header">
+      <span class="epoch-emoji">🏺</span>
+      <div>
+        <span class="epoch-period">6.000 a.C. — Le origini</span>
+        <div class="epoch-title">Prima della storia</div>
+      </div>
+    </div>
+    <p>Le prime tracce di vinificazione risalgono a circa <strong>8.000 anni fa</strong>, nel Caucaso — nell'attuale Georgia. Archeologi hanno trovato anfore con residui di acido tartarico, la firma chimica inconfondibile dell'uva fermentata. Non era ancora vino come lo intendiamo noi — era succo d'uva lasciato fermentare spontaneamente, probabilmente per errore.</p>
+    <p>Ma quell'errore cambiò la storia dell'umanità.</p>
+  </div>
+
+  <div class="timeline-divider"><span>🍷</span></div>
+
+  <div class="epoch">
+    <div class="epoch-header">
+      <span class="epoch-emoji">𓂀</span>
+      <div>
+        <span class="epoch-period">3.000 a.C. — Egitto</span>
+        <div class="epoch-title">Il vino dei Faraoni</div>
+      </div>
+    </div>
+    <p>Gli Egizi furono i primi a trasformare la vinificazione in <strong>arte e scienza</strong>. Nelle tombe dei faraoni sono state trovate anfore sigillate con indicazione del vigneto, dell'anno e del vinificatore — la prima etichetta della storia. Il vino era riservato alla nobiltà e alle cerimonie religiose, offerto agli dei come dono supremo.</p>
+    <p>Nei geroglifici compaiono scene dettagliate di vendemmia, pigiatura e affinamento. Gli Egizi sapevano già che il vino migliorava con il tempo — un concetto che avremmo riscoperto secoli dopo.</p>
+
+    <div class="quote-block">
+      <p>"Il vino è come il Nilo — porta vita ovunque scorra."</p>
+      <cite>— Iscrizione in un'antica tomba egizia</cite>
+    </div>
+  </div>
+
+  <div class="timeline-divider"><span>🍷</span></div>
+
+  <div class="epoch">
+    <div class="epoch-header">
+      <span class="epoch-emoji">📖</span>
+      <div>
+        <span class="epoch-period">La Bibbia</span>
+        <div class="epoch-title">Il vino e il sacro</div>
+      </div>
+    </div>
+    <p>Il vino è presente nella Bibbia fin dalle prime pagine. <strong>Noè</strong>, dopo il diluvio, piantò una vigna — il vino come simbolo di rinascita e alleanza con Dio. Nel Cantico dei Cantici il vino è metafora dell'amore. Nei Vangeli, Gesù trasforma l'acqua in vino a Cana e usa il vino nell'Ultima Cena — da quel momento diventa sangue di Cristo, al centro del rito eucaristico cristiano.</p>
+    <p>Questa sacralità ha protetto la vigna per secoli — sarà determinante nel Medioevo.</p>
+  </div>
+
+  <div class="timeline-divider"><span>🍷</span></div>
+
+  <div class="epoch">
+    <div class="epoch-header">
+      <span class="epoch-emoji">⚡</span>
+      <div>
+        <span class="epoch-period">700 a.C. — Italia</span>
+        <div class="epoch-title">Gli Etruschi — i maestri dimenticati</div>
+      </div>
+    </div>
+    <p>Prima di Roma, furono gli <strong>Etruschi</strong> a portare la viticoltura in Italia centrale. Erano navigatori e commercianti sofisticati — importarono vitigni dalla Grecia e li adattarono al territorio toscano e laziale. Le loro anfore vinarie sono state ritrovate in tutta la Francia meridionale — erano già esportatori.</p>
+    <p>Quando Roma li conquistò, assorbì la loro cultura vinicola. Molti vitigni autoctoni italiani che oggi chiamiamo "antichi" hanno in realtà radici etrusche.</p>
+  </div>
+
+  <div class="timeline-divider"><span>🍷</span></div>
+
+  <div class="epoch">
+    <div class="epoch-header">
+      <span class="epoch-emoji">🏛️</span>
+      <div>
+        <span class="epoch-period">200 a.C. — 400 d.C.</span>
+        <div class="epoch-title">Roma — il vino conquista il mondo</div>
+      </div>
+    </div>
+    <p>I Romani portarono la vite in ogni angolo dell'Impero — dalla Spagna alla Germania, dalla Francia all'Inghilterra. Erano appassionati e intenditori: avevano già sviluppato un sistema di classificazione dei vini per qualità e provenienza. Il <strong>Falerno</strong> campano era il Barolo dell'epoca — il più pregiato, il più costoso, invecchiato fino a 100 anni.</p>
+    <p>Plinio il Vecchio nella sua <em>Naturalis Historia</em> descrive decine di vitigni e tecniche di vinificazione con una precisione sorprendente. I Romani usavano già l'affinamento in anfora, la colmatura, la filtrazione.</p>
+  </div>
+
+  <div class="timeline-divider"><span>🍷</span></div>
+
+  <div class="epoch">
+    <div class="epoch-header">
+      <span class="epoch-emoji">⛪</span>
+      <div>
+        <span class="epoch-period">500 — 1400 d.C.</span>
+        <div class="epoch-title">I monaci custodi della vigna</div>
+      </div>
+    </div>
+    <p>Dopo la caduta dell'Impero Romano, fu la <strong>Chiesa</strong> a salvare la viticoltura europea. I monasteri Benedettini e Cistercensi coltivavano la vigna per produrre il vino dell'Eucarestia — e con il tempo divennero i più grandi produttori e conoscitori di vino del continente.</p>
+    <p>In Borgogna, i monaci Cistercensi del Clos de Vougeot svilupparono il concetto rivoluzionario di <strong>terroir</strong> — l'idea che ogni appezzamento di terra producesse un vino unico e irripetibile. Assaggiavano la terra, studiavano i microclimi, selezionavano i vitigni. Erano i primi enologi moderni.</p>
+
+    <div class="quote-block">
+      <p>"Lavora, prega e bevi buon vino."</p>
+      <cite>— Adattamento del motto benedettino, circolante nei monasteri medievali</cite>
+    </div>
+  </div>
+
+  <div class="timeline-divider"><span>🍷</span></div>
+
+  <div class="epoch">
+    <div class="epoch-header">
+      <span class="epoch-emoji">🇫🇷</span>
+      <div>
+        <span class="epoch-period">1600 — 1800</span>
+        <div class="epoch-title">La Francia e la rivoluzione della bottiglia</div>
+      </div>
+    </div>
+    <p>I Francesi non inventarono il vino — ma lo reinventarono. Nel Seicento, due innovazioni cambiarono tutto: la <strong>bottiglia di vetro scuro</strong> e il <strong>tappo di sughero</strong>. Per la prima volta il vino poteva essere conservato e trasportato senza deteriorarsi. Nacque il concetto di vino da invecchiamento.</p>
+    <p>Bordeaux, Borgogna, Champagne divennero nomi leggendari. La nobiltà europea gareggiava per accaparrarsi i vini francesi. Nasce la cultura del grande vino come status symbol — un'idea che ancora oggi influenza il mercato mondiale.</p>
+  </div>
+
+  <div class="timeline-divider"><span>🍷</span></div>
+
+  <div class="epoch">
+    <div class="epoch-header">
+      <span class="epoch-emoji">🇮🇹</span>
+      <div>
+        <span class="epoch-period">Oggi</span>
+        <div class="epoch-title">L'Italia ritrova se stessa</div>
+      </div>
+    </div>
+    <p>Per secoli l'Italia ha vissuto all'ombra della Francia. Poi negli anni '80 arriva il <strong>Rinascimento del vino italiano</strong> — i Super Tuscan, il Barolo di Giacomo Conterno, il Brunello di Biondi Santi sfidano i grandi bordolesi e li battono. L'Italia si scopre custode di un patrimonio ampelografico unico al mondo — oltre <strong>500 vitigni autoctoni</strong>, più di qualsiasi altro paese.</p>
+    <p>Oggi l'Italia è il primo produttore mondiale di vino. Ma la vera ricchezza non è nei numeri — è nella diversità. Dal Nebbiolo piemontese all'Aglianico campano, dal Vermentino sardo al Nerello etneo, ogni regione racconta una storia di terra, clima e umanità che nessun altro paese può imitare.</p>
+    <p>È questa storia che vogliamo raccontare con <strong>Calice</strong>.</p>
+  </div>
+
+  <div class="article-cta">
+    <h3>Scopri i vini di Calice</h3>
+    <p>Dalla storia alle bottiglie — esplora il catalogo e condividi le tue degustazioni.</p>
+    <a href="{{ site.baseurl }}/" class="btn-cta">🍷 Esplora il catalogo</a>
+  </div>
+
+</div>
+
+</body>
+</html>
