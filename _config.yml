@@ -7,6 +7,9 @@ collections:
   vini:
     output: true
     permalink: /vini/:name/
+  posts:
+    output: true
+    permalink: /blog/:name/
 
 defaults:
   - scope:
@@ -14,3 +17,8 @@ defaults:
       type: "vini"
     values:
       layout: vino
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: articolo
