@@ -1,13 +1,8 @@
-title: Calice
-description: Il social del vino italiano
-url: https://barcolana.github.io
-baseurl: /Calice
-
 collections:
   vini:
     output: true
     permalink: /vini/:name/
-  posts:
+  articoli:
     output: true
     permalink: /blog/:name/
 
@@ -19,6 +14,6 @@ defaults:
       layout: vino
   - scope:
       path: ""
-      type: "posts"
+      type: "articoli"
     values:
       layout: articolo
