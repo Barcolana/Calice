@@ -5,6 +5,7 @@ tag: 📖 Storie di Vino
 autore: Emiliano Fabrizi
 data: Marzo 2026
 emoji: 🍷
+description: "Ferruccio Biondi Santi, una cantina a Montalcino e una dimenticanza che cambiò per sempre la storia del vino italiano."
 ---
 
 ## Montalcino, 1870

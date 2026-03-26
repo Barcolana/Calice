@@ -5,6 +5,7 @@ tag: 📖 Leggende del Vino
 autore: Emiliano Fabrizi
 data: Marzo 2026
 emoji: 🍷
+description: "Un vescovo tedesco, un servo fedele e un vino laziale così buono da fermare un viaggio verso Roma per sempre."
 ---
 
 ## Un vescovo, un servo e una parola latina
