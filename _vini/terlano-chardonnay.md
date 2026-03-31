@@ -5,12 +5,12 @@ produttore: Cantina Terlano · 2013
 regione: Trentino · DOC
 tipo: Bianco
 punteggio: 96
-prezzo: 45
+prezzo: 29.50
 badge: TOP 2025
 emoji: 🥂
 gradazione: 13.5
 annata: 2013
-descrizione: "Il Chardonnay Riserva Kreuth di Cantina Terlano è uno dei bianchi più longevi e straordinari d'Italia. Prodotto da uve Chardonnay coltivate su suoli porfirici in Alto Adige, affina per circa 1 anno in grandi botti di rovere da 75 ettolitri e poi prosegue l'affinamento in acciaio per oltre 10 anni prima di essere messo in commercio. Un vino che sfida il tempo — giallo dorato intenso con riflessi ambrati, profumi di frutta matura, miele, noci tostate e una mineralità vulcanica unica. Al palato è ampio, cremoso e con una freschezza sorprendente per un vino di questa età."
+descrizione: "Lo Chardonnay Kreuth di Cantina Terlano è uno dei bianchi più eleganti dell'Alto Adige. Prodotto da uve Chardonnay in purezza coltivate sul vigneto Kreuth a Terlano, su suoli porfirici tra i 250 e i 420 metri di altitudine. Fermenta lentamente in botti di rovere grandi e affina per circa 10 mesi sui lieviti fini, metà in legno e metà in acciaio inox. Colore giallo paglierino brillante con riflessi dorati. Profumi di frutta esotica, agrumi, pietra focaia e una nota minerale elegante. Al palato è cremoso, sapido e con una freschezza vibrante tipica dei grandi bianchi altoatesini."
 abbinamenti:
   - 🐟 Pesce nobile
   - 🦞 Aragosta
