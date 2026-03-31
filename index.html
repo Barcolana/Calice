@@ -1512,7 +1512,8 @@
         <a href="#" class="logo">Ca<span>lice</span></a>
         <div class="nav-search">
             <span class="search-icon">🔍</span>
-            <input type="text" placeholder="Cerca vino, cantina, regione…">
+            <input type="text" id="searchInput" placeholder="Cerca vino, cantina, regione…"
+                oninput="cercaVino(this.value)">
         </div>
         <ul class="nav-links">
             <li><a href="#" class="active">Scopri</a></li>
@@ -1954,6 +1955,13 @@
 
 </body>
 <script>
+    function cercaVino(query) {
+        const q = query.toLowerCase().trim();
+        document.querySelectorAll('.wine-card').forEach(card => {
+            const testo = card.innerText.toLowerCase();
+            card.style.display = (q === '' || testo.includes(q)) ? 'block' : 'none';
+        });
+    }
     const chips = document.querySelectorAll('.cat-chip');
     const cards = document.querySelectorAll('.wine-card');
 
