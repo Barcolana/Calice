@@ -5,7 +5,7 @@ produttore: Cantina Terlano · 2013
 regione: Trentino · DOC
 tipo: Bianco
 punteggio: 96
-prezzo:30
+prezzo: 30
 badge: TOP 2025
 emoji: 🥂
 gradazione: 13.5
