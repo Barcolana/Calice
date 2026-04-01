@@ -790,6 +790,10 @@
             font-weight: 400;
         }
 
+        .wine-card.nascosto {
+            display: none !important;
+        }
+
         .wc-add {
             display: block;
             width: 100%;
@@ -1644,6 +1648,12 @@
 
             </div>
         </div>
+        <div style="text-align:center; margin-top:32px; grid-column:1/-1;">
+            <button id="btnCaricaAltri" onclick="caricaAltri()"
+                style="background:var(--wine);color:var(--white);border:none;padding:14px 40px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;">
+                Carica altri vini ↓
+            </button>
+        </div>
 
         <!-- SIDEBAR -->
         <div class="sidebar">
@@ -1981,6 +1991,38 @@
             });
         });
     });
+    // PAGINAZIONE
+    const VINI_PER_PAGINA = 12;
+    let viniMostrati = VINI_PER_PAGINA;
+
+    function inizializzaPaginazione() {
+        const cards = document.querySelectorAll('.wine-card');
+        cards.forEach((card, i) => {
+            if (i >= VINI_PER_PAGINA) card.classList.add('nascosto');
+        });
+        aggiornaBottone();
+    }
+
+    function caricaAltri() {
+        const cards = document.querySelectorAll('.wine-card.nascosto');
+        let mostrati = 0;
+        cards.forEach(card => {
+            if (mostrati < VINI_PER_PAGINA) {
+                card.classList.remove('nascosto');
+                mostrati++;
+            }
+        });
+        viniMostrati += mostrati;
+        aggiornaBottone();
+    }
+
+    function aggiornaBottone() {
+        const rimasti = document.querySelectorAll('.wine-card.nascosto').length;
+        const btn = document.getElementById('btnCaricaAltri');
+        if (btn) btn.style.display = rimasti > 0 ? 'block' : 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', inizializzaPaginazione);
     function scrollCarousel(dir) {
         document.getElementById('carouselTrack').scrollBy({ left: dir * 220, behavior: 'smooth' });
     }
