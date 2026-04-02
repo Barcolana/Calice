@@ -7,7 +7,7 @@ data: Marzo 2026
 emoji: 🥃
 description: "Da vino contadino siciliano a icona internazionale: la storia della Marsala è un romanzo di mare, ingegno e impero."
 ---
-Un vino nato per caso (o per tempesta)
+## Un vino nato per caso (o per tempesta)
 La storia della Marsala non comincia in una cantina, ma in mare aperto.
 
 È il 1773 quando un mercante inglese, John Woodhouse, viene spinto da una tempesta nel porto di Marsala. Scende a terra, assaggia il vino locale — un vino ossidativo, caldo, robusto, simile ai Madeira e ai Porto che già spopolavano in Inghilterra — e capisce immediatamente di aver trovato un tesoro.
@@ -74,7 +74,7 @@ la Marsala come vino da meditazione, non solo da cucina
 
 È un ritorno alle origini, ma con una consapevolezza moderna: la Marsala non è un vino “antico”, è un vino senza tempo.
 
-Ma è vero che furono gli inglesi a renderla famosa?
+## Ma è vero che furono gli inglesi a renderla famosa?
 Sì — e senza mezzi termini.
 
 La Marsala esisteva già come vino locale, ma furono i mercanti inglesi a:
