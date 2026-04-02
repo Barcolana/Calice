@@ -1,0 +1,539 @@
+---
+---
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantine — Calice</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HW7E04GJP3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HW7E04GJP3');
+    </script>
+    <style>
+        :root {
+            --wine: #A0293B;
+            --wine-light: #C4495E;
+            --wine-pale: #F9EDEF;
+            --terra: #C4693A;
+            --terra-light: #F0D5C4;
+            --ink: #1A1A2E;
+            --gray: #6B6B7E;
+            --silver: #E8E8F0;
+            --bg: #FAFAF8;
+            --white: #FFFFFF;
+            --gold: #B8860B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--silver);
+            padding: 0 48px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            height: 64px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .back-btn {
+            margin-left: auto;
+            border: 1.5px solid var(--silver);
+            background: none;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray);
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .back-btn:hover {
+            border-color: var(--wine);
+            color: var(--wine);
+        }
+
+        .page-hero {
+            background: var(--ink);
+            color: var(--white);
+            padding: 64px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '🏭';
+            font-size: 300px;
+            position: absolute;
+            right: -40px;
+            top: -40px;
+            opacity: 0.05;
+            line-height: 1;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .page-hero h1 span {
+            color: var(--wine-light);
+            font-style: italic;
+        }
+
+        .page-hero p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 500px;
+        }
+
+        .search-section {
+            padding: 24px 80px;
+            background: var(--white);
+            border-bottom: 1px solid var(--silver);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg);
+            border: 1.5px solid var(--silver);
+            border-radius: 12px;
+            padding: 12px 20px;
+            max-width: 400px;
+            transition: border-color 0.2s;
+        }
+
+        .search-box:focus-within {
+            border-color: var(--wine);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            background: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            color: var(--ink);
+            outline: none;
+        }
+
+        .cantine-section {
+            padding: 48px 80px;
+        }
+
+        .cantine-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .cantine-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .cantine-header h2 span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .cantine-count {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .cantine-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 64px;
+        }
+
+        .cantina-card {
+            background: var(--white);
+            border: 1px solid var(--silver);
+            border-radius: 14px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+        }
+
+        .cantina-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(26, 26, 46, 0.1);
+            border-color: var(--wine);
+        }
+
+        .cantina-card.active {
+            border-color: var(--wine);
+            background: var(--wine-pale);
+        }
+
+        .cantina-nome {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+
+        .cantina-regione {
+            font-size: 12px;
+            color: var(--terra);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+        }
+
+        .cantina-count {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .vini-cantina-section {
+            display: none;
+            padding: 0 0 64px;
+        }
+
+        .vini-cantina-section.visible {
+            display: block;
+        }
+
+        .vini-cantina-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .vini-cantina-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .btn-chiudi {
+            margin-left: auto;
+            border: 1.5px solid var(--silver);
+            background: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray);
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .btn-chiudi:hover {
+            border-color: var(--wine);
+            color: var(--wine);
+        }
+
+        .vini-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .wine-card {
+            background: var(--white);
+            border-radius: 14px;
+            border: 1px solid var(--silver);
+            overflow: hidden;
+            transition: all 0.25s;
+        }
+
+        .wine-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(26, 26, 46, 0.1);
+        }
+
+        .wc-img {
+            height: 120px;
+            background: linear-gradient(135deg, var(--wine-pale), var(--terra-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .wc-body {
+            padding: 14px;
+        }
+
+        .wc-region {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--terra);
+        }
+
+        .wc-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 4px 0 2px;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+
+        .wc-producer {
+            font-size: 12px;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .wc-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .wc-score {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--wine);
+        }
+
+        .wc-price {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .wc-link {
+            display: block;
+            width: 100%;
+            background: var(--wine-pale);
+            color: var(--wine);
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .wc-link:hover {
+            background: var(--wine);
+            color: var(--white);
+        }
+
+        @media (max-width: 1024px) {
+
+            nav,
+            .page-hero,
+            .search-section,
+            .cantine-section {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .cantine-grid,
+            .vini-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .cantine-grid,
+            .vini-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="{{ site.baseurl }}/" class="logo">Ca<span>lice</span></a>
+        <a href="{{ site.baseurl }}/" class="back-btn">← Torna ai vini</a>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Le nostre <span>Cantine</span></h1>
+        <p>Scopri le cantine presenti nel catalogo Calice e i loro vini selezionati.</p>
+    </div>
+
+    <div class="search-section">
+        <div class="search-box">
+            <span>🔍</span>
+            <input type="text" id="searchCantine" placeholder="Cerca una cantina…" oninput="filtraCantine(this.value)">
+        </div>
+    </div>
+
+    <div class="cantine-section">
+        <div class="cantine-header">
+            <h2>Tutte le <span>cantine</span></h2>
+            <span class="cantine-count" id="cantineCount"></span>
+        </div>
+
+        <div class="cantine-grid" id="cantineGrid">
+            <!-- Generato da Jekyll -->
+            {% assign cantine = site.vini | map: 'produttore' | uniq | sort %}
+            {% for produttore in cantine %}
+            {% assign nome_cantina = produttore | split: ' · ' | first %}
+            {% assign vini_cantina = site.vini | where: 'produttore', produttore %}
+            {% assign primo_vino = vini_cantina | first %}
+            <div class="cantina-card" onclick="mostraVini('{{ nome_cantina | escape }}', this)"
+                data-cantina="{{ nome_cantina | downcase | escape }}">
+                <div class="cantina-nome">{{ nome_cantina }}</div>
+                <div class="cantina-regione">{{ primo_vino.regione }}</div>
+                <div class="cantina-count">{{ vini_cantina | size }} {% if vini_cantina.size == 1 %}vino{% else %}vini{%
+                    endif %} in catalogo</div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Sezione vini della cantina selezionata -->
+        <div class="vini-cantina-section" id="viniCantina">
+            <div class="vini-cantina-header">
+                <h3 id="titoloViniCantina"></h3>
+                <button class="btn-chiudi" onclick="chiudiVini()">✕ Chiudi</button>
+            </div>
+            <div class="vini-grid" id="viniGrid"></div>
+        </div>
+
+    </div>
+
+    <!-- Dati vini nascosti per JavaScript -->
+    <div id="datiVini" style="display:none;">
+        {% for vino in site.vini %}
+        <div data-nome="{{ vino.nome | escape }}" data-produttore="{{ vino.produttore | escape }}"
+            data-cantina="{{ vino.produttore | split: ' · ' | first | downcase | escape }}"
+            data-regione="{{ vino.regione | escape }}" data-tipo="{{ vino.tipo }}" data-punteggio="{{ vino.punteggio }}"
+            data-prezzo="{{ vino.prezzo }}" data-emoji="{{ vino.emoji }}" data-slug="{{ vino.slug }}"
+            data-baseurl="{{ site.baseurl }}"></div>
+        {% endfor %}
+    </div>
+
+    <script>
+        // Conta cantine
+        const totCantine = document.querySelectorAll('.cantina-card').length;
+        document.getElementById('cantineCount').textContent = totCantine + ' cantine';
+
+        function filtraCantine(query) {
+            const q = query.toLowerCase().trim();
+            document.querySelectorAll('.cantina-card').forEach(card => {
+                const nome = card.getAttribute('data-cantina') || '';
+                card.style.display = (q === '' || nome.includes(q)) ? 'block' : 'none';
+            });
+        }
+
+        function mostraVini(cantina, cardEl) {
+            document.querySelectorAll('.cantina-card').forEach(c => c.classList.remove('active'));
+            cardEl.classList.add('active');
+
+            const viniDati = document.querySelectorAll('#datiVini div');
+            const viniGrid = document.getElementById('viniGrid');
+            const baseurl = document.querySelector('#datiVini div')?.getAttribute('data-baseurl') || '';
+
+            viniGrid.innerHTML = '';
+            let trovati = 0;
+
+            viniDati.forEach(v => {
+                const cantinaNome = v.getAttribute('data-cantina') || '';
+                if (cantinaNome === cantina.toLowerCase()) {
+                    trovati++;
+                    const card = document.createElement('div');
+                    card.className = 'wine-card';
+                    card.innerHTML = `
+          <div class="wc-img">${v.getAttribute('data-emoji')}</div>
+          <div class="wc-body">
+            <div class="wc-region">${v.getAttribute('data-regione')}</div>
+            <div class="wc-name">${v.getAttribute('data-nome')}</div>
+            <div class="wc-producer">${v.getAttribute('data-produttore')}</div>
+            <div class="wc-footer">
+              <span class="wc-score">${v.getAttribute('data-punteggio')}</span>
+              <div class="wc-price">€${v.getAttribute('data-prezzo')} <small>/bt</small></div>
+            </div>
+            <a href="${baseurl}/vini/${v.getAttribute('data-slug')}" class="wc-link">→ Scopri questo vino</a>
+          </div>
+        `;
+                    viniGrid.appendChild(card);
+                }
+            });
+
+            document.getElementById('titoloViniCantina').textContent = cantina + ' — ' + trovati + (trovati === 1 ? ' vino' : ' vini');
+            document.getElementById('viniCantina').classList.add('visible');
+            document.getElementById('viniCantina').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function chiudiVini() {
+            document.getElementById('viniCantina').classList.remove('visible');
+            document.querySelectorAll('.cantina-card').forEach(c => c.classList.remove('active'));
+        }
+
+        // Parametro URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const cantina = urlParams.get('cantina');
+        if (cantina) {
+            const card = Array.from(document.querySelectorAll('.cantina-card'))
+                .find(c => c.getAttribute('data-cantina') === cantina.toLowerCase());
+            if (card) card.click();
+        }
+    </script>
+
+</body>
+
+</html>
