@@ -490,7 +490,6 @@
     </div>
 
     <script>
-        const API_KEY = 'REDACTED';
 
         function handleFile(input) {
             const file = input.files[0];
@@ -500,38 +499,35 @@
             reader.onload = function (e) {
                 document.getElementById('previewImg').src = e.target.result;
                 document.getElementById('previewArea').style.display = 'block';
-                analizzaImmagine(e.target.result.split(',')[1]);
+                analizzaImmagine(e.target.result); // ora passiamo l'immagine intera
             };
             reader.readAsDataURL(file);
         }
 
-        async function analizzaImmagine(base64) {
+        async function analizzaImmagine(imgBase64) {
             document.getElementById('uploadArea').style.display = 'none';
             document.getElementById('loading').style.display = 'block';
             document.getElementById('risultati').style.display = 'none';
 
             try {
-                const response = await fetch(`https://vision.googleapis.com/v1/images:annotate?key=${API_KEY}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        requests: [{
-                            image: { content: base64 },
-                            features: [{ type: 'TEXT_DETECTION', maxResults: 1 }]
-                        }]
-                    })
-                });
+                // 🔥 OCR con Tesseract.js
+                const { data: { text } } = await Tesseract.recognize(
+                    imgBase64,
+                    'ita+eng',
+                    { logger: m => console.log(m) }
+                );
 
-                const data = await response.json();
-                const testo = data.responses[0]?.fullTextAnnotation?.text || '';
+                const testo = text || '';
 
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('risultati').style.display = 'block';
-                document.getElementById('testoLetto').textContent = testo.replace(/\n/g, ' ').substring(0, 200) + '...';
+                document.getElementById('testoLetto').textContent =
+                    testo.replace(/\n/g, ' ').substring(0, 200) + '...';
 
                 cercaVini(testo.toLowerCase());
 
             } catch (error) {
+                console.error(error);
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('risultati').style.display = 'block';
                 document.getElementById('testoLetto').textContent = 'Errore nella scansione — riprova.';
@@ -553,7 +549,9 @@
                 const paroleNome = nome.split(' ').filter(p => p.length > 3);
                 const paroleProd = produttore.split(' ').filter(p => p.length > 3);
 
-                const match = paroleNome.some(p => testo.includes(p)) || paroleProd.some(p => testo.includes(p));
+                const match =
+                    paroleNome.some(p => testo.includes(p.toLowerCase())) ||
+                    paroleProd.some(p => testo.includes(p.toLowerCase()));
 
                 if (match) {
                     trovati++;
@@ -561,14 +559,14 @@
                     card.className = 'vino-risultato';
                     card.href = `${baseurl}/vini/${v.getAttribute('data-slug')}`;
                     card.innerHTML = `
-          <div class="vino-emoji">${v.getAttribute('data-emoji')}</div>
-          <div class="vino-info">
-            <div class="vino-nome">${v.getAttribute('data-nome-display')}</div>
-            <div class="vino-produttore">${v.getAttribute('data-produttore-display')}</div>
-            <div class="vino-regione">${v.getAttribute('data-regione')}</div>
-          </div>
-          <div class="vino-score">${v.getAttribute('data-punteggio')}</div>
-        `;
+                    <div class="vino-emoji">${v.getAttribute('data-emoji')}</div>
+                    <div class="vino-info">
+                        <div class="vino-nome">${v.getAttribute('data-nome-display')}</div>
+                        <div class="vino-produttore">${v.getAttribute('data-produttore-display')}</div>
+                        <div class="vino-regione">${v.getAttribute('data-regione')}</div>
+                    </div>
+                    <div class="vino-score">${v.getAttribute('data-punteggio')}</div>
+                `;
                     viniFindati.appendChild(card);
                 }
             });
@@ -586,7 +584,7 @@
             document.getElementById('cameraInput').value = '';
         }
 
-        // Drag and drop
+        // Drag & Drop
         const uploadArea = document.getElementById('uploadArea');
         uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.classList.add('dragover'); });
         uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('dragover'));
@@ -599,12 +597,16 @@
                 reader.onload = ev => {
                     document.getElementById('previewImg').src = ev.target.result;
                     document.getElementById('previewArea').style.display = 'block';
-                    analizzaImmagine(ev.target.result.split(',')[1]);
+                    analizzaImmagine(ev.target.result);
                 };
                 reader.readAsDataURL(file);
             }
         });
+
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
 
 </body>
 
