@@ -527,33 +527,30 @@
         }
 
         async function analizzaImmagine(imgBase64) {
-            const imgMigliorata = await miglioraImmagine(imgBase64);
-
-            const { data: { text } } = await Tesseract.recognize(
-                imgMigliorata,
-                'ita+eng',
-                { logger: m => console.log(m) }
-            );
-
             document.getElementById('uploadArea').style.display = 'none';
             document.getElementById('loading').style.display = 'block';
             document.getElementById('risultati').style.display = 'none';
 
             try {
-                // 🔥 OCR con Tesseract.js
+                // 1️⃣ Migliora l'immagine
+                const imgMigliorata = await miglioraImmagine(imgBase64);
+
+                // 2️⃣ OCR su immagine migliorata
                 const { data: { text } } = await Tesseract.recognize(
-                    imgBase64,
+                    imgMigliorata,
                     'ita+eng',
                     { logger: m => console.log(m) }
                 );
 
                 const testo = text || '';
 
+                // 3️⃣ Aggiorna UI
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('risultati').style.display = 'block';
                 document.getElementById('testoLetto').textContent =
                     testo.replace(/\n/g, ' ').substring(0, 200) + '...';
 
+                // 4️⃣ Cerca vini
                 cercaVini(testo.toLowerCase());
 
             } catch (error) {
@@ -564,6 +561,7 @@
                 document.getElementById('nessunRisultato').style.display = 'block';
             }
         }
+
 
         function cercaVini(testo) {
             const viniDati = document.querySelectorAll('#datiVini div');
