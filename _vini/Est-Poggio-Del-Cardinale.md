@@ -1,18 +1,24 @@
 ---
 layout: vino
-nome: Praepositus Sauvignon
-produttore: Abbazia di Novacella · 2022
-regione: Trentino · DOC
+nome: Est! Est!! Est!!! Poggio del Cardinale
+produttore: Antica Cantina Leonardi · Montefiascone
+regione: Lazio · DOC
 tipo: Bianco
-punteggio: 93
-prezzo: 28
+punteggio: 88
+prezzo: 12.00
 badge: ""
-emoji: 🥂
-gradazione: 13.5
-annata: 2022
-descrizione: Un Sauvignon Blanc d'alta quota prodotto dall'antica Abbazia di Novacella in Valle Isarco, a oltre 700 metri di altitudine. Profumi intensi e riconoscibili di pompelmo, erba tagliata, salvia e quella nota minerale che i puristi definiscono "pietra focaia". Al palato è fresco, sapido e con una persistenza aromatica notevole. Un bianco di carattere che non lascia indifferenti.
+emoji: 🍋
+gradazione: ""
+annata: ""
+descrizione: >
+  Storico bianco di Montefiascone, legato alla celebre leggenda del vescovo
+  Johannes Defuk e del suo servitore Martino. Il Poggio del Cardinale è una
+  delle interpretazioni più classiche dell’Antica Cantina Leonardi: fresco,
+  immediato, piacevole, con note di frutta bianca, fiori e una sapidità che
+  racconta perfettamente il territorio vulcanico del lago di Bolsena.
 abbinamenti:
-  - 🐟 Pesce crudo
-  - 🥗 Insalate di mare
-  - 🧀 Formaggi di capra
+  - 🐟 Antipasti di pesce
+  - 🍤 Fritture leggere
+  - 🍝 Piatti della tradizione laziale
+  - 🧀 Formaggi freschi
 ---
