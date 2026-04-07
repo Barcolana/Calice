@@ -10,7 +10,7 @@ badge: ""
 emoji: 🍋
 gradazione: ""
 annata: ""
-descrizione: >
+descrizione: 
   Storico bianco di Montefiascone, legato alla celebre leggenda del vescovo
   Johannes Defuk e del suo servitore Martino. Il Poggio del Cardinale è una
   delle interpretazioni più classiche dell’Antica Cantina Leonardi: fresco,
