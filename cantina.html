@@ -1,0 +1,94 @@
+---
+layout: default
+title: La mia cantina
+---
+
+<style>
+    .grid-vini {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .card-vino {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
+        background: #fff;
+        text-align: center;
+    }
+
+    .card-vino img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .info-vino h3 {
+        margin: 10px 0;
+        font-size: 1.1rem;
+    }
+
+    .btn,
+    .btn-rimuovi {
+        display: block;
+        margin: 8px auto;
+        padding: 8px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .btn {
+        background: #333;
+        color: white;
+    }
+
+    .btn-rimuovi {
+        background: #b30000;
+        color: white;
+    }
+</style>
+
+<h1>🍷 La mia cantina</h1>
+
+<div id="cantina-container" class="grid-vini"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("cantina-container");
+        const viniSalvati = [];
+
+        for (let i = 0; i < localStorage.length; i++) {
+            const chiave = localStorage.key(i);
+            if (chiave.startsWith("like_")) {
+                viniSalvati.push(chiave.replace("like_", ""));
+            }
+        }
+
+        if (viniSalvati.length === 0) {
+            container.innerHTML = "<p>Nessun vino nella tua cantina… per ora.</p>";
+            return;
+        }
+
+        let html = "";
+        viniSalvati.forEach(slug => {
+            html += `
+        <div class="card-vino">
+            <a href="/vini/${slug}">
+                <img src="/assets/img/vini/${slug}.jpg" alt="${slug}">
+            </a>
+            <div class="info-vino">
+                <h3>${slug.replace(/-/g, " ")}</h3>
+                <a class="btn" href="/vini/${slug}">Vai alla scheda</a>
+                <button class="btn-rimuovi" onclick="rimuoviVino('${slug}')">Rimuovi</button>
+            </div>
+        </div>`;
+        });
+
+        container.innerHTML = html;
+    });
+
+    function rimuoviVino(slug) {
+        localStorage.removeItem("like_" + slug);
+        location.reload();
+    }
+</script>
