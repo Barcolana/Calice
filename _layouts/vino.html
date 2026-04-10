@@ -387,6 +387,14 @@
     </div>
     function aggiungiLike() {
     const btn = document.getElementById('btnLike');
+    const chiave = 'like_{{ page.slug }}';
+
+    if (localStorage.getItem(chiave)) {
+    btn.textContent = '❤️ Già nella tua cantina';
+    return;
+    }
+
+    localStorage.setItem(chiave, '1');
     btn.textContent = '❤️ Aggiunto alla cantina!';
     btn.style.background = 'var(--wine)';
     btn.style.color = 'white';
@@ -397,6 +405,17 @@
     mode: 'no-cors'
     });
     }
+
+    // Controlla se già piaciuto al caricamento
+    window.addEventListener('DOMContentLoaded', () => {
+    const chiave = 'like_{{ page.slug }}';
+    if (localStorage.getItem(chiave)) {
+    const btn = document.getElementById('btnLike');
+    btn.textContent = '❤️ Già nella tua cantina';
+    btn.style.background = 'var(--wine)';
+    btn.style.color = 'white';
+    }
+    });
 
 </body>
 
