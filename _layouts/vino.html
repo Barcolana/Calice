@@ -399,14 +399,17 @@
     btn.style.background = 'var(--wine)';
     btn.style.color = 'white';
 
-    fetch('https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/formResponse?entry.231130425={{
-    page.nome | url_encode }}&submit=Submit', {
+    const url =
+    'https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/formResponse' +
+    '?entry.231130425={{ page.nome | url_encode }}&submit=Submit';
+
+    fetch(url, {
     method: 'POST',
     mode: 'no-cors'
     });
     }
 
-    // Controlla se già piaciuto al caricamento
+    // Stato iniziale
     window.addEventListener('DOMContentLoaded', () => {
     const chiave = 'like_{{ page.slug }}';
     if (localStorage.getItem(chiave)) {
@@ -416,6 +419,7 @@
     btn.style.color = 'white';
     }
     });
+
 
 </body>
 
