@@ -208,6 +208,12 @@
             transform: translateY(-2px);
         }
 
+        .btn-cantina.attivo {
+            background: var(--wine) !important;
+            color: white !important;
+        }
+
+
         .btn-cantina {
             display: block;
             width: 100%;
@@ -338,9 +344,8 @@
             </div>
 
             <button class="btn-acquista">🛒 Acquista ora</button>
-            <button class="btn-cantina" id="btnLike" onclick="aggiungiLike()"> &#10084;&#65039; Aggiungi alla mia
-                cantina
-            </button>
+            <button class="btn-cantina" id="btnLike" onclick="aggiungiLike()">❤️ Aggiungi alla mia cantina</button>
+
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/viewform?usp=header"
                 target="_blank" class="btn-cantina" style="text-decoration:none;">📝 Condividi la tua degustazione</a>
 
@@ -393,34 +398,30 @@
 
     if (localStorage.getItem(chiave)) {
     btn.textContent = '❤️ Già nella tua cantina';
+    btn.classList.add('attivo');
     return;
     }
 
     localStorage.setItem(chiave, '1');
     btn.textContent = '❤️ Aggiunto alla cantina!';
-    btn.style.background = 'var(--wine)';
-    btn.style.color = 'white';
+    btn.classList.add('attivo');
 
-    const url =
-    'https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/formResponse' +
-    '?entry.231130425={{ page.nome | url_encode }}&submit=Submit';
-
-    fetch(url, {
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/formResponse?entry.231130425={{
+    page.nome | url_encode }}&submit=Submit', {
     method: 'POST',
     mode: 'no-cors'
     });
     }
 
-    // Stato iniziale
     window.addEventListener('DOMContentLoaded', () => {
     const chiave = 'like_{{ page.slug }}';
     if (localStorage.getItem(chiave)) {
     const btn = document.getElementById('btnLike');
     btn.textContent = '❤️ Già nella tua cantina';
-    btn.style.background = 'var(--wine)';
-    btn.style.color = 'white';
+    btn.classList.add('attivo');
     }
     });
+
 
 
 </body>
