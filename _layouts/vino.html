@@ -407,6 +407,9 @@
             btn.textContent = '❤️ Aggiunto alla cantina!';
             btn.classList.add('attivo');
 
+            // QUI aggiungiamo solo UNA riga
+            document.getElementById("link-cantina").style.display = "block";
+
             fetch('https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/formResponse?entry.231130425={{ page.nome | url_encode }}&submit=Submit', {
                 method: 'POST',
                 mode: 'no-cors'
@@ -419,12 +422,19 @@
                 const btn = document.getElementById('btnLike');
                 btn.textContent = '❤️ Già nella tua cantina';
                 btn.classList.add('attivo');
+
+                // Se il vino è già nella cantina, mostra il link
+                document.getElementById("link-cantina").style.display = "block";
             }
         });
     </script>
+
     <a id="link-cantina" href="/Calice/cantina.html" style="display:none; margin-top:10px; font-weight:bold;">
         Vai alla mia cantina →
     </a>
+
+
+
 
 
 
