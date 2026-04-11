@@ -410,10 +410,13 @@
             // QUI aggiungiamo solo UNA riga
             document.getElementById("link-cantina").style.display = "block";
 
-            fetch('https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/formResponse?entry.231130425={{ page.nome | url_encode }}&submit=Submit', {
-                method: 'POST',
-                mode: 'no-cors'
-            });
+            const link = document.createElement('a');
+            link.href = 'https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/viewform?usp=pp_url&entry.231130425={{ page.nome | url_encode }}';
+            link.target = '_blank';
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         window.addEventListener('DOMContentLoaded', () => {
