@@ -1,98 +1,414 @@
 ---
-layout: default
-title: La mia cantina
 ---
+<!DOCTYPE html>
+<html lang="it">
 
-<style>
-    .grid-vini {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 20px;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La mia Cantina — Calice</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HW7E04GJP3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HW7E04GJP3');
+    </script>
+    <style>
+        :root {
+            --wine: #A0293B;
+            --wine-light: #C4495E;
+            --wine-pale: #F9EDEF;
+            --terra: #C4693A;
+            --terra-light: #F0D5C4;
+            --ink: #1A1A2E;
+            --gray: #6B6B7E;
+            --silver: #E8E8F0;
+            --bg: #FAFAF8;
+            --white: #FFFFFF;
+            --gold: #B8860B;
+        }
 
-    .card-vino {
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 10px;
-        background: #fff;
-        text-align: center;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .card-vino img {
-        width: 100%;
-        border-radius: 8px;
-    }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+        }
 
-    .info-vino h3 {
-        margin: 10px 0;
-        font-size: 1.1rem;
-    }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--silver);
+            padding: 0 48px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            height: 64px;
+        }
 
-    .btn,
-    .btn-rimuovi {
-        display: block;
-        margin: 8px auto;
-        padding: 8px 12px;
-        border-radius: 6px;
-        cursor: pointer;
-    }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+        }
 
-    .btn {
-        background: #333;
-        color: white;
-    }
+        .logo span {
+            color: var(--wine);
+            font-style: italic;
+        }
 
-    .btn-rimuovi {
-        background: #b30000;
-        color: white;
-    }
-</style>
+        .back-btn {
+            margin-left: auto;
+            border: 1.5px solid var(--silver);
+            background: none;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray);
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
 
-<h1>🍷 La mia cantina</h1>
+        .back-btn:hover {
+            border-color: var(--wine);
+            color: var(--wine);
+        }
 
+        .page-hero {
+            background: var(--ink);
+            color: var(--white);
+            padding: 64px 80px;
+            position: relative;
+            overflow: hidden;
+        }
 
-<div id="cantina-container" class="grid-vini"></div>
+        .page-hero::before {
+            content: '🍷';
+            font-size: 300px;
+            position: absolute;
+            right: -40px;
+            top: -40px;
+            opacity: 0.05;
+            line-height: 1;
+        }
 
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
 
+        .page-hero h1 span {
+            color: var(--wine-light);
+            font-style: italic;
+        }
 
+        .page-hero p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 500px;
+        }
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const container = document.getElementById("cantina-container");
-        const viniSalvati = [];
+        .cantina-section {
+            padding: 48px 80px;
+        }
 
-        for (let i = 0; i < localStorage.length; i++) {
-            const chiave = localStorage.key(i);
-            if (chiave.startsWith("like_")) {
-                viniSalvati.push(chiave.replace("like_", ""));
+        .cantina-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .cantina-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .cantina-header h2 span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .cantina-count {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .vini-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .wine-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--silver);
+            overflow: hidden;
+            transition: all 0.25s;
+        }
+
+        .wine-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(26, 26, 46, 0.1);
+        }
+
+        .wc-img {
+            height: 140px;
+            background: linear-gradient(135deg, var(--wine-pale), var(--terra-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            position: relative;
+        }
+
+        .wc-body {
+            padding: 16px;
+        }
+
+        .wc-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+
+        .wc-producer {
+            font-size: 12px;
+            color: var(--gray);
+            margin-bottom: 12px;
+        }
+
+        .wc-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .wc-link {
+            flex: 1;
+            background: var(--wine-pale);
+            color: var(--wine);
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .wc-link:hover {
+            background: var(--wine);
+            color: var(--white);
+        }
+
+        .wc-remove {
+            background: none;
+            border: 1.5px solid var(--silver);
+            color: var(--gray);
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .wc-remove:hover {
+            border-color: var(--wine);
+            color: var(--wine);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            grid-column: 1/-1;
+        }
+
+        .empty-state h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--ink);
+            margin-bottom: 12px;
+        }
+
+        .empty-state p {
+            color: var(--gray);
+            font-size: 16px;
+            margin-bottom: 28px;
+        }
+
+        .btn-esplora {
+            display: inline-block;
+            background: var(--wine);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-esplora:hover {
+            background: var(--wine-light);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1024px) {
+
+            nav,
+            .page-hero,
+            .cantina-section {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .vini-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        if (viniSalvati.length === 0) {
-            container.innerHTML = "<p>Nessun vino nella tua cantina… per ora.</p>";
-            return;
-        }
+        @media (max-width: 600px) {
+            .vini-grid {
+                grid-template-columns: 1fr;
+            }
 
-        let html = "";
-        viniSalvati.forEach(slug => {
-            html += `
-        <div class="card-vino">
-            <a href="/vini/${slug}">
-                <img src="/assets/img/vini/${slug}.jpg" alt="${slug}">
-            </a>
-            <div class="info-vino">
-                <h3>${slug.replace(/-/g, " ")}</h3>
-                <a class="btn" href="/vini/${slug}">Vai alla scheda</a>
-                <button class="btn-rimuovi" onclick="rimuoviVino('${slug}')">Rimuovi</button>
-            </div>
+            .page-hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="{{ site.baseurl }}/" class="logo">Ca<span>lice</span></a>
+        <a href="{{ site.baseurl }}/" class="back-btn">← Torna ai vini</a>
+    </nav>
+
+    <div class="page-hero">
+        <h1>La mia <span>Cantina</span></h1>
+        <p>I vini che hai salvato — la tua collezione personale su Calice.</p>
+    </div>
+
+    <div class="cantina-section">
+        <div class="cantina-header">
+            <h2>I tuoi <span>vini</span></h2>
+            <span class="cantina-count" id="cantina-count"></span>
+        </div>
+        <div class="vini-grid" id="cantina-container"></div>
+    </div>
+
+    <!-- Dati vini Jekyll per arricchire le card -->
+    <div id="datiVini" style="display:none;">
+        {% for vino in site.vini %}
+        <div data-slug="{{ vino.slug }}" data-nome="{{ vino.nome | escape }}"
+            data-produttore="{{ vino.produttore | escape }}" data-regione="{{ vino.regione | escape }}"
+            data-emoji="{{ vino.emoji }}" data-punteggio="{{ vino.punteggio }}" data-prezzo="{{ vino.prezzo }}"
+            data-baseurl="{{ site.baseurl }}"></div>
+        {% endfor %}
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('cantina-container');
+            const baseurl = document.querySelector('#datiVini div')?.getAttribute('data-baseurl') || '';
+
+            // Leggi vini dal localStorage
+            const slugSalvati = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const chiave = localStorage.key(i);
+                if (chiave.startsWith('like_')) {
+                    slugSalvati.push(chiave.replace('like_', ''));
+                }
+            }
+
+            // Aggiorna count
+            document.getElementById('cantina-count').textContent = slugSalvati.length + ' vini';
+
+            if (slugSalvati.length === 0) {
+                container.innerHTML = `
+        <div class="empty-state">
+          <h3>La tua cantina è vuota</h3>
+          <p>Esplora il catalogo e aggiungi i vini che ti piacciono cliccando ❤️</p>
+          <a href="${baseurl}/" class="btn-esplora">🍷 Esplora i vini</a>
         </div>`;
+                return;
+            }
+
+            // Costruisci un indice dei vini Jekyll
+            const indiceVini = {};
+            document.querySelectorAll('#datiVini div').forEach(v => {
+                indiceVini[v.getAttribute('data-slug')] = {
+                    nome: v.getAttribute('data-nome'),
+                    produttore: v.getAttribute('data-produttore'),
+                    regione: v.getAttribute('data-regione'),
+                    emoji: v.getAttribute('data-emoji'),
+                    punteggio: v.getAttribute('data-punteggio'),
+                    prezzo: v.getAttribute('data-prezzo')
+                };
+            });
+
+            let html = '';
+            slugSalvati.forEach(slug => {
+                const vino = indiceVini[slug];
+                const nome = vino ? vino.nome : slug.replace(/-/g, ' ');
+                const produttore = vino ? vino.produttore : '';
+                const emoji = vino ? vino.emoji : '🍷';
+                const punteggio = vino ? vino.punteggio : '';
+                const prezzo = vino ? vino.prezzo : '';
+
+                html += `
+        <div class="wine-card">
+          <div class="wc-img">${emoji}</div>
+          <div class="wc-body">
+            <div class="wc-name">${nome}</div>
+            <div class="wc-producer">${produttore}</div>
+            <div class="wc-actions">
+              <a href="${baseurl}/vini/${slug}" class="wc-link">→ Scheda vino</a>
+              <button class="wc-remove" onclick="rimuoviVino('${slug}')">🗑️</button>
+            </div>
+          </div>
+        </div>`;
+            });
+
+            container.innerHTML = html;
         });
 
-        container.innerHTML = html;
-    });
+        function rimuoviVino(slug) {
+            localStorage.removeItem('like_' + slug);
+            location.reload();
+        }
+    </script>
 
-    function rimuoviVino(slug) {
-        localStorage.removeItem("like_" + slug);
-        location.reload();
-    }
-</script>
+</body>
+
+</html>
