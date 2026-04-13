@@ -1,7 +1,7 @@
 ---
 layout: vino
 nome: Latour a Civitella
-produttore: Mottura · 2020
+produttore: Sergio Mottura · 2020
 regione: Lazio · IGT
 tipo: Bio
 punteggio: 91
