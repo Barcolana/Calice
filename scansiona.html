@@ -537,8 +537,17 @@
                 const { data: { text } } = await Tesseract.recognize(
                     imgMigliorata,
                     'ita+eng',
-                    { logger: m => console.log(m) }
+                    {
+                        logger: m => console.log(m),
+                        load_system_dawg: false,
+                        load_freq_dawg: false,
+                        load_punc_dawg: false,
+                        load_number_dawg: false,
+                        load_unambig_dawg: false,
+                        load_bigram_dawg: false
+                    }
                 );
+
 
                 const testo = text || '';
 
@@ -681,15 +690,7 @@
                 reader.readAsDataURL(file);
             }
         });
-        Tesseract.recognize(imgMigliorata, 'ita+eng', {
-            logger: m => console.log(m),
-            load_system_dawg: false,
-            load_freq_dawg: false,
-            load_punc_dawg: false,
-            load_number_dawg: false,
-            load_unambig_dawg: false,
-            load_bigram_dawg: false
-        });
+
 
 
     </script>
