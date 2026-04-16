@@ -588,6 +588,19 @@
 
             document.getElementById('nessunRisultato').style.display = top.length === 0 ? 'block' : 'none';
         }
+        function handleFile(input) {
+            const file = input.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('previewImg').src = e.target.result;
+                document.getElementById('previewArea').style.display = 'block';
+                analizzaImmagine(e.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+
 
     </script>
 
