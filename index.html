@@ -1623,7 +1623,8 @@
             </div>
             <div class="feed-grid">
 
-                {% for vino in site.vini %}
+                {% assign random_vini = site.vini | sample: 999 %}
+                {% for vino in random_vini %}
                 <div class="wine-card" data-tipo="{{ vino.tipo }}">
                     <div class="wc-img">{{ vino.emoji }}
                         {% if vino.badge != "" %}
