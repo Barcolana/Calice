@@ -6,7 +6,7 @@ regione: Lazio · IGT
 tipo: Bio
 punteggio: 92
 prezzo: 15
-badge: ""
+badge: 🌿 BIO
 emoji: 🌿
 gradazione: 13
 annata: 2022
