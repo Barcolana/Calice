@@ -7,7 +7,7 @@ tipo: Bio
 vitigno: Chardonnay 100%
 punteggio: 94
 prezzo: 44
-badge: ""
+badge: 🌿 BIO
 emoji: 🦔
 gradazione: 12.5
 annata: 2016
