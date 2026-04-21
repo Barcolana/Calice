@@ -3,7 +3,7 @@ layout: vino
 nome: Spumante Metodo Classico Brut Nature
 produttore: Sergio Mottura
 regione: Lazio · IGT
-tipo: Spumante
+tipo: Bio
 vitigno: Chardonnay 100%
 punteggio: 94
 prezzo: 44
