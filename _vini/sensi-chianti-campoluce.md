@@ -3,10 +3,10 @@ layout: vino
 nome: Chianti Campoluce
 produttore: Sensi · 2022
 regione: Toscana · DOCG
-tipo: Rosso
+tipo: BIO
 punteggio: 89
 prezzo: 10
-badge: "BIO"
+badge: 🌿BIO
 emoji: 🌿
 gradazione: 13
 annata: 2022
