@@ -1,0 +1,618 @@
+---
+layout: null
+title: Top Vini 2025 — Calice
+---
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="I migliori vini italiani del 2025 selezionati dalla redazione di Calice. Scopri le bottiglie eccezionali del catalogo.">
+    <meta name="keywords"
+        content="top vini 2025, migliori vini italiani, vini premiati, Brunello, Barolo, Amarone, degustazione">
+    <meta name="author" content="Emiliano Fabrizi">
+    <title>Top Vini 2025 — Calice</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --wine: #A0293B;
+            --wine-light: #C4495E;
+            --wine-pale: #F9EDEF;
+            --terra: #C4693A;
+            --terra-light: #F0D5C4;
+            --sage: #5C7A5A;
+            --sage-light: #D8E8D6;
+            --ink: #1A1A2E;
+            --ink-soft: #3D3D52;
+            --gray: #6B6B7E;
+            --silver: #E8E8F0;
+            --bg: #FAFAF8;
+            --white: #FFFFFF;
+            --gold: #B8860B;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+        }
+
+        /* ── NAV ── */
+        nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--silver);
+            padding: 0 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .nav-logo span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--ink-soft);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color .2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--wine);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, var(--ink) 0%, #2D1B25 60%, #3D1520 100%);
+            color: var(--white);
+            padding: 80px 80px 64px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '🏆';
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 140px;
+            opacity: 0.12;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: var(--wine-light);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.72);
+            max-width: 560px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-stat span {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ── FILTRI ── */
+        .filtri-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--silver);
+            padding: 16px 80px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .filtri-label {
+            font-size: 13px;
+            color: var(--gray);
+            font-weight: 500;
+            margin-right: 4px;
+        }
+
+        .filtro-btn {
+            padding: 7px 18px;
+            border-radius: 20px;
+            border: 1.5px solid var(--silver);
+            background: var(--white);
+            color: var(--ink-soft);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: inherit;
+        }
+
+        .filtro-btn:hover,
+        .filtro-btn.active {
+            background: var(--wine);
+            border-color: var(--wine);
+            color: var(--white);
+        }
+
+        /* ── GRIGLIA ── */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 48px 80px 80px;
+        }
+
+        .sezione-titolo {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .sezione-titolo h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .sezione-titolo span {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .vini-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        /* ── CARD ── */
+        .vino-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--silver);
+            overflow: hidden;
+            transition: transform .25s, box-shadow .25s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vino-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.10);
+        }
+
+        .card-top {
+            background: linear-gradient(135deg, #F9EDEF 0%, #FDF5F0 100%);
+            padding: 32px 24px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .card-emoji {
+            font-size: 52px;
+            line-height: 1;
+        }
+
+        .card-rank {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--gold);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+
+        .card-score {
+            text-align: right;
+        }
+
+        .score-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--wine);
+            line-height: 1;
+        }
+
+        .score-label {
+            font-size: 11px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-body {
+            padding: 20px 24px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-regione {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--wine);
+            margin-bottom: 6px;
+        }
+
+        .card-nome {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 4px;
+            line-height: 1.25;
+        }
+
+        .card-produttore {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 14px;
+        }
+
+        .card-desc {
+            font-size: 13.5px;
+            color: var(--ink-soft);
+            line-height: 1.65;
+            flex: 1;
+            display: -webkit-box;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+
+            /* versione standard */
+            line-clamp: 3;
+
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--silver);
+        }
+
+        .card-prezzo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .card-prezzo span {
+            font-size: 13px;
+            color: var(--gray);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        .card-tipo {
+            background: var(--wine-pale);
+            color: var(--wine);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        .card-cta {
+            display: inline-block;
+            margin-top: 16px;
+            background: var(--wine);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: background .2s;
+        }
+
+        .card-cta:hover {
+            background: var(--wine-light);
+        }
+
+        /* ── BANNER INFO ── */
+        .info-banner {
+            background: linear-gradient(135deg, #FDF5F0, #F9EDEF);
+            border: 1px solid #E8C8CE;
+            border-radius: 16px;
+            padding: 32px 40px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .info-banner-icon {
+            font-size: 40px;
+        }
+
+        .info-banner h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 6px;
+        }
+
+        .info-banner p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--ink);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 48px 80px 32px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: var(--wine-light);
+            font-style: italic;
+        }
+
+        footer p {
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        footer a {
+            color: var(--wine-light);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+
+            nav,
+            .hero,
+            .filtri-bar,
+            .container,
+            footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero::before {
+                display: none;
+            }
+
+            .vini-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="{{ site.baseurl }}/" class="nav-logo">Calice <span>🍷</span></a>
+        <ul class="nav-links">
+            <li><a href="{{ site.baseurl }}/">Home</a></li>
+            <li><a href="{{ site.baseurl }}/regioni.html">Regioni</a></li>
+            <li><a href="{{ site.baseurl }}/cantine.html">Cantine d'Italia</a></li>
+            <li><a href="{{ site.baseurl }}/abbinamenti.html">Abbinamenti</a></li>
+            <li><a href="{{ site.baseurl }}/blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">⭐ Selezione Annuale</div>
+        <h1>Top Vini <span>2025</span></h1>
+        <p>Le bottiglie più straordinarie del nostro catalogo, selezionate dalla redazione di Calice per qualità,
+            personalità e rapporto qualità-prezzo.</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <strong>{% assign top_vini = site.vini | where_exp: "v", "v.badge contains 'TOP 2025'" %}{{ top_vini |
+                    size }}</strong>
+                <span>Vini selezionati</span>
+            </div>
+            <div class="hero-stat">
+                <strong>{% assign punteggio_medio = 0 %}{% for v in top_vini %}{% assign punteggio_medio =
+                    punteggio_medio | plus: v.punteggio %}{% endfor %}{{ punteggio_medio | divided_by: top_vini.size
+                    }}</strong>
+                <span>Punteggio medio</span>
+            </div>
+            <div class="hero-stat">
+                <strong>2025</strong>
+                <span>Annata di riferimento</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTRI -->
+    <div class="filtri-bar">
+        <span class="filtri-label">Filtra per:</span>
+        <button class="filtro-btn active" onclick="filtra('tutti', this)">Tutti</button>
+        <button class="filtro-btn" onclick="filtra('Rosso', this)">🍷 Rossi</button>
+        <button class="filtro-btn" onclick="filtra('Bianco', this)">🥂 Bianchi</button>
+        <button class="filtro-btn" onclick="filtra('Spumante', this)">🫧 Spumanti</button>
+        <button class="filtro-btn" onclick="filtra('Passito', this)">🍯 Passiti</button>
+    </div>
+
+    <!-- CONTENUTO -->
+    <div class="container">
+
+        <div class="info-banner">
+            <div class="info-banner-icon">🏅</div>
+            <div>
+                <h3>Come vengono selezionati i Top Vini?</h3>
+                <p>La redazione di Calice valuta ogni bottiglia del catalogo in base a punteggio critico, originalità
+                    del territorio, coerenza stilistica e valore rispetto al prezzo. Solo i vini con punteggio ≥ 93 e
+                    una storia di cantina entrano in questa selezione.</p>
+            </div>
+        </div>
+
+        <div class="sezione-titolo">
+            <h2>I migliori del catalogo</h2>
+            <span id="count-label">{{ top_vini | size }} vini selezionati</span>
+        </div>
+
+        <div class="vini-grid" id="vini-grid">
+            {% assign top_vini_sorted = site.vini | where_exp: "v", "v.badge contains 'TOP 2025'" | sort: "punteggio" |
+            reverse %}
+            {% for vino in top_vini_sorted %}
+            <div class="vino-card" data-tipo="{{ vino.tipo }}">
+                <div class="card-top">
+                    <div class="card-rank">TOP 2025</div>
+                    <div class="card-emoji">{{ vino.emoji }}</div>
+                    <div class="card-score">
+                        <div class="score-num">{{ vino.punteggio }}</div>
+                        <div class="score-label">/ 100</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-regione">{{ vino.regione }}</div>
+                    <div class="card-nome">{{ vino.nome }}</div>
+                    <div class="card-produttore">{{ vino.produttore }}</div>
+                    <div class="card-desc">{{ vino.descrizione }}</div>
+                    <div class="card-footer">
+                        <div class="card-prezzo">€{{ vino.prezzo }} <span>/ bottiglia</span></div>
+                        <div class="card-tipo">{{ vino.tipo }}</div>
+                    </div>
+                    <a href="{{ site.baseurl }}{{ vino.url }}" class="card-cta">Scopri il vino →</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">Calice <span>🍷</span></div>
+        <p>Il social del vino italiano · <a href="{{ site.baseurl }}/">Torna alla home</a></p>
+        <p style="margin-top: 24px; font-size: 12px; opacity: 0.5;">© 2025 Calice · Tutti i diritti riservati</p>
+    </footer>
+
+    <script>
+        function filtra(tipo, btn) {
+            document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.vino-card');
+            let visibili = 0;
+            cards.forEach(card => {
+                const cardTipo = card.dataset.tipo || '';
+                if (tipo === 'tutti' || cardTipo === tipo) {
+                    card.style.display = '';
+                    visibili++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('count-label').textContent = visibili + ' vini selezionati';
+        }
+    </script>
+
+</body>
+
+</html>
