@@ -522,6 +522,178 @@
             if (btn) btn.click();
         }
     </script>
+    <!-- ============================================================
+     ISTRUZIONI: incolla questo blocco appena prima di </body>
+     in tutte le pagine HTML del sito (index.html, blog.html, ecc.)
+     ============================================================ -->
+
+    <!-- ── BANNER COOKIE ── -->
+    <div id="cookie-banner" style="display:none;">
+        <div id="cookie-box">
+            <div id="cookie-text">
+                <strong>🍪 Questo sito usa cookie</strong>
+                <p>Utilizziamo Google Analytics per capire come viene usato il sito (dati aggregati e anonimi). Puoi
+                    accettare o rifiutare i cookie analitici. <a href="{{ site.baseurl }}/privacy.html">Leggi la Privacy
+                        Policy</a></p>
+            </div>
+            <div id="cookie-btns">
+                <button onclick="accettaCookie()" id="btn-accetta">Accetta</button>
+                <button onclick="rifiutaCookie()" id="btn-rifiuta">Rifiuta</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: rgba(26, 26, 46, 0.97);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px 80px;
+        }
+
+        #cookie-box {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
+        #cookie-text strong {
+            display: block;
+            color: #fff;
+            font-size: 15px;
+            margin-bottom: 4px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        #cookie-text p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        #cookie-text a {
+            color: #C4495E;
+            text-decoration: underline;
+        }
+
+        #cookie-btns {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        #btn-accetta {
+            background: #A0293B;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background .2s;
+        }
+
+        #btn-accetta:hover {
+            background: #C4495E;
+        }
+
+        #btn-rifiuta {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all .2s;
+        }
+
+        #btn-rifiuta:hover {
+            border-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            #cookie-banner {
+                padding: 20px;
+            }
+
+            #cookie-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            #cookie-btns {
+                width: 100%;
+            }
+
+            #btn-accetta,
+            #btn-rifiuta {
+                flex: 1;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <script>
+        // ── Carica Analytics solo se l'utente ha accettato ──
+        function caricaAnalytics() {
+            if (document.getElementById('ga-script')) return;
+            var s = document.createElement('script');
+            s.id = 'ga-script';
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HW7E04GJP3';
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-HW7E04GJP3', { anonymize_ip: true });
+        }
+
+        function accettaCookie() {
+            localStorage.setItem('calice_cookie_consent', 'accettato');
+            document.getElementById('cookie-banner').style.display = 'none';
+            caricaAnalytics();
+        }
+
+        function rifiutaCookie() {
+            localStorage.setItem('calice_cookie_consent', 'rifiutato');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        function resetCookieConsent() {
+            localStorage.removeItem('calice_cookie_consent');
+            location.reload();
+        }
+
+        // ── Controlla il consenso al caricamento ──
+        (function () {
+            var consenso = localStorage.getItem('calice_cookie_consent');
+            if (!consenso) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            } else if (consenso === 'accettato') {
+                caricaAnalytics();
+            }
+            // se 'rifiutato' → non fa nulla, Analytics non viene caricato
+        })();
+    </script>
+
 
 </body>
 
