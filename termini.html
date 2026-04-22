@@ -4,12 +4,15 @@ title: Termini di Utilizzo — Calice
 ---
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
     <title>Termini di Utilizzo — Calice</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --wine: #A0293B;
@@ -21,8 +24,18 @@ title: Termini di Utilizzo — Calice
             --bg: #FAFAF8;
             --white: #FFFFFF;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--ink); }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+        }
 
         nav {
             background: var(--white);
@@ -32,14 +45,40 @@ title: Termini di Utilizzo — Calice
             align-items: center;
             justify-content: space-between;
             height: 64px;
-            position: sticky; top: 0; z-index: 100;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .nav-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); text-decoration: none; }
-        .nav-logo span { color: var(--wine); font-style: italic; }
-        .nav-back { font-size: 14px; color: var(--gray); text-decoration: none; transition: color .2s; }
-        .nav-back:hover { color: var(--wine); }
 
-        .container { max-width: 780px; margin: 0 auto; padding: 64px 24px 80px; }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .nav-logo span {
+            color: var(--wine);
+            font-style: italic;
+        }
+
+        .nav-back {
+            font-size: 14px;
+            color: var(--gray);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .nav-back:hover {
+            color: var(--wine);
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 64px 24px 80px;
+        }
 
         .page-tag {
             display: inline-block;
@@ -54,14 +93,58 @@ title: Termini di Utilizzo — Calice
             margin-bottom: 16px;
         }
 
-        h1 { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.2; }
-        .meta { font-size: 13px; color: var(--gray); margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--silver); }
-        h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin: 40px 0 14px; }
-        p { font-size: 15px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 16px; }
-        ul { padding-left: 20px; margin-bottom: 16px; }
-        ul li { font-size: 15px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 6px; }
-        a { color: var(--wine); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .meta {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--silver);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ink);
+            margin: 40px 0 14px;
+        }
+
+        p {
+            font-size: 15px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        ul li {
+            font-size: 15px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+            margin-bottom: 6px;
+        }
+
+        a {
+            color: var(--wine);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
 
         .highlight-box {
             background: #F0F4FF;
@@ -74,72 +157,112 @@ title: Termini di Utilizzo — Calice
             line-height: 1.7;
         }
 
-        footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 32px 80px; text-align: center; font-size: 13px; }
-        footer a { color: var(--wine-light); }
+        footer {
+            background: var(--ink);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 32px 80px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--wine-light);
+        }
 
         @media (max-width: 768px) {
-            nav { padding: 0 20px; }
-            .container { padding: 40px 20px 60px; }
-            h1 { font-size: 28px; }
-            footer { padding: 32px 20px; }
+            nav {
+                padding: 0 20px;
+            }
+
+            .container {
+                padding: 40px 20px 60px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            footer {
+                padding: 32px 20px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<nav>
-    <a href="{{ site.baseurl }}/" class="nav-logo">Calice <span>🍷</span></a>
-    <a href="{{ site.baseurl }}/" class="nav-back">← Torna alla home</a>
-</nav>
+    <nav>
+        <a href="{{ site.baseurl }}/" class="nav-logo">Calice <span>🍷</span></a>
+        <a href="{{ site.baseurl }}/" class="nav-back">← Torna alla home</a>
+    </nav>
 
-<div class="container">
+    <div class="container">
 
-    <div class="page-tag">Legale</div>
-    <h1>Termini di Utilizzo</h1>
-    <p class="meta">Ultimo aggiornamento: Aprile 2025 · Titolare: Emiliano Fabrizi</p>
+        <div class="page-tag">Legale</div>
+        <h1>Termini di Utilizzo</h1>
+        <p class="meta">Ultimo aggiornamento: Aprile 2025 · Titolare: Emiliano Fabrizi</p>
 
-    <p>Accedendo e utilizzando il sito <strong>Calice</strong> (accessibile all'indirizzo <a href="https://barcolana.github.io/Calice/">barcolana.github.io/Calice</a>) dichiari di aver letto e accettato i presenti Termini di Utilizzo.</p>
+        <p>Accedendo e utilizzando il sito <strong>Calice</strong> (accessibile all'indirizzo <a
+                href="https://barcolana.github.io/Calice/">barcolana.github.io/Calice</a>) dichiari di aver letto e
+            accettato i presenti Termini di Utilizzo.</p>
 
-    <h2>1. Natura del sito</h2>
-    <p>Calice è una <strong>piattaforma dimostrativa</strong> dedicata alla cultura del vino italiano. Il sito non vende vini, non gestisce transazioni commerciali e non raccoglie ordini. Tutti i contenuti — schede vino, punteggi, prezzi, descrizioni — sono a scopo informativo e illustrativo.</p>
+        <h2>1. Natura del sito</h2>
+        <p>Calice è una <strong>piattaforma dimostrativa</strong> dedicata alla cultura del vino italiano. Il sito non
+            vende vini, non gestisce transazioni commerciali e non raccoglie ordini. Tutti i contenuti — schede vino,
+            punteggi, prezzi, descrizioni — sono a scopo informativo e illustrativo.</p>
 
-    <div class="highlight-box">
-        ℹ️ I punteggi e le valutazioni presenti sul sito sono indicativi e basati su valutazioni interne della redazione. I prezzi indicati sono approssimativi e possono variare. Calice non garantisce l'accuratezza o l'aggiornamento di tali informazioni.
+        <div class="highlight-box">
+            ℹ️ I punteggi e le valutazioni presenti sul sito sono indicativi e basati su valutazioni interne della
+            redazione. I prezzi indicati sono approssimativi e possono variare. Calice non garantisce l'accuratezza o
+            l'aggiornamento di tali informazioni.
+        </div>
+
+        <h2>2. Proprietà intellettuale</h2>
+        <p>Tutti i contenuti del sito — testi, grafica, codice, struttura — sono di proprietà di <strong>Emiliano
+                Fabrizi</strong>, salvo diversa indicazione. È vietata la riproduzione, la copia o la distribuzione di
+            tali contenuti senza autorizzazione scritta.</p>
+        <p>I marchi, i nomi e i loghi delle cantine e dei produttori citati appartengono ai rispettivi proprietari e
+            sono utilizzati a scopo puramente informativo e descrittivo, senza alcun intento commerciale o promozionale.
+        </p>
+
+        <h2>3. Contenuto alcolico</h2>
+        <p>Il sito tratta esclusivamente di vino e bevande alcoliche a scopo culturale e informativo. L'accesso e la
+            consultazione del sito sono consentiti a persone <strong>maggiorenni</strong> (18 anni compiuti) secondo la
+            normativa italiana vigente. Utilizzando il sito dichiari di avere almeno 18 anni.</p>
+
+        <h2>4. Limitazione di responsabilità</h2>
+        <p>Emiliano Fabrizi non si assume alcuna responsabilità per:</p>
+        <ul>
+            <li>Eventuali imprecisioni o errori nelle schede vino, punteggi o prezzi</li>
+            <li>Decisioni d'acquisto prese sulla base delle informazioni presenti sul sito</li>
+            <li>Interruzioni, malfunzionamenti o indisponibilità del sito</li>
+            <li>Contenuti di siti terzi eventualmente collegati tramite link</li>
+        </ul>
+
+        <h2>5. Link esterni</h2>
+        <p>Il sito può contenere link a siti web di terze parti. Tali link sono forniti a titolo informativo. Calice non
+            ha controllo su quei siti e non è responsabile dei loro contenuti o delle loro politiche sulla privacy.</p>
+
+        <h2>6. Modifiche al sito e ai termini</h2>
+        <p>Il titolare si riserva il diritto di modificare, aggiornare o rimuovere contenuti del sito in qualsiasi
+            momento e senza preavviso. I presenti Termini possono essere aggiornati periodicamente — la data di
+            revisione è indicata in cima a questa pagina.</p>
+
+        <h2>7. Legge applicabile</h2>
+        <p>I presenti Termini di Utilizzo sono regolati dalla legge italiana. Per qualsiasi controversia è competente il
+            Foro di residenza del titolare.</p>
+
+        <h2>8. Contatti</h2>
+        <p>Per qualsiasi domanda relativa ai presenti Termini scrivi a: <a
+                href="mailto:emilyman@hotmail.it">emilyman@hotmail.it</a></p>
+
     </div>
 
-    <h2>2. Proprietà intellettuale</h2>
-    <p>Tutti i contenuti del sito — testi, grafica, codice, struttura — sono di proprietà di <strong>Emiliano Fabrizi</strong>, salvo diversa indicazione. È vietata la riproduzione, la copia o la distribuzione di tali contenuti senza autorizzazione scritta.</p>
-    <p>I marchi, i nomi e i loghi delle cantine e dei produttori citati appartengono ai rispettivi proprietari e sono utilizzati a scopo puramente informativo e descrittivo, senza alcun intento commerciale o promozionale.</p>
-
-    <h2>3. Contenuto alcolico</h2>
-    <p>Il sito tratta esclusivamente di vino e bevande alcoliche a scopo culturale e informativo. L'accesso e la consultazione del sito sono consentiti a persone <strong>maggiorenni</strong> (18 anni compiuti) secondo la normativa italiana vigente. Utilizzando il sito dichiari di avere almeno 18 anni.</p>
-
-    <h2>4. Limitazione di responsabilità</h2>
-    <p>Emiliano Fabrizi non si assume alcuna responsabilità per:</p>
-    <ul>
-        <li>Eventuali imprecisioni o errori nelle schede vino, punteggi o prezzi</li>
-        <li>Decisioni d'acquisto prese sulla base delle informazioni presenti sul sito</li>
-        <li>Interruzioni, malfunzionamenti o indisponibilità del sito</li>
-        <li>Contenuti di siti terzi eventualmente collegati tramite link</li>
-    </ul>
-
-    <h2>5. Link esterni</h2>
-    <p>Il sito può contenere link a siti web di terze parti. Tali link sono forniti a titolo informativo. Calice non ha controllo su quei siti e non è responsabile dei loro contenuti o delle loro politiche sulla privacy.</p>
-
-    <h2>6. Modifiche al sito e ai termini</h2>
-    <p>Il titolare si riserva il diritto di modificare, aggiornare o rimuovere contenuti del sito in qualsiasi momento e senza preavviso. I presenti Termini possono essere aggiornati periodicamente — la data di revisione è indicata in cima a questa pagina.</p>
-
-    <h2>7. Legge applicabile</h2>
-    <p>I presenti Termini di Utilizzo sono regolati dalla legge italiana. Per qualsiasi controversia è competente il Foro di residenza del titolare.</p>
-
-    <h2>8. Contatti</h2>
-    <p>Per qualsiasi domanda relativa ai presenti Termini scrivi a: <a href="mailto:emiliano@calice.it">emiliano@calice.it</a></p>
-
-</div>
-
-<footer>
-    <p>© 2025 Calice · Emiliano Fabrizi · <a href="{{ site.baseurl }}/termini.html">Termini di utilizzo</a> · <a href="{{ site.baseurl }}/privacy.html">Privacy Policy</a></p>
-</footer>
+    <footer>
+        <p>© 2025 Calice · Emiliano Fabrizi · <a href="{{ site.baseurl }}/termini.html">Termini di utilizzo</a> · <a
+                href="{{ site.baseurl }}/privacy.html">Privacy Policy</a></p>
+    </footer>
 
 </body>
+
 </html>
