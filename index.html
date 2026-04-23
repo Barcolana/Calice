@@ -2163,10 +2163,21 @@
         });
     });
 
+    const MAPPA_FILTRI = {
+        'spumante': ['spumante', 'metodo classico', 'prosecco', 'franciacorta'],
+        'dolce': ['dolce', 'passito', 'moscato'],
+        'bio': ['bio', 'naturale', 'biodinamico'],
+    };
+
     function applicaFiltro() {
         document.querySelectorAll('.wine-card').forEach(card => {
             const tipo = (card.dataset.tipo || '').toLowerCase();
-            const mostra = filtroAttivo === '' || tipo === filtroAttivo.toLowerCase();
+            let mostra = filtroAttivo === '';
+            if (!mostra) {
+                const filtroLow = filtroAttivo.toLowerCase();
+                const sinonimi = MAPPA_FILTRI[filtroLow] || [filtroLow];
+                mostra = sinonimi.some(s => tipo.includes(s));
+            }
             card.classList.toggle('filtrato', !mostra);
             if (!mostra) card.classList.add('nascosto');
         });
