@@ -607,6 +607,8 @@
         }
 
         // 📌 5) Matching super‑preciso
+        const STOPWORDS = new Set(['del', 'della', 'di', 'da', 'il', 'la', 'le', 'lo', 'dei', 'delle', 'al', 'sul', 'per', 'con', 'un', 'una', 'e', 'in', 'a']);
+
         function cercaVini(testo) {
             const viniDati = document.querySelectorAll('#datiVini div');
             const viniFindati = document.getElementById('viniFindati');
@@ -625,11 +627,11 @@
                 punteggio += similarita(testo, nome) * 7;
 
                 nome.split(' ').forEach(p => {
-                    if (p.length > 3 && testo.includes(p)) punteggio += 1.5;
+                    if (p.length > 3 && !STOPWORDS.has(p) && testo.includes(p)) punteggio += 1.5;
                 });
 
                 produttore.split(' ').forEach(p => {
-                    if (p.length > 3 && testo.includes(p)) punteggio += 2;
+                    if (p.length > 3 && !STOPWORDS.has(p) && testo.includes(p)) punteggio += 2;
                 });
 
                 if (punteggio > 2) {
@@ -639,7 +641,10 @@
 
             risultati.sort((a, b) => b.punteggio - a.punteggio);
 
-            const top = risultati.slice(0, 2);
+            const top = risultati.slice(0, 3).filter((r, i, arr) => {
+                if (i === 0) return true;
+                return r.punteggio >= arr[0].punteggio * 0.70;
+            });
 
             top.forEach(r => {
                 const v = r.v;
