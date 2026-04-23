@@ -650,6 +650,10 @@
             transition: all 0.25s;
         }
 
+        .wine-card.filtrato {
+            display: none !important;
+        }
+
         .wine-card:hover {
             border-color: var(--wine-light);
             box-shadow: 0 6px 24px rgba(160, 41, 59, 0.1);
@@ -2138,33 +2142,58 @@
 
 </body>
 <script>
+    // ── Ricerca testuale ──
     function cercaVino(query) {
         const q = query.toLowerCase().trim();
         document.querySelectorAll('.wine-card').forEach(card => {
             const testo = card.innerText.toLowerCase();
-            card.style.display = (q === '' || testo.includes(q)) ? 'block' : 'none';
+            card.style.display = (q === '' || testo.includes(q)) ? '' : 'none';
         });
     }
-    const chips = document.querySelectorAll('.cat-chip');
-    const cards = document.querySelectorAll('.wine-card');
 
+    // ── Filtro chip categorie ──
+    let filtroAttivo = '';
 
-    // PAGINAZIONE
+    document.querySelectorAll('.cat-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+            document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            filtroAttivo = chip.dataset.filtro || '';
+            applicaFiltro();
+        });
+    });
+
+    function applicaFiltro() {
+        document.querySelectorAll('.wine-card').forEach(card => {
+            const tipo = (card.dataset.tipo || '').toLowerCase();
+            const mostra = filtroAttivo === '' || tipo === filtroAttivo.toLowerCase();
+            card.classList.toggle('filtrato', !mostra);
+            if (!mostra) card.classList.add('nascosto');
+        });
+        viniMostrati = VINI_PER_PAGINA;
+        let count = 0;
+        document.querySelectorAll('.wine-card').forEach(card => {
+            if (card.classList.contains('filtrato')) return;
+            card.classList.toggle('nascosto', count >= VINI_PER_PAGINA);
+            count++;
+        });
+        aggiornaBottone();
+    }
+
+    // ── Paginazione ──
     const VINI_PER_PAGINA = 12;
     let viniMostrati = VINI_PER_PAGINA;
 
     function inizializzaPaginazione() {
-        const cards = document.querySelectorAll('.wine-card');
-        cards.forEach((card, i) => {
+        document.querySelectorAll('.wine-card').forEach((card, i) => {
             if (i >= VINI_PER_PAGINA) card.classList.add('nascosto');
         });
         aggiornaBottone();
     }
 
     function caricaAltri() {
-        const cards = document.querySelectorAll('.wine-card.nascosto');
         let mostrati = 0;
-        cards.forEach(card => {
+        document.querySelectorAll('.wine-card:not(.filtrato).nascosto').forEach(card => {
             if (mostrati < VINI_PER_PAGINA) {
                 card.classList.remove('nascosto');
                 mostrati++;
@@ -2175,15 +2204,16 @@
     }
 
     function aggiornaBottone() {
-        const rimasti = document.querySelectorAll('.wine-card.nascosto').length;
+        const rimasti = document.querySelectorAll('.wine-card:not(.filtrato).nascosto').length;
         const btn = document.getElementById('btnCaricaAltri');
         if (btn) btn.style.display = rimasti > 0 ? 'block' : 'none';
     }
 
-    document.addEventListener('DOMContentLoaded', inizializzaPaginazione);
     function scrollCarousel(dir) {
         document.getElementById('carouselTrack').scrollBy({ left: dir * 220, behavior: 'smooth' });
     }
+
+    document.addEventListener('DOMContentLoaded', inizializzaPaginazione);
 </script>
 
 
