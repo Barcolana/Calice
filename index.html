@@ -2148,22 +2148,7 @@
     const chips = document.querySelectorAll('.cat-chip');
     const cards = document.querySelectorAll('.wine-card');
 
-    chips.forEach(chip => {
-        chip.addEventListener('click', () => {
-            chips.forEach(c => c.classList.remove('active'));
-            chip.classList.add('active');
 
-            const filtro = chip.dataset.filtro || null;
-
-            cards.forEach(card => {
-                if (!filtro) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = card.getAttribute('data-tipo') === filtro ? 'block' : 'none';
-                }
-            });
-        });
-    });
     // PAGINAZIONE
     const VINI_PER_PAGINA = 12;
     let viniMostrati = VINI_PER_PAGINA;
