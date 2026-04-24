@@ -6,7 +6,7 @@ regione: Lombardia · Franciacorta DOCG
 tipo: Metodo Classico
 punteggio: 97
 prezzo: 180
-badge: 🥇 "TOP 2025"
+badge: "🥇 TOP 2025"
 emoji: 🍾
 gradazione: 13
 annata: 2015
