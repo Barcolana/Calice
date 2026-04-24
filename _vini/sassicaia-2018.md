@@ -6,7 +6,7 @@ regione: Toscana · DOC
 tipo: Rosso
 punteggio: 97
 prezzo: 280
-badge: "gioielleria"
+badge: "TOP 2025"
 emoji: 🐎
 gradazione: 14
 annata: 2018

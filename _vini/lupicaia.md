@@ -6,7 +6,7 @@ regione: Toscana · IGT
 tipo: Rosso
 punteggio: 97
 prezzo: 180
-badge: "gioielleria"
+badge: "TOP 2025"
 emoji: 🐎
 gradazione: 14.5
 annata: 2020

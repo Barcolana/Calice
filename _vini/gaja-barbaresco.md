@@ -7,7 +7,7 @@ tipo: Rosso
 vitigno: Nebbiolo
 punteggio: 97
 prezzo: 320
-badge: "gioielleria"
+badge: "TOP 2025"
 emoji: 🍂
 gradazione: 14
 annata: 2020

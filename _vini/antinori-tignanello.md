@@ -6,7 +6,7 @@ regione: Toscana · IGT
 tipo: Rosso
 punteggio: 97
 prezzo: 145
-badge: "gioielleria"
+badge: "TOP 2025"
 emoji: 🔥
 gradazione: 14
 annata: 2022

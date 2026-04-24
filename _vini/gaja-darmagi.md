@@ -7,7 +7,7 @@ tipo: Rosso
 vitigno: Cabernet Sauvignon (prevalente) + Merlot
 punteggio: 97
 prezzo: 420
-badge: "gioielleria"
+badge: "TOP 2025"
 emoji: 🐂
 gradazione: 14
 annata: 2020

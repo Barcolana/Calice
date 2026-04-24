@@ -7,7 +7,7 @@ tipo: Rosso
 vitigno: Sangiovese + Cabernet Sauvignon + Merlot
 punteggio: 98
 prezzo: 1600
-badge: "gioielleria"
+badge: "TOP 2025"
 emoji: 🦁
 gradazione: 14
 annata: 1997
