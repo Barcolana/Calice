@@ -2167,16 +2167,18 @@
         'spumante': ['spumante', 'metodo classico', 'prosecco', 'franciacorta'],
         'dolce': ['dolce', 'passito', 'moscato'],
         'bio': ['bio', 'naturale', 'biodinamico'],
+        'premiati': ['top 2025'],  // ← solo questa riga
     };
 
     function applicaFiltro() {
         document.querySelectorAll('.wine-card').forEach(card => {
             const tipo = (card.dataset.tipo || '').toLowerCase();
+            const badge = (card.dataset.badge || '').toLowerCase();
             let mostra = filtroAttivo === '';
             if (!mostra) {
                 const filtroLow = filtroAttivo.toLowerCase();
                 const sinonimi = MAPPA_FILTRI[filtroLow] || [filtroLow];
-                mostra = sinonimi.some(s => tipo.includes(s));
+                mostra = sinonimi.some(s => tipo.includes(s) || badge.includes(s));
             }
             card.classList.toggle('filtrato', !mostra);
             if (!mostra) card.classList.add('nascosto');
