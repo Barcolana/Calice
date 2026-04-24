@@ -597,16 +597,19 @@ title: Top Vini 2025 — Calice
             document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
+            const MAPPA = {
+                'Spumante': ['Spumante', 'Metodo Classico', 'Franciacorta', 'Prosecco'],
+                'Passito': ['Passito', 'Dolce', 'Moscato'],
+            };
+
             const cards = document.querySelectorAll('.vino-card');
             let visibili = 0;
             cards.forEach(card => {
                 const cardTipo = card.dataset.tipo || '';
-                if (tipo === 'tutti' || cardTipo === tipo) {
-                    card.style.display = '';
-                    visibili++;
-                } else {
-                    card.style.display = 'none';
-                }
+                const sinonimi = MAPPA[tipo] || [tipo];
+                const mostra = tipo === 'tutti' || sinonimi.includes(cardTipo);
+                card.style.display = mostra ? '' : 'none';
+                if (mostra) visibili++;
             });
 
             document.getElementById('count-label').textContent = visibili + ' vini selezionati';
