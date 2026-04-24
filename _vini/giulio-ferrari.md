@@ -6,7 +6,7 @@ regione: Trentino · Trento DOC
 tipo: Spumante
 vitigno: Chardonnay
 punteggio: 98
-prezzo: 150
+prezzo: 300
 badge: "🥇 TOP 2025"
 emoji: 🥂
 gradazione: 12.5
