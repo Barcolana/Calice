@@ -3,7 +3,7 @@ layout: vino
 nome: Cuvée Annamaria Clementi
 produttore: Ca' del Bosco · 2015
 regione: Lombardia · Franciacorta DOCG
-tipo: Metodo Classico
+tipo: tipo: Spumante
 punteggio: 97
 prezzo: 180
 badge: "🥇 TOP 2025"
