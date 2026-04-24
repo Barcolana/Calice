@@ -506,9 +506,11 @@
             let trovati = 0;
 
             viniDati.forEach(v => {
-                const cantinaNome = (v.getAttribute('data-cantina') || '').split(' · ')[0].trim();
-                if (cantinaNome.toLowerCase() === cantina.toLowerCase()) {
+                const cantinaDato = (v.getAttribute('data-cantina') || '').toLowerCase().trim();
+                const cantinaRicerca = cantina.toLowerCase().trim();
+                if (cantinaDato.includes(cantinaRicerca) || cantinaRicerca.includes(cantinaDato)) {
                     trovati++;
+                    // resto invariato...
                     const card = document.createElement('div');
                     card.className = 'wine-card';
                     card.innerHTML = `
