@@ -443,8 +443,8 @@
             {% assign vini_cantina = site.vini | where_exp: "v", "v.produttore contains nome_cantina" %}
             {% assign primo_vino = vini_cantina | first %}
 
-            <div class="cantina-card" onclick="mostraVini('{{ nome_cantina | escape }}', this)"
-                data-cantina="{{ nome_cantina | downcase | escape }}">
+            <div class="cantina-card" onclick="mostraVini(this)" data-cantina="{{ nome_cantina | downcase | escape }}"
+                data-cantina-display="{{ nome_cantina | escape }}">
                 <div class="cantina-nome">{{ nome_cantina }}</div>
                 <div class="cantina-regione">{{ primo_vino.regione }}</div>
                 <div class="cantina-count">
@@ -494,9 +494,12 @@
             });
         }
 
-        function mostraVini(cantina, cardEl) {
+        function mostraVini(cardEl) {
             document.querySelectorAll('.cantina-card').forEach(c => c.classList.remove('active'));
             cardEl.classList.add('active');
+
+            const cantina = cardEl.getAttribute('data-cantina');
+            const cantinaDisplay = cardEl.getAttribute('data-cantina-display');
 
             const viniDati = document.querySelectorAll('#datiVini div');
             const viniGrid = document.getElementById('viniGrid');
@@ -507,30 +510,28 @@
 
             viniDati.forEach(v => {
                 const cantinaDato = (v.getAttribute('data-cantina') || '').toLowerCase().trim();
-                const cantinaRicerca = cantina.toLowerCase().trim();
-                if (cantinaDato.includes(cantinaRicerca) || cantinaRicerca.includes(cantinaDato)) {
+                if (cantinaDato.includes(cantina) || cantina.includes(cantinaDato)) {
                     trovati++;
-                    // resto invariato...
                     const card = document.createElement('div');
                     card.className = 'wine-card';
                     card.innerHTML = `
-          <div class="wc-img">${v.getAttribute('data-emoji')}</div>
-          <div class="wc-body">
-            <div class="wc-region">${v.getAttribute('data-regione')}</div>
-            <div class="wc-name">${v.getAttribute('data-nome')}</div>
-            <div class="wc-producer">${v.getAttribute('data-produttore')}</div>
-            <div class="wc-footer">
-              <span class="wc-score">${v.getAttribute('data-punteggio')}</span>
-              <div class="wc-price">€${v.getAttribute('data-prezzo')} <small>/bt</small></div>
-            </div>
-            <a href="${baseurl}/vini/${v.getAttribute('data-slug')}" class="wc-link">→ Scopri questo vino</a>
-          </div>
-        `;
+              <div class="wc-img">${v.getAttribute('data-emoji')}</div>
+              <div class="wc-body">
+                <div class="wc-region">${v.getAttribute('data-regione')}</div>
+                <div class="wc-name">${v.getAttribute('data-nome')}</div>
+                <div class="wc-producer">${v.getAttribute('data-produttore')}</div>
+                <div class="wc-footer">
+                  <span class="wc-score">${v.getAttribute('data-punteggio')}</span>
+                  <div class="wc-price">€${v.getAttribute('data-prezzo')} <small>/bt</small></div>
+                </div>
+                <a href="${baseurl}/vini/${v.getAttribute('data-slug')}" class="wc-link">→ Scopri questo vino</a>
+              </div>
+            `;
                     viniGrid.appendChild(card);
                 }
             });
 
-            document.getElementById('titoloViniCantina').textContent = cantina + ' — ' + trovati + (trovati === 1 ? ' vino' : ' vini');
+            document.getElementById('titoloViniCantina').textContent = cantinaDisplay + ' — ' + trovati + (trovati === 1 ? ' vino' : ' vini');
             document.getElementById('viniCantina').classList.add('visible');
             document.getElementById('viniCantina').scrollIntoView({ behavior: 'smooth' });
         }
