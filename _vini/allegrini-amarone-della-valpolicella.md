@@ -6,7 +6,7 @@ regione: Veneto · DOCG
 tipo: Rosso
 punteggio: 95
 prezzo: 75
-badge: ""
+badge: "TOP 2025"
 emoji: 🍷
 gradazione: 16
 annata: 2020

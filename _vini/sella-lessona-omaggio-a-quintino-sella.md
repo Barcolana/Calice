@@ -6,7 +6,7 @@ regione: Piemonte · DOC
 tipo: Rosso
 punteggio: 94
 prezzo: 42
-badge: ""
+badge: "TOP 2025"
 emoji: 🍷
 gradazione: 13.5
 annata: 2019
