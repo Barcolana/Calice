@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Oslavje
 produttore: Radikon · 2018
+cantina: Radikon · 2018
 regione: Friuli · Venezia Giulia IGT
 tipo: Bianco
 vitigno: Chardonnay, Pinot Grigio, Sauvignon

@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Schidione (Magnum)
 produttore: Jacopo Biondi Santi
+cantina: Jacopo Biondi Santi
 regione: Toscana · IGT
 tipo: Rosso
 vitigno: Sangiovese + Cabernet Sauvignon + Merlot

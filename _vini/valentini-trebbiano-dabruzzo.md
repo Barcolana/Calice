@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Trebbiano d'Abruzzo
 produttore: Edoardo Valentini · 2018
+cantina: Edoardo Valentini · 2018
 regione: Abruzzo · Trebbiano d'Abruzzo DOC
 tipo: Bianco
 vitigno: Trebbiano d'Abruzzo

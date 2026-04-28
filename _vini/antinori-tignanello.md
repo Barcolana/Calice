@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Tignanello
 produttore: Marchesi Antinori · Tenuta Tignanello
+cantina: Marchesi Antinori · Tenuta Tignanello
 regione: Toscana · IGT
 tipo: Rosso
 punteggio: 97

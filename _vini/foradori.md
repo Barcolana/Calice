@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Granato Teroldego
 produttore: Foradori · 2019
+cantina: Foradori · 2019
 regione: Trentino · IGT
 tipo: Bio
 punteggio: 93

@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Jo Negroamaro
 produttore: Gianfranco Fino · 2021
+cantina: Gianfranco Fino · 2021
 regione: Puglia · Salento IGT
 tipo: Rosso
 vitigno: Negroamaro

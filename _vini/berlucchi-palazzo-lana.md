@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Franciacorta Palazzo Lana Extreme Riserva
 produttore: Berlucchi · 2015
+cantina: Berlucchi · 2015
 regione: Lombardia · Franciacorta DOCG
 tipo: Spumante
 vitigno: Chardonnay, Pinot Nero

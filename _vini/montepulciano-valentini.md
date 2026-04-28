@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Montepulciano d'Abruzzo
 produttore: Edoardo Valentini · 2017
+cantina: Edoardo Valentini · 2017
 regione: Abruzzo · Montepulciano d'Abruzzo DOC
 tipo: Rosso
 vitigno: Montepulciano

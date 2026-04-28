@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Chianti Classico Riserva
 produttore: Rocca delle Macìe · 2019
+cantina: Rocca delle Macìe · 2019
 regione: Toscana · DOCG
 tipo: Rosso
 punteggio: 91

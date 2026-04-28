@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Archetipo – Susumaniello
 produttore: Tenute Archetipo · 2021
+cantina: Tenute Archetipo · 2021
 regione: Puglia · IGT
 tipo: Bio
 punteggio: 92

@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Don Carmelo Rosso
 produttore: Tenute Al Bano Carrisi · 2020
+cantina: Tenute Al Bano Carrisi · 2020
 regione: Puglia · IGT
 tipo: Rosso
 punteggio: 88

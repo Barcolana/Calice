@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Ben Ryé Passito di Pantelleria
 produttore: Donnafugata · 2021
+cantina: Donnafugata · 2021
 regione: Sicilia · Passito di Pantelleria DOC
 tipo: Dolce
 vitigno: Zibibbo

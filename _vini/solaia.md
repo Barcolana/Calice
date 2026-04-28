@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Solaia
 produttore: Marchesi Antinori · Tenuta Tignanello
+cantina: Marchesi Antinori · Tenuta Tignanello
 regione: Toscana · IGT
 tipo: Rosso
 punteggio: 98

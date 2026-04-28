@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Lugana Pratto
 produttore: Cà dei Frati · 2021
+cantina: Cà dei Frati · 2021
 regione: Lombardia · Lugana DOC
 tipo: Bianco
 vitigno: Turbiana

@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Franciacorta Pas Dosé QdE
 produttore: Mosnel · 2017
+cantina: Mosnel · 2017
 regione: Lombardia · Franciacorta DOCG
 tipo: Spumante
 vitigno: Chardonnay, Pinot Nero, Pinot Bianco

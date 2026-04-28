@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Praepositus Sauvignon
 produttore: Abbazia di Novacella · 2022
+cantina: Abbazia di Novacella · 2022
 regione: Trentino · DOC
 tipo: Bianco
 punteggio: 93

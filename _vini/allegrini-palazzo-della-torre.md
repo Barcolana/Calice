@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Palazzo della Torre
 produttore: Allegrini · 2019
+cantina: Allegrini · 2019
 regione: Veneto · Veronese IGT
 tipo: Rosso
 vitigno: Corvina, Rondinella, Sangiovese

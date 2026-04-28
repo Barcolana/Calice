@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Amarone della Valpolicella Classico
 produttore: Bertani · 2015
+cantina: Bertani · 2015
 regione: Veneto · DOCG
 tipo: Rosso
 punteggio: 95

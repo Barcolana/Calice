@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Valtellina Superiore Grumello
 produttore: Aldo Rainoldi · 2019
+cantina: Aldo Rainoldi · 2019
 regione: Lombardia · Valtellina Superiore DOCG
 tipo: Rosso
 vitigno: Nebbiolo

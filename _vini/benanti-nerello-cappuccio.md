@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Etna Bianco Superiore Pietramarina
 produttore: Benanti · 2020
+cantina: Benanti · 2020
 regione: Sicilia · Etna DOC
 tipo: Bianco
 vitigno: Carricante

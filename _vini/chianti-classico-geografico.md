@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Chianti Classico
 produttore: Geografico
+cantina: Geografico
 regione: Toscana · DOCG
 tipo: Rosso
 vitigno: Sangiovese (prevalente) + Canaiolo

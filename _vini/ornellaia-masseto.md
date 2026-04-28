@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Masseto
 produttore: Tenuta dell'Ornellaia
+cantina: Tenuta dell'Ornellaia
 regione: Toscana · IGT
 tipo: Rosso
 punteggio: 99

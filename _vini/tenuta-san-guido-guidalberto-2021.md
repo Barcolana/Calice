@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Guidalberto
 produttore: Tenuta San Guido · 2021
+cantina: Tenuta San Guido · 2021
 regione: Toscana · Toscana IGT
 tipo: Rosso
 vitigno: Cabernet Sauvignon, Merlot

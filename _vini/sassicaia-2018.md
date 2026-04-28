@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Sassicaia
 produttore: Tenuta San Guido
+cantina: Tenuta San Guido
 regione: Toscana · DOC
 tipo: Rosso
 punteggio: 97

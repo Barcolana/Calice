@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Barolo Riserva del Fondatore Riserva
 produttore: Marchesi di Barolo · 2015
+cantina: Marchesi di Barolo · 2015
 regione: Piemonte · Barolo DOCG
 tipo: Rosso
 vitigno: Nebbiolo

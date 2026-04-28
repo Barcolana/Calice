@@ -432,7 +432,7 @@
 
             {% assign cantine_pulite = "" | split: "" %}
             {% for vino in site.vini %}
-            {% assign nome_cantina = vino.produttore | split: ' · ' | first | strip %}
+            {% assign nome_cantina = vino.cantina | strip %}
             {% unless cantine_pulite contains nome_cantina %}
             {% assign cantine_pulite = cantine_pulite | push: nome_cantina %}
             {% endunless %}
@@ -440,7 +440,7 @@
             {% assign cantine = cantine_pulite | sort %}
 
             {% for nome_cantina in cantine %}
-            {% assign vini_cantina = site.vini | where_exp: "v", "v.produttore contains nome_cantina" %}
+            {% assign vini_cantina = site.vini | where_exp: "v", "v.cantina == nome_cantina" %}
             {% assign primo_vino = vini_cantina | first %}
 
             <div class="cantina-card" onclick="mostraVini(this)" data-cantina="{{ nome_cantina | downcase | escape }}"
@@ -474,10 +474,9 @@
     <div id="datiVini" style="display:none;">
         {% for vino in site.vini %}
         <div data-nome="{{ vino.nome | escape }}" data-produttore="{{ vino.produttore | escape }}"
-            data-cantina="{{ vino.produttore | split: ' · ' | first | downcase | escape }}"
-            data-regione="{{ vino.regione | escape }}" data-tipo="{{ vino.tipo }}" data-punteggio="{{ vino.punteggio }}"
-            data-prezzo="{{ vino.prezzo }}" data-emoji="{{ vino.emoji }}" data-slug="{{ vino.slug }}"
-            data-baseurl="{{ site.baseurl }}"></div>
+            data-cantina="{{ vino.cantina | downcase | escape }}" data-regione="{{ vino.regione | escape }}"
+            data-tipo="{{ vino.tipo }}" data-punteggio="{{ vino.punteggio }}" data-prezzo="{{ vino.prezzo }}"
+            data-emoji="{{ vino.emoji }}" data-slug="{{ vino.slug }}" data-baseurl="{{ site.baseurl }}"></div>
         {% endfor %}
     </div>
 

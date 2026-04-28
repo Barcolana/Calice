@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Franciacorta Prestige Cuvée
 produttore: Bellavista · NV
+cantina: Bellavista · NV
 regione: Lombardia · DOCG
 tipo: Spumante
 punteggio: 93

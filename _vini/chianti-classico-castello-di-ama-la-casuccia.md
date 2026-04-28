@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Chianti Classico Gran Selezione "La Casuccia"
 produttore: Castello di Ama
+cantina: Castello di Ama
 regione: Toscana · DOCG
 tipo: Rosso
 punteggio: 96

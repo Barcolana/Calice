@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Es Primitivo di Manduria
 produttore: Gianfranco Fino · 2020
+cantina: Gianfranco Fino · 2020
 regione: Puglia · Primitivo di Manduria DOC
 tipo: Rosso
 vitigno: Primitivo

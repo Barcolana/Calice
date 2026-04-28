@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Gewürztraminer Kolbenhof
 produttore: Hofstätter · 2022
+cantina: Hofstätter · 2022
 regione: Alto Adige · Alto Adige DOC
 tipo: Bianco
 vitigno: Gewürztraminer

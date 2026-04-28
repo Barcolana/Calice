@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Vino Nobile di Montepulciano
 produttore: Avignonesi
+cantina: Avignonesi
 regione: Toscana · DOCG
 tipo: Rosso
 vitigno: Prugnolo Gentile (Sangiovese)

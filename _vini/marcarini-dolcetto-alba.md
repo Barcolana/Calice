@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Dolcetto d'Alba Fontanazza
 produttore: Marcarini · 2022
+cantina: Marcarini · 2022
 regione: Piemonte · Dolcetto d'Alba DOC
 tipo: Rosso
 vitigno: Dolcetto

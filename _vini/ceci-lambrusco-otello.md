@@ -1,7 +1,8 @@
----
+﻿---
 layout: vino
 nome: Otello Nero di Lambrusco
 produttore: Ceci · 2023
+cantina: Ceci · 2023
 regione: Emilia · Lambrusco IGT
 tipo: Rosso
 vitigno: Lambrusco Maestri
