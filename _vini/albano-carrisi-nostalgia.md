@@ -1,21 +1,21 @@
 ---
 layout: vino
 nome: Nostalgia
-produttore: Tenute Al Bano Carrisi 
+produttore: Tenute Al Bano Carrisi · 2019
 cantina: Tenute Al Bano Carrisi
-regione: Puglia � Primitivo di Manduria DOC
+regione: Puglia · Primitivo di Manduria DOC
 tipo: Rosso
 vitigno: Primitivo
 punteggio: 90
 prezzo: 28
 badge: ""
-emoji: ??
+emoji: 🎵
 gradazione: 14.5
 annata: 2019
-descrizione: Nostalgia � il Primitivo di punta di Al Bano Carrisi, il celebre cantante che ha trasformato la sua tenuta di Cellino San Marco in una realt� vitivinicola di qualit�. Uve Primitivo in purezza da vigne adulte in terra salentina. Profumi di mora matura, prugna, carruba e spezie dolci. In bocca � caldo, avvolgente, con una morbidezza tipica del vitigno e un finale persistente. Un vino che racconta il Salento.
+descrizione: Nostalgia è il Primitivo di punta di Tenute Al Bano Carrisi, espressione del Salento più caldo e generoso. Uve Primitivo in purezza da vigne mature. Profumi intensi di mora, prugna, carruba e spezie dolci. Al palato è morbido, avvolgente e con un finale lungo e fruttato che richiama la mediterraneità del territorio.
 abbinamenti:
-  - ?? Bombette pugliesi
-  - ?? Orecchiette al rag�
-  - ?? Canestrato pugliese
-  - ?? Agnello al forno con patate
+  - 🥩 Bombette pugliesi
+  - 🍝 Orecchiette al ragù
+  - 🧀 Canestrato pugliese
+  - 🐑 Agnello al forno con patate
 ---
