@@ -1,19 +1,21 @@
 ---
 layout: vino
 nome: Don Carmelo Rosso
-produttore: Tenute Albano Carrisi  
-cantina: Tenute Albano Carrisi  
-regione: Puglia � IGT
+produttore: Tenute Albano Carrisi · 2020
+cantina: Tenute Albano Carrisi
+regione: Puglia · Salento IGT
 tipo: Rosso
+vitigno: Negroamaro, Primitivo
 punteggio: 88
 prezzo: 16
 badge: ""
-emoji: ??
+emoji: 🍷
 gradazione: 13.5
 annata: 2020
-descrizione: Don Carmelo � il vino di punta delle Tenute Al Bano Carrisi a Cellino San Marco, nel cuore del Salento. Prodotto da uve Negroamaro e Primitivo coltivate su terreni argillosi tipici della Puglia profonda. Prende il nome dal padre di Al Bano � un omaggio alle radici contadine di una famiglia che ha fatto del vino una passione autentica. Colore rosso rubino intenso. Profumi di frutti neri maturi, tabacco, spezie mediterranee e una nota balsamica. Al palato � caldo, rotondo e con una tannicit� morbida tipica dei grandi rossi salentini.
+descrizione: Don Carmelo è il vino di punta delle Tenute Al Bano Carrisi a Cellino San Marco, nel cuore del Salento. Prende il nome dal padre di Al Bano, omaggio alle radici contadine della famiglia. Profumi di frutti neri maturi, tabacco, spezie mediterranee e note balsamiche. Al palato è caldo, rotondo con tannini morbidi tipici dei grandi rossi salentini.
 abbinamenti:
-  - ?? Carni rosse
-  - ?? Pasta al rag�
-  - ?? Formaggi stagionati
+  - 🥩 Carni rosse alla brace
+  - 🍝 Pasta al ragù barese
+  - 🧀 Formaggi stagionati pugliesi
+  - 🐑 Agnello al forno
 ---
