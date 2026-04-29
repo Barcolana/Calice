@@ -1,7 +1,7 @@
 ---
 layout: vino
 nome: Don Carmelo Rosso
-produttore: Tenute Albano Carlisi · 2020
+produttore: Tenute Albano Carrisi · 2020
 regione: Puglia · IGT
 tipo: Rosso
 punteggio: 88
