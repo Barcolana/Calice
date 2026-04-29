@@ -1,7 +1,7 @@
----
+﻿---
 layout: vino
 nome: Barolo Brunate
-produttore: Marcarini · 2018
+produttore: Marcarini
 regione: Piemonte · Barolo DOCG
 tipo: Rosso
 vitigno: Nebbiolo

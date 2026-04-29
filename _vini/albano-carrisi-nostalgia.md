@@ -1,7 +1,7 @@
----
+﻿---
 layout: vino
 nome: Nostalgia
-produttore: Tenute Albano Carrisi · 2019
+produttore: Tenute Albano Carrisi
 regione: Puglia · Primitivo di Manduria DOC
 tipo: Rosso
 vitigno: Primitivo

@@ -1,4 +1,4 @@
----
+﻿---
 layout: vino
 nome: Chianti Classico Gran Selezione "La Casuccia"
 produttore: Castello di Ama

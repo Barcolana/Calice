@@ -1,7 +1,7 @@
----
+﻿---
 layout: vino
 nome: Mille e una Notte
-produttore: Donnafugata · 2019
+produttore: Donnafugata
 regione: Sicilia · Contessa Entellina DOC
 tipo: Rosso
 vitigno: Nero d'Avola, Syrah, Petit Verdot

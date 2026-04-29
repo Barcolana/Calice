@@ -1,7 +1,7 @@
----
+﻿---
 layout: vino
 nome: Cirò Rosso Classico Superiore
-produttore: Librandi · 2020
+produttore: Librandi
 regione: Calabria · DOC
 tipo: Rosso
 punteggio: 89

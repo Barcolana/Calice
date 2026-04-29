@@ -1,7 +1,7 @@
----
+﻿---
 layout: vino
 nome: Aleatico di Gradoli
-produttore: Cantina Cooperativa di Gradoli · 2022
+produttore: Cantina Cooperativa di Gradoli
 regione: Lazio · DOC
 tipo: Dolce
 punteggio: 88

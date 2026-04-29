@@ -1,4 +1,4 @@
----
+﻿---
 layout: vino
 nome: Chianti Classico
 produttore: Geografico

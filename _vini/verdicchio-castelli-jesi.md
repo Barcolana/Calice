@@ -1,7 +1,7 @@
----
+﻿---
 layout: vino
 nome: Verdicchio dei Castelli di Jesi Classico Superiore
-produttore: Umani Ronchi · 2022
+produttore: Umani Ronchi
 regione: Marche · DOC
 tipo: Bianco
 punteggio: 91

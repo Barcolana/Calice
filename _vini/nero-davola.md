@@ -1,7 +1,7 @@
----
+﻿---
 layout: vino
 nome: Nero d'Avola Riserva
-produttore: Donnafugata · 2020
+produttore: Donnafugata
 regione: Sicilia · DOC
 tipo: Rosso
 punteggio: 91
