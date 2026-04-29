@@ -443,8 +443,7 @@
             {% assign vini_cantina = site.vini | where_exp: "v", "v.produttore contains nome_cantina" %}
             {% assign primo_vino = vini_cantina | first %}
 
-            <div class="cantina-card" onclick="mostraVini(this)"
-                data-cantina="{{ vino.produttore | split: ' · ' | first | downcase | escape }}"
+            <div class="cantina-card" onclick="mostraVini(this)" data-cantina="{{ nome_cantina | downcase | escape }}"
                 data-cantina-display="{{ nome_cantina | escape }}">
                 <div class="cantina-nome">{{ nome_cantina }}</div>
                 <div class="cantina-regione">{{ primo_vino.regione }}</div>
@@ -475,7 +474,7 @@
     <div id="datiVini" style="display:none;">
         {% for vino in site.vini %}
         <div data-nome="{{ vino.nome | escape }}" data-produttore="{{ vino.produttore | escape }}"
-            data-cantina="{{ vino.cantina | strip | downcase | escape }}"
+            data-cantina="{{ vino.produttore | split: ' · ' | first | downcase | escape }}"
             data-regione="{{ vino.regione | strip | downcase | escape }}" data-tipo="{{ vino.tipo }}"
             data-punteggio="{{ vino.punteggio }}" data-prezzo="{{ vino.prezzo }}" data-emoji="{{ vino.emoji }}"
             data-slug="{{ vino.slug }}" data-baseurl="{{ site.baseurl }}"></div>
