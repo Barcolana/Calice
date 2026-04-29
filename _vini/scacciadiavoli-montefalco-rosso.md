@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Montefalco Rosso
-produttore: Scacciadiavoli · 2021
+produttore: Scacciadiavoli
 cantina: Scacciadiavoli
 regione: Umbria · Montefalco DOC
 tipo: Rosso

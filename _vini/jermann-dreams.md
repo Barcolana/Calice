@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Dreams
-produttore: Jermann · 2021
+produttore: Jermann
 cantina: Jermann
 regione: Friuli · Venezia Giulia IGT
 tipo: Bianco

@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Soave Sereole
-produttore: Bertani · 2022
+produttore: Bertani
 cantina: Bertani
 regione: Veneto · Soave DOC
 tipo: Bianco

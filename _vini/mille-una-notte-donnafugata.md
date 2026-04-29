@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Mille e una Notte
-produttore: Donnafugata · 2019
+produttore: Donnafugata
 cantina: Donnafugata
 regione: Sicilia · Contessa Entellina DOC
 tipo: Rosso

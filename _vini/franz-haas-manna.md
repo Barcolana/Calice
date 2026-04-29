@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Manna
-produttore: Franz Haas · 2022
+produttore: Franz Haas
 cantina: Franz Haas
 regione: Alto Adige · Alto Adige DOC
 tipo: Bianco

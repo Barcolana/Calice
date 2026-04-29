@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Etna Rosso Serra della Contessa
-produttore: Benanti · 2019
+produttore: Benanti
 cantina: Benanti
 regione: Sicilia · Etna DOC
 tipo: Rosso

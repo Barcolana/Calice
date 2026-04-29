@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Siepi
-produttore: Mazzei · 2019
+produttore: Mazzei
 cantina: Mazzei
 regione: Toscana · Toscana IGT
 tipo: Rosso

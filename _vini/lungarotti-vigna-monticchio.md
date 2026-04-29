@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Rubesco Vigna Monticchio
-produttore: Lungarotti · 2018
+produttore: Lungarotti
 cantina: Lungarotti
 regione: Umbria · DOCG
 tipo: Rosso

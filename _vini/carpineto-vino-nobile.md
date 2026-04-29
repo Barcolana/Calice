@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Vino Nobile di Montepulciano Riserva
-produttore: Carpineto · 2017
+produttore: Carpineto
 cantina: Carpineto
 regione: Toscana · Vino Nobile di Montepulciano DOCG
 tipo: Rosso

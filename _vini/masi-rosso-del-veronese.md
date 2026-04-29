@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Campofiorin Rosso del Veronese
-produttore: Masi · 2020
+produttore: Masi
 cantina: Masi
 regione: Veneto · IGT
 tipo: Rosso

@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Sagana Nero d'Avola
-produttore: Cusumano · 2019
+produttore: Cusumano
 cantina: Cusumano
 regione: Sicilia · Sicilia DOC
 tipo: Rosso

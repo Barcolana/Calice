@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Chianti Classico Riserva di Fizzano
-produttore: Rocca delle Macìe · 2019
+produttore: Rocca delle Macìe
 cantina: Rocca delle Macìe
 regione: Toscana · Chianti Classico DOCG
 tipo: Rosso

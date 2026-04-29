@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Vermentino di Gallura Superiore
-produttore: Capichera · 2022
+produttore: Capichera
 cantina: Capichera
 regione: Sardegna · DOCG
 tipo: Bianco

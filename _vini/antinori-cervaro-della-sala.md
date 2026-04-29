@@ -1,7 +1,7 @@
 ﻿---
 layout: vino
 nome: Cervaro della Sala
-produttore: Antinori · 2021
+produttore: Antinori
 cantina: Antinori
 regione: Umbria · Umbria IGT
 tipo: Bianco
