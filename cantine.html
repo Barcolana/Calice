@@ -432,7 +432,7 @@
 
             {% assign cantine_pulite = "" | split: "" %}
             {% for vino in site.vini %}
-            {% assign nome_cantina = vino.cantina | strip %}
+            {% assign nome_cantina = vino.produttore | split: ' · ' | first | strip %}
             {% unless cantine_pulite contains nome_cantina %}
             {% assign cantine_pulite = cantine_pulite | push: nome_cantina %}
             {% endunless %}
@@ -440,10 +440,11 @@
             {% assign cantine = cantine_pulite | sort %}
 
             {% for nome_cantina in cantine %}
-            {% assign vini_cantina = site.vini | where_exp: "v", "v.cantina == nome_cantina" %}
+            {% assign vini_cantina = site.vini | where_exp: "v", "v.produttore contains nome_cantina" %}
             {% assign primo_vino = vini_cantina | first %}
 
-            <div class="cantina-card" onclick="mostraVini(this)" data-cantina="{{ nome_cantina | downcase | escape }}"
+            <div class="cantina-card" onclick="mostraVini(this)"
+                data-cantina="{{ vino.produttore | split: ' · ' | first | downcase | escape }}"
                 data-cantina-display="{{ nome_cantina | escape }}">
                 <div class="cantina-nome">{{ nome_cantina }}</div>
                 <div class="cantina-regione">{{ primo_vino.regione }}</div>
