@@ -2,7 +2,7 @@
 layout: vino
 nome: Poggio della Costa
 produttore: Sergio Mottura · 2022
-cantina: Sergio Mottura · 2022
+cantina: Sergio Mottura
 regione: Lazio · IGT
 tipo: Bio
 punteggio: 92

@@ -2,7 +2,7 @@
 layout: vino
 nome: Repertorio
 produttore: Cantine del Notaio · 2020
-cantina: Cantine del Notaio · 2020
+cantina: Cantine del Notaio
 regione: Basilicata · Aglianico del Vulture DOC
 tipo: Rosso
 punteggio: 92

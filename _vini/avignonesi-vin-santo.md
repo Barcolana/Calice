@@ -2,7 +2,7 @@
 layout: vino
 nome: Vin Santo di Montepulciano Occhio di Pernice
 produttore: Avignonesi · 2007
-cantina: Avignonesi · 2007
+cantina: Avignonesi
 regione: Toscana · Vin Santo di Montepulciano DOC
 tipo: Dolce
 vitigno: Prugnolo Gentile

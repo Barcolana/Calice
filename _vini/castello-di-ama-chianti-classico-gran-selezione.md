@@ -2,7 +2,7 @@
 layout: vino
 nome: Chianti Classico Gran Selezione Vigneto Bellavista
 produttore: Castello di Ama · 2019
-cantina: Castello di Ama · 2019
+cantina: Castello di Ama
 regione: Toscana · Chianti Classico DOCG
 tipo: Rosso
 vitigno: Sangiovese

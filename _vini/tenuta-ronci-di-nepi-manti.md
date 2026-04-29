@@ -2,7 +2,7 @@
 layout: vino
 nome: Manti Bianco
 produttore: Tenuta Ronci · Nepi
-cantina: Tenuta Ronci · Nepi
+cantina: Tenuta Ronci
 regione: Lazio · IGT
 tipo: Bianco
 punteggio: 87

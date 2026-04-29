@@ -2,7 +2,7 @@
 layout: vino
 nome: Rubino
 produttore: Todini · 2019
-cantina: Todini · 2019
+cantina: Todini
 regione: Umbria · Colli Martani DOC
 tipo: Rosso
 vitigno: Sangiovese, Cabernet Sauvignon, Merlot

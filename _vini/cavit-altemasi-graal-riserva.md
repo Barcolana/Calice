@@ -2,7 +2,7 @@
 layout: vino
 nome: Altemasi Graal Riserva
 produttore: Cavit · 2017
-cantina: Cavit · 2017
+cantina: Cavit
 regione: Trentino · DOC
 tipo: Spumante
 punteggio: 93

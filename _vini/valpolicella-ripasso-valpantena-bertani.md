@@ -2,7 +2,7 @@
 layout: vino
 nome: Valpolicella Ripasso Valpantena
 produttore: Bertani · Valpantena
-cantina: Bertani · Valpantena
+cantina: Bertani
 regione: Veneto · DOC
 tipo: Rosso
 punteggio: 90

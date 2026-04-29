@@ -2,7 +2,7 @@
 layout: vino
 nome: Vernaccia di San Gimignano Riserva
 produttore: Geografico · 2021
-cantina: Geografico · 2021
+cantina: Geografico
 regione: Toscana · Vernaccia di San Gimignano DOCG
 tipo: Bianco
 vitigno: Vernaccia

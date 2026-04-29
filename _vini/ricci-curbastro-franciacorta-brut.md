@@ -2,7 +2,7 @@
 layout: vino
 nome: Franciacorta Brut
 produttore: Ricci Curbastro · 2019
-cantina: Ricci Curbastro · 2019
+cantina: Ricci Curbastro
 regione: Lombardia · Franciacorta DOCG
 tipo: Spumante
 vitigno: Chardonnay, Pinot Nero

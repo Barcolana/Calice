@@ -2,7 +2,7 @@
 layout: vino
 nome: Soave Classico Calvarino
 produttore: Pieropan · 2021
-cantina: Pieropan · 2021
+cantina: Pieropan
 regione: Veneto · Soave Classico DOC
 tipo: Bianco
 vitigno: Garganega, Trebbiano di Soave

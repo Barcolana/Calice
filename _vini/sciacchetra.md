@@ -2,7 +2,7 @@
 layout: vino
 nome: Sciacchetrà
 produttore: Walter De Battè · 2020
-cantina: Walter De Battè · 2020
+cantina: Walter De Battè
 regione: Liguria · DOC
 tipo: Dolce
 punteggio: 94

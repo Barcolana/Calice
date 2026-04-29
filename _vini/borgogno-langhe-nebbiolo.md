@@ -2,7 +2,7 @@
 layout: vino
 nome: Langhe Nebbiolo
 produttore: Borgogno · 2021
-cantina: Borgogno · 2021
+cantina: Borgogno
 regione: Piemonte · Langhe DOC
 tipo: Rosso
 vitigno: Nebbiolo

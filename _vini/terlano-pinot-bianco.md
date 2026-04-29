@@ -2,7 +2,7 @@
 layout: vino
 nome: Pinot Bianco Vorberg Riserva
 produttore: Terlano · 2020
-cantina: Terlano · 2020
+cantina: Terlano
 regione: Alto Adige · Alto Adige DOC
 tipo: Bianco
 vitigno: Pinot Bianco

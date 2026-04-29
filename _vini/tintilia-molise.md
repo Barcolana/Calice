@@ -2,7 +2,7 @@
 layout: vino
 nome: Tintilia del Molise
 produttore: Di Majo Norante · 2020
-cantina: Di Majo Norante · 2020
+cantina: Di Majo Norante
 regione: Molise · DOC
 tipo: Rosso
 punteggio: 88

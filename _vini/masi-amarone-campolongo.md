@@ -2,7 +2,7 @@
 layout: vino
 nome: Amarone della Valpolicella Campolongo di Torbe
 produttore: Masi · 2013
-cantina: Masi · 2013
+cantina: Masi
 regione: Veneto · Amarone della Valpolicella DOCG
 tipo: Rosso
 vitigno: Corvina, Rondinella, Molinara

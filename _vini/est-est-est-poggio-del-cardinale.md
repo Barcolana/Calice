@@ -2,7 +2,7 @@
 layout: vino
 nome: Est! Est!! Est!!! Poggio del Cardinale
 produttore: Antica Cantina Leonardi · Montefiascone
-cantina: Antica Cantina Leonardi · Montefiascone
+cantina: Antica Cantina Leonardi
 regione: Lazio · DOC
 tipo: Bianco
 punteggio: 88

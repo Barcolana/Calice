@@ -2,7 +2,7 @@
 layout: vino
 nome: Cervaro della Sala
 produttore: Antinori · 2021
-cantina: Antinori · 2021
+cantina: Antinori
 regione: Umbria · Umbria IGT
 tipo: Bianco
 vitigno: Chardonnay, Grechetto

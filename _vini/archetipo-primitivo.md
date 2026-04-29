@@ -2,7 +2,7 @@
 layout: vino
 nome: Primitivo in Purezza
 produttore: Archetipo · 2020
-cantina: Archetipo · 2020
+cantina: Archetipo
 regione: Puglia · Primitivo di Manduria DOC
 tipo: Rosso
 vitigno: Primitivo
