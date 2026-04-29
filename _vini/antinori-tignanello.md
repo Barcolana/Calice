@@ -1,4 +1,4 @@
-﻿---
+---
 layout: vino
 nome: Tignanello
 produttore: Marchesi Antinori · Tenuta Tignanello

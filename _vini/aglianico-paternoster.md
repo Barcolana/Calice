@@ -1,7 +1,7 @@
-﻿--- 
+--- 
 layout: vino
 nome: Aglianico del Vulture Synthesi
-produttore: Paternoster
+produttore: Paternoster · 2020
 regione: Basilicata · DOC
 tipo: Rosso
 punteggio: 93

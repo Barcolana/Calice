@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Giulio Ferrari Riserva del Fondatore
-produttore: Ferrari
+produttore: Ferrari · 2004
 regione: Trentino · Trento DOC
 tipo: Spumante
 vitigno: Chardonnay

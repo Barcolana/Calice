@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Sforzato di Valtellina Canua
-produttore: Aldo Rainoldi
+produttore: Aldo Rainoldi · 2019
 regione: Lombardia · Sforzato di Valtellina DOCG
 tipo: Rosso
 vitigno: Nebbiolo

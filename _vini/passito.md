@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Passito di Pantelleria
-produttore: Donnafugata
+produttore: Donnafugata · 2020
 regione: Sicilia · DOC
 tipo: Dolce
 punteggio: 94

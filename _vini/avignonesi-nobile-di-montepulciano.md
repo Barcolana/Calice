@@ -1,4 +1,4 @@
-﻿---
+---
 layout: vino
 nome: Vino Nobile di Montepulciano
 produttore: Avignonesi

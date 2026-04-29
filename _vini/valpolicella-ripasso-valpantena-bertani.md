@@ -1,4 +1,4 @@
-﻿---
+---
 layout: vino
 nome: Valpolicella Ripasso Valpantena
 produttore: Bertani · Valpantena

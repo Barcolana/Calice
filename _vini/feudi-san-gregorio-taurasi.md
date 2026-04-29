@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Taurasi Piano di Montevergine Riserva
-produttore: Feudi di San Gregorio
+produttore: Feudi di San Gregorio · 2016
 regione: Campania · Taurasi DOCG
 tipo: Rosso
 vitigno: Aglianico

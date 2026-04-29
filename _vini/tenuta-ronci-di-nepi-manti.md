@@ -1,4 +1,4 @@
-﻿---
+---
 layout: vino
 nome: Manti Bianco
 produttore: Tenuta Ronci · Nepi

@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Pinot Nero Schweizer
-produttore: Franz Haas
+produttore: Franz Haas · 2020
 regione: Alto Adige · Alto Adige DOC
 tipo: Rosso
 vitigno: Pinot Nero

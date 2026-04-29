@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Trento DOC Perlé
-produttore: Ferrari
+produttore: Ferrari · 2017
 regione: Trentino · DOC
 tipo: Spumante
 punteggio: 94

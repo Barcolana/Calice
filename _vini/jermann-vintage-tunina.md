@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Vintage Tunina
-produttore: Jermann
+produttore: Jermann · 2021
 regione: Friuli · IGT
 tipo: Bianco
 punteggio: 95

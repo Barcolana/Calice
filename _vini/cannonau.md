@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Cannonau di Sardegna
-produttore: Argiolas
+produttore: Argiolas · 2021
 regione: Sardegna · DOC
 tipo: Rosso
 punteggio: 89
