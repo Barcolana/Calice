@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Amarone della Valpolicella Classico
-produttore: Allegrini
+produttore: Allegrini · 2020
 regione: Veneto · DOCG
 tipo: Rosso
 punteggio: 95

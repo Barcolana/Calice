@@ -1,4 +1,4 @@
-﻿---
+---
 layout: vino
 nome: Poggio Triale
 produttore: Tenuta La Pazzaglia

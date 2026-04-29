@@ -1,4 +1,4 @@
-﻿---
+---
 layout: vino
 nome: Schidione (Magnum)
 produttore: Jacopo Biondi Santi

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: vino
 nome: Barolo Cannubi
 produttore: Marchesi di Barolo

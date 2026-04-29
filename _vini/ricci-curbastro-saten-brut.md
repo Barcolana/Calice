@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Franciacorta Satèn Brut
-produttore: Ricci Curbastro
+produttore: Ricci Curbastro · 2021
 regione: Lombardia · DOCG
 tipo: Spumante
 punteggio: 92

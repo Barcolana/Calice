@@ -1,4 +1,4 @@
-﻿---
+---
 layout: vino
 nome: Franciacorta Brut
 produttore: Mosnel · NV

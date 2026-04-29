@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Torrette Supérieur
-produttore: Les Crêtes
+produttore: Les Crêtes · 2021
 regione: Valle d'Aosta · DOC
 tipo: Rosso
 punteggio: 90

@@ -475,9 +475,9 @@
         {% for vino in site.vini %}
         <div data-nome="{{ vino.nome | escape }}" data-produttore="{{ vino.produttore | escape }}"
             data-cantina="{{ vino.produttore | split: ' · ' | first | downcase | escape }}"
-            data-regione="{{ vino.regione | strip | downcase | escape }}" data-tipo="{{ vino.tipo }}"
-            data-punteggio="{{ vino.punteggio }}" data-prezzo="{{ vino.prezzo }}" data-emoji="{{ vino.emoji }}"
-            data-slug="{{ vino.slug }}" data-baseurl="{{ site.baseurl }}"></div>
+            data-regione="{{ vino.regione | escape }}" data-tipo="{{ vino.tipo }}" data-punteggio="{{ vino.punteggio }}"
+            data-prezzo="{{ vino.prezzo }}" data-emoji="{{ vino.emoji }}" data-slug="{{ vino.slug }}"
+            data-baseurl="{{ site.baseurl }}"></div>
         {% endfor %}
     </div>
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: vino
 nome: Sangiovese "Paterno"
 produttore: Trappolini · Castiglione in Teverina

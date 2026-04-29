@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Montiano
-produttore: Famiglia Cotarella
+produttore: Famiglia Cotarella · 2019
 regione: Lazio · IGP
 tipo: Rosso
 punteggio: 94

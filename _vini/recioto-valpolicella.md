@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Recioto della Valpolicella
-produttore: Bertani
+produttore: Bertani · 2019
 regione: Veneto · DOCG
 tipo: Dolce
 punteggio: 93

@@ -516,7 +516,7 @@ title: Top Vini 2025 — Calice
             </div>
             <div class="hero-stat">
                 <strong>{% assign punteggio_medio = 0 %}{% for v in top_vini %}{% assign punteggio_medio =
-                    {% if top_vini.size > 0 %}{{ punteggio_medio | divided_by: top_vini.size }}{% else %}0{% endif %}
+                    punteggio_medio | plus: v.punteggio %}{% endfor %}{{ punteggio_medio | divided_by: top_vini.size
                     }}</strong>
                 <span>Punteggio medio</span>
             </div>

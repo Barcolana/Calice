@@ -1,7 +1,7 @@
-﻿---
+---
 layout: vino
 nome: Fiano di Avellino Terre di Dora
-produttore: Terredora
+produttore: Terredora · 2022
 regione: Campania · Fiano di Avellino DOCG
 tipo: Bianco
 vitigno: Fiano
