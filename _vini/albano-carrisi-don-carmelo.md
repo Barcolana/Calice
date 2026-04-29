@@ -1,8 +1,8 @@
 ---
 layout: vino
 nome: Don Carmelo Rosso
-produttore: Tenute Al Bano Carrisi 
-cantina: Tenute Al Bano Carrisi
+produttore: Tenute Albano Carrisi  
+cantina: Tenute Albano Carrisi  
 regione: Puglia � IGT
 tipo: Rosso
 punteggio: 88

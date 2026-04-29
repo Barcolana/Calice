@@ -1,8 +1,8 @@
 ---
 layout: vino
 nome: Nostalgia
-produttore: Tenute Al Bano Carrisi 
-cantina: Tenute Al Bano Carrisi
+produttore: Tenute Albano Carrisi  
+cantina: Tenute Albano Carrisi 
 regione: Puglia · Primitivo di Manduria DOC
 tipo: Rosso
 vitigno: Primitivo
