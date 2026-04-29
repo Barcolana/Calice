@@ -2,7 +2,6 @@
 layout: vino
 nome: Soente Grechetto
 produttore: Cotarella
-cantina: Cotarella
 regione: Umbria · Umbria IGT
 tipo: Bianco
 vitigno: Grechetto

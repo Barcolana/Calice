@@ -2,7 +2,6 @@
 layout: vino
 nome: Lacryma Christi del Vesuvio Bianco
 produttore: Mastroberardino
-cantina: Mastroberardino
 regione: Campania · DOC
 tipo: Bianco
 punteggio: 91

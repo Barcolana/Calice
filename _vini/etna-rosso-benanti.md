@@ -2,7 +2,6 @@
 layout: vino
 nome: Etna Rosso Serra della Contessa
 produttore: Benanti
-cantina: Benanti
 regione: Sicilia · Etna DOC
 tipo: Rosso
 vitigno: Nerello Mascalese

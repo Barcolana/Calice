@@ -2,7 +2,6 @@
 layout: vino
 nome: Franciacorta Brut 61
 produttore: Guido Berlucchi · NV
-cantina: Guido Berlucchi
 regione: Lombardia · DOCG
 tipo: Spumante
 punteggio: 89

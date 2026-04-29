@@ -2,7 +2,6 @@
 layout: vino
 nome: Chardonnay Riserva Kreuth
 produttore: Cantina Terlano
-cantina: Cantina Terlano
 regione: Trentino · DOC
 tipo: Bianco
 punteggio: 96

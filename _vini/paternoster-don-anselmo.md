@@ -2,7 +2,6 @@
 layout: vino
 nome: Aglianico del Vulture Don Anselmo
 produttore: Paternoster
-cantina: Paternoster
 regione: Basilicata · Aglianico del Vulture DOC
 tipo: Rosso
 vitigno: Aglianico

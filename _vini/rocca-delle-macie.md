@@ -2,7 +2,6 @@
 layout: vino
 nome: Chianti Classico Riserva
 produttore: Rocca delle Macìe
-cantina: Rocca delle Macìe
 regione: Toscana · DOCG
 tipo: Rosso
 punteggio: 91

@@ -2,7 +2,6 @@
 layout: vino
 nome: Sangiovese "Paterno"
 produttore: Trappolini · Castiglione in Teverina
-cantina: Trappolini
 regione: Lazio · IGT
 tipo: Rosso
 punteggio: 88

@@ -2,7 +2,6 @@
 layout: vino
 nome: Chianti Campoluce
 produttore: Sensi
-cantina: Sensi
 regione: Toscana · DOCG
 tipo: BIO
 punteggio: 89

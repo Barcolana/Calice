@@ -2,7 +2,6 @@
 layout: vino
 nome: Vermentino di Gallura Superiore
 produttore: Capichera
-cantina: Capichera
 regione: Sardegna · DOCG
 tipo: Bianco
 punteggio: 92

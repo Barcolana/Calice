@@ -2,7 +2,6 @@
 layout: vino
 nome: Sagrantino di Montefalco
 produttore: Scacciadiavoli
-cantina: Scacciadiavoli
 regione: Umbria · DOCG
 tipo: Rosso
 punteggio: 94

@@ -2,7 +2,6 @@
 layout: vino
 nome: Granato Teroldego
 produttore: Foradori
-cantina: Foradori
 regione: Trentino · IGT
 tipo: Bio
 punteggio: 93

@@ -2,7 +2,6 @@
 layout: vino
 nome: Pinot Nero Schweizer
 produttore: Franz Haas
-cantina: Franz Haas
 regione: Alto Adige · Alto Adige DOC
 tipo: Rosso
 vitigno: Pinot Nero

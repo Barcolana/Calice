@@ -2,7 +2,6 @@
 layout: vino
 nome: Le Serre Nuove dell'Ornellaia
 produttore: Ornellaia
-cantina: Ornellaia
 regione: Toscana · Bolgheri DOC
 tipo: Rosso
 vitigno: Merlot, Cabernet Sauvignon, Cabernet Franc, Petit Verdot

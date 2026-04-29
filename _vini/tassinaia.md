@@ -2,7 +2,6 @@
 layout: vino
 nome: Tassinaia
 produttore: Castello del Terriccio
-cantina: Castello del Terriccio
 regione: Toscana · IGT
 tipo: Rosso
 punteggio: 94

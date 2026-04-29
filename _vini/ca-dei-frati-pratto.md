@@ -2,7 +2,6 @@
 layout: vino
 nome: Lugana Pratto
 produttore: Cà dei Frati
-cantina: Cà dei Frati
 regione: Lombardia · Lugana DOC
 tipo: Bianco
 vitigno: Turbiana

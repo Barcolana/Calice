@@ -2,7 +2,6 @@
 layout: vino
 nome: Brunello di Montalcino
 produttore: Carpineto
-cantina: Carpineto
 regione: Toscana · DOCG
 tipo: Rosso
 punteggio: 94

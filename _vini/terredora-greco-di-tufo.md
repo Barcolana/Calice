@@ -2,7 +2,6 @@
 layout: vino
 nome: Greco di Tufo Loggia della Serra
 produttore: Terredora
-cantina: Terredora
 regione: Campania · Greco di Tufo DOCG
 tipo: Bianco
 vitigno: Greco

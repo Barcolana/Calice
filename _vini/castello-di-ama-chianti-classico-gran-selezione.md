@@ -2,7 +2,6 @@
 layout: vino
 nome: Chianti Classico Gran Selezione Vigneto Bellavista
 produttore: Castello di Ama
-cantina: Castello di Ama
 regione: Toscana · Chianti Classico DOCG
 tipo: Rosso
 vitigno: Sangiovese

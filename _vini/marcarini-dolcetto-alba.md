@@ -2,7 +2,6 @@
 layout: vino
 nome: Dolcetto d'Alba Fontanazza
 produttore: Marcarini
-cantina: Marcarini
 regione: Piemonte · Dolcetto d'Alba DOC
 tipo: Rosso
 vitigno: Dolcetto

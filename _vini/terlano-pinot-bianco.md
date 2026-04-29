@@ -2,7 +2,6 @@
 layout: vino
 nome: Pinot Bianco Vorberg Riserva
 produttore: Terlano
-cantina: Terlano
 regione: Alto Adige · Alto Adige DOC
 tipo: Bianco
 vitigno: Pinot Bianco

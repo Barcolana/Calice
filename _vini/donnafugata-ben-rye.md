@@ -2,7 +2,6 @@
 layout: vino
 nome: Ben Ryé Passito di Pantelleria
 produttore: Donnafugata
-cantina: Donnafugata
 regione: Sicilia · Passito di Pantelleria DOC
 tipo: Dolce
 vitigno: Zibibbo

@@ -2,7 +2,6 @@
 layout: vino
 nome: Lessona Omaggio a Quintino Sella
 produttore: Sella
-cantina: Sella
 regione: Piemonte · DOC
 tipo: Rosso
 punteggio: 94

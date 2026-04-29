@@ -2,7 +2,6 @@
 layout: vino
 nome: Amarone della Valpolicella
 produttore: Dal Forno Romano
-cantina: Dal Forno Romano
 regione: Veneto · DOCG
 tipo: Rosso
 punteggio: 95

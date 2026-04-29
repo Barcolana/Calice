@@ -2,7 +2,6 @@
 layout: vino
 nome: Recioto della Valpolicella
 produttore: Bertani
-cantina: Bertani
 regione: Veneto · DOCG
 tipo: Dolce
 punteggio: 93

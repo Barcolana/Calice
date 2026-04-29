@@ -2,7 +2,6 @@
 layout: vino
 nome: Siepi
 produttore: Mazzei
-cantina: Mazzei
 regione: Toscana · Toscana IGT
 tipo: Rosso
 vitigno: Sangiovese, Merlot

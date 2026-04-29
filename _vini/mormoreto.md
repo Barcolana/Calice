@@ -2,7 +2,6 @@
 layout: vino
 nome: "Mormoreto"
 produttore: "Marchesi Frescobaldi - 1997"
-cantina: "Marchesi Frescobaldi - 1997"
 regione: "Toscana · IGT"
 tipo: "Rosso"
 punteggio: 96

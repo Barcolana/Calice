@@ -2,7 +2,6 @@
 layout: vino
 nome: Darmagi
 produttore: Gaja
-cantina: Gaja
 regione: Piemonte · DOC
 tipo: Rosso
 vitigno: Cabernet Sauvignon (prevalente) + Merlot

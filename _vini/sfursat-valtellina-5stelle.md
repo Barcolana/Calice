@@ -2,7 +2,6 @@
 layout: vino
 nome: Sfursat 5 Stelle
 produttore: Nino Negri
-cantina: Nino Negri
 regione: Lombardia · DOCG
 tipo: Rosso
 punteggio: 95

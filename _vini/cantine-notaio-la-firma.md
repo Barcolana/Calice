@@ -2,7 +2,6 @@
 layout: vino
 nome: Aglianico del Vulture La Firma
 produttore: Cantine del Notaio
-cantina: Cantine del Notaio
 regione: Basilicata · Aglianico del Vulture DOC
 tipo: Rosso
 vitigno: Aglianico

@@ -2,7 +2,6 @@
 layout: vino
 nome: Franciacorta Brut
 produttore: Ricci Curbastro
-cantina: Ricci Curbastro
 regione: Lombardia · Franciacorta DOCG
 tipo: Spumante
 vitigno: Chardonnay, Pinot Nero

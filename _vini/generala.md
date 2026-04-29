@@ -5,7 +5,6 @@ layout: vino
 nome: La Generala
 
 produttore: Bersano
-cantina: Bersano
 
 regione: Piemonte · DOCG
 

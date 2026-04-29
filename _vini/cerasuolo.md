@@ -2,7 +2,6 @@
 layout: vino
 nome: Cerasuolo d'Abruzzo
 produttore: Valentini
-cantina: Valentini
 regione: Abruzzo · DOC
 tipo: Rosé
 punteggio: 93

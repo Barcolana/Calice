@@ -2,7 +2,6 @@
 layout: vino
 nome: Barbaresco
 produttore: Gaja
-cantina: Gaja
 regione: Piemonte · DOCG
 tipo: Rosso
 vitigno: Nebbiolo

@@ -2,7 +2,6 @@
 layout: vino
 nome: Torrette Supérieur
 produttore: Les Crêtes
-cantina: Les Crêtes
 regione: Valle d'Aosta · DOC
 tipo: Rosso
 punteggio: 90

@@ -2,7 +2,6 @@
 layout: vino
 nome: Cirò Rosso Classico Superiore
 produttore: Librandi
-cantina: Librandi
 regione: Calabria · DOC
 tipo: Rosso
 punteggio: 89

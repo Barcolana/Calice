@@ -2,7 +2,6 @@
 layout: vino
 nome: Langhe Nebbiolo
 produttore: Borgogno
-cantina: Borgogno
 regione: Piemonte · Langhe DOC
 tipo: Rosso
 vitigno: Nebbiolo

@@ -2,7 +2,6 @@
 layout: vino
 nome: Praepositus Sauvignon
 produttore: Abbazia di Novacella
-cantina: Abbazia di Novacella
 regione: Trentino · DOC
 tipo: Bianco
 punteggio: 93

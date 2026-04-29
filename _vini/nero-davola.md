@@ -2,7 +2,6 @@
 layout: vino
 nome: Nero d'Avola Riserva
 produttore: Donnafugata
-cantina: Donnafugata
 regione: Sicilia · DOC
 tipo: Rosso
 punteggio: 91

@@ -2,7 +2,6 @@
 layout: vino
 nome: Torgiano Rosso Riserva Rubesco Vigna Monticchio
 produttore: Lungarotti
-cantina: Lungarotti
 regione: Umbria · Torgiano Rosso Riserva DOCG
 tipo: Rosso
 vitigno: Sangiovese, Canaiolo

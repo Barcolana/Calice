@@ -2,7 +2,6 @@
 layout: vino
 nome: Guidalberto
 produttore: Tenuta San Guido
-cantina: Tenuta San Guido
 regione: Toscana · IGT
 tipo: Rosso
 punteggio: 93

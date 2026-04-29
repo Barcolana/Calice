@@ -2,7 +2,6 @@
 layout: vino
 nome: Poggio Triale
 produttore: Tenuta La Pazzaglia
-cantina: Tenuta La Pazzaglia
 regione: Lazio · DOC
 tipo: Bianco
 punteggio: 88

@@ -2,7 +2,6 @@
 layout: vino
 nome: Vintage Tunina
 produttore: Jermann
-cantina: Jermann
 regione: Friuli · IGT
 tipo: Bianco
 punteggio: 95

@@ -2,7 +2,6 @@
 layout: vino
 nome: Barolo Cannubi
 produttore: Borgogno
-cantina: Borgogno
 regione: Piemonte · DOCG
 tipo: Rosso
 vitigno: Nebbiolo

@@ -2,7 +2,6 @@
 layout: vino
 nome: Barolo Cannubi
 produttore: Marchesi di Barolo
-cantina: Marchesi di Barolo
 regione: Piemonte · DOCG
 tipo: Rosso
 vitigno: Nebbiolo

@@ -2,7 +2,6 @@
 layout: vino
 nome: Cannonau di Sardegna
 produttore: Argiolas
-cantina: Argiolas
 regione: Sardegna · DOC
 tipo: Rosso
 punteggio: 89

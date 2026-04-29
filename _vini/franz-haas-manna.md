@@ -2,7 +2,6 @@
 layout: vino
 nome: Manna
 produttore: Franz Haas
-cantina: Franz Haas
 regione: Alto Adige · Alto Adige DOC
 tipo: Bianco
 vitigno: Gewürztraminer, Riesling, Chardonnay, Sauvignon

@@ -2,7 +2,6 @@
 layout: vino
 nome: Barolo Cannubi Boschis
 produttore: Sandrone
-cantina: Sandrone
 regione: Piemonte · DOCG
 tipo: Rosso
 punteggio: 96

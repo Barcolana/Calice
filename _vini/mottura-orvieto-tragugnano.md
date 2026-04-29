@@ -2,7 +2,6 @@
 layout: vino
 nome: Orvieto Classico Tragugnano
 produttore: Mottura
-cantina: Mottura
 regione: Umbria · Orvieto Classico DOC
 tipo: Bianco
 vitigno: Grechetto, Procanico, Verdello

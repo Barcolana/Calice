@@ -2,7 +2,6 @@
 layout: vino
 nome: Terre Verdiane Lambrusco
 produttore: Ceci · NV
-cantina: Ceci
 regione: Emilia-Romagna · IGT
 tipo: Rosso
 punteggio: 88

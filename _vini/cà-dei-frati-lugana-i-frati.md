@@ -2,7 +2,6 @@
 layout: vino
 nome: Lugana I Frati
 produttore: Cà dei Frati
-cantina: Cà dei Frati
 regione: Lombardia · DOC
 tipo: Bianco
 punteggio: 92

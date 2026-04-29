@@ -2,7 +2,6 @@
 layout: vino
 nome: Franciacorta Brut
 produttore: Mosnel · NV
-cantina: Mosnel
 regione: Lombardia · DOCG
 tipo: Spumante
 punteggio: 91

@@ -2,7 +2,6 @@
 layout: vino
 nome: Dreams
 produttore: Jermann
-cantina: Jermann
 regione: Friuli · Venezia Giulia IGT
 tipo: Bianco
 vitigno: Chardonnay

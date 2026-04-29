@@ -2,7 +2,6 @@
 layout: vino
 nome: Vino Nobile di Montepulciano Riserva
 produttore: Carpineto
-cantina: Carpineto
 regione: Toscana · Vino Nobile di Montepulciano DOCG
 tipo: Rosso
 vitigno: Prugnolo Gentile
