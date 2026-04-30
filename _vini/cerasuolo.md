@@ -1,7 +1,7 @@
 ---
 layout: vino
 nome: Cerasuolo d'Abruzzo
-produttore: Valentini · 2021
+produttore: Edoardo Valentini · 2018
 regione: Abruzzo · DOC
 tipo: Rosé
 punteggio: 93
