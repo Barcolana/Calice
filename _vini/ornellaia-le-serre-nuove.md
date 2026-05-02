@@ -1,7 +1,7 @@
 ---
 layout: vino
 nome: Le Serre Nuove dell'Ornellaia
-produttore: Ornellaia · 2020
+produttore: Tenuta dell'Ornellaia · 2020
 regione: Toscana · Bolgheri DOC
 tipo: Rosso
 vitigno: Merlot, Cabernet Sauvignon, Cabernet Franc, Petit Verdot
