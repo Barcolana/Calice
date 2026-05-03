@@ -1,7 +1,7 @@
 ---
 layout: vino
 nome: Chianti Classico
-produttore: Castello di Fonterutoli (Mazzei)
+produttore: Castello di Fonterutoli 
 regione: Toscana · DOCG
 tipo: Rosso
 vitigno: Sangiovese (prevalente) + uve autoctone
