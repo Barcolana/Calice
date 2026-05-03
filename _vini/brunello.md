@@ -1,7 +1,7 @@
 ---
 layout: vino
 nome: Brunello di Montalcino Riserva
-produttore: Biondi Santi · 2019
+produttore: Biondi Santi Tenuta Greppo · 2019
 regione: Toscana · DOCG
 tipo: Rosso
 punteggio: 97
