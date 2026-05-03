@@ -1,7 +1,7 @@
 ---
 layout: vino
 nome: Guidalberto
-produttore: Tenuta San · Guido 2022
+produttore: Tenuta San Guido · 2022
 regione: Toscana · IGT
 tipo: Rosso
 punteggio: 93
