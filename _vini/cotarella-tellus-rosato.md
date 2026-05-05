@@ -3,7 +3,7 @@ layout: vino
 nome: Tellus Rosato
 produttore: Famiglia Cotarella · 2021
 regione: Lazio · IGP
-tipo: Rosè
+tipo: Rosé
 punteggio: 86
 prezzo: 11
 badge: ""
