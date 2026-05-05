@@ -6,7 +6,7 @@ regione: Piemonte · DOCG
 tipo: Rosso
 punteggio: 96
 prezzo: 95
-badge: ""
+badge: "TOP 2025"
 emoji: 🍾
 gradazione: 14
 annata: 2018
