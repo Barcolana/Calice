@@ -1424,12 +1424,13 @@
         }
 
         /* ── FLOATING SCAN ── */
+        /* ── FLOATING SCAN ── */
         .fab {
             position: fixed;
             bottom: 80px;
             right: 28px;
             z-index: 200;
-            background: var(--wine);
+            background: linear-gradient(135deg, #B8860B, #DAA520);
             color: var(--white);
             border: none;
             border-radius: 16px;
@@ -1441,13 +1442,28 @@
             font-weight: 600;
             cursor: pointer;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            box-shadow: 0 8px 28px rgba(160, 41, 59, 0.45);
+            box-shadow: 0 8px 28px rgba(184, 134, 11, 0.5);
             transition: all 0.3s;
+            animation: pulseGold 2.5s ease-in-out infinite;
         }
 
         .fab:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 36px rgba(160, 41, 59, 0.55);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 36px rgba(184, 134, 11, 0.7);
+            animation: none;
+        }
+
+        @keyframes pulseGold {
+
+            0%,
+            100% {
+                box-shadow: 0 8px 28px rgba(184, 134, 11, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 8px 40px rgba(184, 134, 11, 0.85);
+                transform: translateY(-2px);
+            }
         }
 
         @media (max-width: 1024px) {
