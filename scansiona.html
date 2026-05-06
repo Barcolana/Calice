@@ -491,23 +491,18 @@
         {% endfor %}
     </div>
     <script>
-
         // 📌 1) Migliora immagine per OCR
         function miglioraImmagine(imgBase64) {
             return new Promise(resolve => {
                 const img = new Image();
                 img.src = imgBase64;
-
                 img.onload = () => {
                     const canvas = document.createElement('canvas');
                     const ctx = canvas.getContext('2d');
-
                     canvas.width = img.width;
                     canvas.height = img.height;
-
                     ctx.filter = 'contrast(140%) brightness(110%) grayscale(100%)';
                     ctx.drawImage(img, 0, 0);
-
                     resolve(canvas.toDataURL());
                 };
             });
@@ -517,7 +512,6 @@
         function handleFile(input) {
             const file = input.files[0];
             if (!file) return;
-
             const reader = new FileReader();
             reader.onload = function (e) {
                 document.getElementById('previewImg').src = e.target.result;
@@ -541,14 +535,12 @@
                     'ita+eng',
                     {
                         logger: m => console.log(m),
-                        //abbiamo eleiminato 2 righe qui sotto
                         load_punc_dawg: false,
                         load_number_dawg: false,
                         load_unambig_dawg: false,
                         load_bigram_dawg: false
                     }
                 );
-
 
                 const testo = text || '';
 
@@ -558,11 +550,6 @@
                     testo.replace(/\n/g, ' ').substring(0, 200) + '...';
 
                 cercaVini(testo.toLowerCase());
-                // Pre-compila il form con il testo OCR
-                const parole = testo.toLowerCase().split(/\s+/).filter(p => p.length > 3);
-                const nomeIndovinato = parole.slice(0, 3).join(' ');
-                const urlForm = `https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/viewform?usp=pp_url&entry.231130425=${encodeURIComponent(nomeIndovinato)}`;
-                document.getElementById('btnSuggerisci').href = urlForm;
 
             } catch (error) {
                 console.error(error);
@@ -612,7 +599,7 @@
             return sim + prefix * 0.1;
         }
 
-        // 📌 5) Matching super‑preciso
+        // 📌 5) Matching super-preciso con pre-compilazione form
         const STOPWORDS = new Set(['del', 'della', 'di', 'da', 'il', 'la', 'le', 'lo', 'dei', 'delle', 'al', 'sul', 'per', 'con', 'un', 'una', 'e', 'in', 'a']);
 
         function cercaVini(testo) {
@@ -669,6 +656,15 @@
                 viniFindati.appendChild(card);
             });
 
+            // Pre-compila il form solo quando il vino non è trovato
+            if (top.length === 0) {
+                const parole = testo.split(/\s+/).filter(p => p.length > 3);
+                const nomeIndovinato = parole.slice(0, 3).join(' ');
+                const urlForm = `https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/viewform?usp=pp_url&entry.231130425=${encodeURIComponent(nomeIndovinato)}`;
+                const btn = document.getElementById('btnSuggerisci');
+                if (btn) btn.href = urlForm;
+            }
+
             document.getElementById('nessunRisultato').style.display = top.length === 0 ? 'block' : 'none';
         }
 
@@ -701,10 +697,8 @@
                 reader.readAsDataURL(file);
             }
         });
-
-
-
     </script>
+
     <!-- ============================================================
      ISTRUZIONI: incolla questo blocco appena prima di </body>
      in tutte le pagine HTML del sito (index.html, blog.html, ecc.)
