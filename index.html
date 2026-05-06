@@ -316,24 +316,27 @@
         }
 
         .btn-scan {
-            border: 1.5px solid var(--silver);
-            background: var(--white);
-            color: var(--ink);
+            border: 2px solid #B8860B;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: var(--white);
             padding: 14px 24px;
             border-radius: 10px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            transition: all 0.2s;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             gap: 8px;
+            box-shadow: 0 4px 20px rgba(184, 134, 11, 0.4);
+            animation: pulseGold 2.5s ease-in-out infinite;
         }
 
         .btn-scan:hover {
-            border-color: var(--terra);
-            color: var(--terra);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(184, 134, 11, 0.6);
+            animation: none;
         }
 
         .hero-trust {
