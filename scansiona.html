@@ -467,15 +467,16 @@
                     <span id="testoLetto"></span>
                 </div>
             </div>
-            <div class="vini-trovati" id="viniFindati"></div>
             <div class="nessun-risultato" id="nessunRisultato">
                 <h3>Vino non trovato 😕</h3>
                 <p>Non abbiamo trovato questo vino nel catalogo — ma puoi segnalarcelo!</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScc_q0_B5piFGWulCqtTTv_86eT3qA-Rb_S5ncJ-PyZxd_f2w/viewform"
+                <a id="btnSuggerisci"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/viewform?usp=pp_url"
                     target="_blank" class="btn-suggerisci">📝 Suggerisci questo vino</a>
             </div>
-            <button class="btn-nuova-scansione" onclick="nuovaScansione()">🔄 Nuova scansione</button>
         </div>
+        <button class="btn-nuova-scansione" onclick="nuovaScansione()">🔄 Nuova scansione</button>
+    </div>
 
     </div>
 
@@ -557,6 +558,11 @@
                     testo.replace(/\n/g, ' ').substring(0, 200) + '...';
 
                 cercaVini(testo.toLowerCase());
+                // Pre-compila il form con il testo OCR
+                const parole = testo.toLowerCase().split(/\s+/).filter(p => p.length > 3);
+                const nomeIndovinato = parole.slice(0, 3).join(' ');
+                const urlForm = `https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/viewform?usp=pp_url&entry.231130425=${encodeURIComponent(nomeIndovinato)}`;
+                document.getElementById('btnSuggerisci').href = urlForm;
 
             } catch (error) {
                 console.error(error);
