@@ -698,10 +698,6 @@
             }
         });
     </script>
-    <!-- ============================================================ -->
-    ISTRUZIONI: incolla questo blocco appena prima di
-
-    in tutte le pagine HTML del sito (index.html, blog.html, ecc.)
 
 
     <!-- ── BANNER COOKIE ── -->
@@ -870,87 +866,7 @@
             // se 'rifiutato' → non fa nulla, Analytics non viene caricato
         })();
     </script>
-    <script>
-        function cercaVini(testo) {
-            const viniDati = document.querySelectorAll('#datiVini div');
-            const viniFindati = document.getElementById('viniFindati');
-            const baseurl = document.querySelector('#datiVini div')?.getAttribute('data-baseurl') || '';
 
-            viniFindati.innerHTML = '';
-
-            const risultati = [];
-
-            viniDati.forEach(v => {
-                const nome = (v.getAttribute('data-nome') || '').toLowerCase();
-                const produttore = (v.getAttribute('data-produttore') || '').toLowerCase();
-
-                let punteggio = 0;
-
-                // 🔥 QUESTA È LA CHIAVE: similarità + includes
-                punteggio += similarita(testo, nome) * 7;
-                punteggio += similarita(testo, produttore) * 5;
-
-                nome.split(' ').forEach(p => {
-                    if (p.length > 3 && testo.includes(p)) punteggio += 1.5;
-                });
-
-                produttore.split(' ').forEach(p => {
-                    if (p.length > 3 && testo.includes(p)) punteggio += 2;
-                });
-
-                if (punteggio > 2) {
-                    risultati.push({ punteggio, v });
-                }
-            });
-
-            risultati.sort((a, b) => b.punteggio - a.punteggio);
-
-            const top = risultati.slice(0, 3).filter((r, i, arr) => {
-                if (i === 0) return true;
-                return r.punteggio >= arr[0].punteggio * 0.70;
-            });
-
-            top.forEach(r => {
-                const v = r.v;
-
-                const card = document.createElement('a');
-                card.className = 'vino-risultato';
-                card.href = `${baseurl}/vini/${v.getAttribute('data-slug')}`;
-
-                card.innerHTML = `
-            <div class="vino-emoji">${v.getAttribute('data-emoji')}</div>
-            <div class="vino-info">
-                <div class="vino-nome">${v.getAttribute('data-nome-display')}</div>
-                <div class="vino-produttore">${v.getAttribute('data-produttore-display')}</div>
-                <div class="vino-regione">${v.getAttribute('data-regione')}</div>
-            </div>
-            <div class="vino-score">${Math.round(r.punteggio)}</div>
-        `;
-
-                viniFindati.appendChild(card);
-            });
-
-            if (top.length === 0) {
-                const parole = testo.split(/\s+/).filter(p => p.length > 3);
-                const nomeIndovinato = parole.slice(0, 3).join(' ');
-
-                const urlForm = `https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/viewform?usp=pp_url&entry.231130425=${encodeURIComponent(nomeIndovinato)}`;
-
-                const btn = document.getElementById('btnSuggerisci');
-                if (btn) btn.href = urlForm;
-            }
-
-            document.getElementById('nessunRisultato').style.display =
-                top.length === 0 ? 'block' : 'none';
-        }
-
-
-
-
-
-
-
-    </script>
 
 
 
