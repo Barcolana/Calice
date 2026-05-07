@@ -733,6 +733,9 @@
             const viniFindati = document.getElementById('viniFindati');
             const baseurl = document.querySelector('#datiVini div')?.getAttribute('data-baseurl') || '';
             viniFindati.innerHTML = '';
+            //Debug
+            console.log('Testo ricevuto:', testo);
+            console.log('Vini nel catalogo:', viniDati.length);
 
             const risultati = [];
 
@@ -759,6 +762,9 @@
             });
 
             risultati.sort((a, b) => b.punteggio - a.punteggio);
+            //Debug
+            console.log('Risultati trovati:', risultati.length);
+            console.log('Top risultati:', top.length);
 
             const top = risultati.slice(0, 3).filter((r, i, arr) => {
                 if (i === 0) return true;
