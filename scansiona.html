@@ -658,7 +658,7 @@
 
                 const { data: { text } } = await Tesseract.recognize(
                     imgMigliorata,
-                    'ita+eng',
+                    'eng',
                     {
                         logger: m => console.log(m),
                         load_punc_dawg: false,
@@ -766,12 +766,12 @@
             console.log('Risultati trovati:', risultati.length);
             console.log('Top risultati:', top.length);
 
-            const top = risultati.slice(0, 3).filter((r, i, arr) => {
+            const migliori = risultati.slice(0, 3).filter((r, i, arr) => {
                 if (i === 0) return true;
                 return r.punteggio >= arr[0].punteggio * 0.70;
             });
 
-            top.forEach(r => {
+            migliori.forEach(r => {
                 const v = r.v;
                 const card = document.createElement('a');
                 card.className = 'vino-risultato';
@@ -789,7 +789,7 @@
             });
 
             // Pre-compila il form solo quando il vino non è trovato
-            if (top.length === 0) {
+            if (migliori.length === 0) {
                 const parole = testo.split(/\s+/).filter(p => p.length > 3);
                 const nomeIndovinato = parole.slice(0, 3).join(' ');
                 const urlForm = `https://docs.google.com/forms/d/e/1FAIpQLScTsD1z4XI3ii1mQc--q3twc19KnulKIR5hPCcPSReaHdNizQ/viewform?usp=pp_url&entry.231130425=${encodeURIComponent(nomeIndovinato)}`;
@@ -797,7 +797,7 @@
                 if (btn) btn.href = urlForm;
             }
 
-            document.getElementById('nessunRisultato').style.display = top.length === 0 ? 'block' : 'none';
+            document.getElementById('nessunRisultato').style.display = migliori.length === 0 ? 'block' : 'none';
         }
 
         // 📌 6) Nuova scansione
