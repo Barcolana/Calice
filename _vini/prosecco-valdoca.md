@@ -1,6 +1,6 @@
 ---
 layout: vino
-nome: Prosecco Superiore DOCG Extra Dry
+nome: Prosecco Superiore DOCG Extra Dry JOS
 produttore: Val d’Oca
 regione: Veneto 
 tipo: Spumante Charmat
