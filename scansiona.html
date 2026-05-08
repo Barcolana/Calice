@@ -727,31 +727,41 @@
 
         // 📌 5) Matching super-preciso con pre-compilazione form
         const STOPWORDS = new Set(['del', 'della', 'di', 'da', 'il', 'la', 'le', 'lo', 'dei', 'delle', 'al', 'sul', 'per', 'con', 'un', 'una', 'e', 'in', 'a']);
-
         function cercaVini(testo) {
+            // 📌 Pulisce caratteri speciali dal testo OCR e dai nomi
+            const pulisci = str => str.toLowerCase().replace(/[!?.,;:'"()]/g, ' ').replace(/\s+/g, ' ').trim();
+
+            // Applica la pulizia al testo OCR
+            testo = pulisci(testo);
+
             const viniDati = document.querySelectorAll('#datiVini div');
             const viniFindati = document.getElementById('viniFindati');
             const baseurl = document.querySelector('#datiVini div')?.getAttribute('data-baseurl') || '';
             viniFindati.innerHTML = '';
-            //Debug
+
+            // Debug
             console.log('Testo ricevuto:', testo);
             console.log('Vini nel catalogo:', viniDati.length);
 
             const risultati = [];
 
             viniDati.forEach(v => {
-                const nome = v.getAttribute('data-nome') || '';
-                const produttore = v.getAttribute('data-produttore') || '';
+                // Applica la pulizia anche ai nomi del catalogo
+                const nome = pulisci(v.getAttribute('data-nome') || '');
+                const produttore = pulisci(v.getAttribute('data-produttore') || '');
 
                 let punteggio = 0;
 
+                // Similarità Jaro-Winkler sul testo completo
                 punteggio += similarita(testo, produttore) * 5;
                 punteggio += similarita(testo, nome) * 7;
 
+                // Bonus per ogni parola significativa trovata nel nome
                 nome.split(' ').forEach(p => {
                     if (p.length > 3 && !STOPWORDS.has(p) && testo.includes(p)) punteggio += 1.5;
                 });
 
+                // Bonus maggiore per ogni parola del produttore trovata
                 produttore.split(' ').forEach(p => {
                     if (p.length > 3 && !STOPWORDS.has(p) && testo.includes(p)) punteggio += 2;
                 });
@@ -761,16 +771,22 @@
                 }
             });
 
+            // Ordina per punteggio decrescente
             risultati.sort((a, b) => b.punteggio - a.punteggio);
-            //Debug
-            console.log('Risultati trovati:', risultati.length);
-            console.log('Top risultati:', top.length);
 
+            // Debug
+            console.log('Risultati trovati:', risultati.length);
+
+            // Mostra solo i risultati con punteggio vicino al migliore (70%)
             const migliori = risultati.slice(0, 3).filter((r, i, arr) => {
                 if (i === 0) return true;
                 return r.punteggio >= arr[0].punteggio * 0.70;
             });
 
+            // Debug
+            console.log('Top risultati:', migliori.length);
+
+            // Costruisce le card dei vini trovati
             migliori.forEach(r => {
                 const v = r.v;
                 const card = document.createElement('a');
@@ -797,6 +813,7 @@
                 if (btn) btn.href = urlForm;
             }
 
+            // Mostra o nasconde il messaggio "Vino non trovato"
             document.getElementById('nessunRisultato').style.display = migliori.length === 0 ? 'block' : 'none';
         }
 
