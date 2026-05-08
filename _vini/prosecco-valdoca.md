@@ -1,8 +1,8 @@
 ---
 layout: vino
-nome: Prosecco Extra Dry
+nome: Prosecco Superiore DOCG Extra Dry
 produttore: Val d’Oca
-regione: Veneto · Prosecco DOC
+regione: Veneto 
 tipo: Spumante Charmat
 vitigno: Glera
 punteggio: 86
