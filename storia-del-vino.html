@@ -4,6 +4,13 @@
 <html lang="it">
 
 <head>
+  <link rel="manifest" href="{{ site.baseurl }}/manifest.json">
+  <meta name="theme-color" content="#A0293B">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/Calice/service-worker.js');
+    }
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Storia del Vino — Calice</title>
@@ -437,7 +444,8 @@
         più grandi produttori e conoscitori di vino del continente.</p>
       <p>In Borgogna, i monaci Cistercensi del Clos de Vougeot svilupparono il concetto rivoluzionario di
         <strong>terroir</strong> — l'idea che ogni appezzamento di terra producesse un vino unico e irripetibile.
-        Assaggiavano la terra, studiavano i microclimi, selezionavano i vitigni. Erano i primi enologi moderni.</p>
+        Assaggiavano la terra, studiavano i microclimi, selezionavano i vitigni. Erano i primi enologi moderni.
+      </p>
 
       <div class="quote-block">
         <p>"Lavora, prega e bevi buon vino."</p>
@@ -457,7 +465,8 @@
       </div>
       <p>I Francesi non inventarono il vino — ma lo reinventarono. Nel Seicento, due innovazioni cambiarono tutto: la
         <strong>bottiglia di vetro scuro</strong> e il <strong>tappo di sughero</strong>. Per la prima volta il vino
-        poteva essere conservato e trasportato senza deteriorarsi. Nacque il concetto di vino da invecchiamento.</p>
+        poteva essere conservato e trasportato senza deteriorarsi. Nacque il concetto di vino da invecchiamento.
+      </p>
       <p>Bordeaux, Borgogna, Champagne divennero nomi leggendari. La nobiltà europea gareggiava per accaparrarsi i vini
         francesi. Nasce la cultura del grande vino come status symbol — un'idea che ancora oggi influenza il mercato
         mondiale.</p>
@@ -476,7 +485,8 @@
       <p>Per secoli l'Italia ha vissuto all'ombra della Francia. Poi negli anni '80 arriva il <strong>Rinascimento del
           vino italiano</strong> — i Super Tuscan, il Barolo di Giacomo Conterno, il Brunello di Biondi Santi sfidano i
         grandi bordolesi e li battono. L'Italia si scopre custode di un patrimonio ampelografico unico al mondo — oltre
-        <strong>500 vitigni autoctoni</strong>, più di qualsiasi altro paese.</p>
+        <strong>500 vitigni autoctoni</strong>, più di qualsiasi altro paese.
+      </p>
       <p>Oggi l'Italia è il primo produttore mondiale di vino. Ma la vera ricchezza non è nei numeri — è nella
         diversità. Dal Nebbiolo piemontese all'Aglianico campano, dal Vermentino sardo al Nerello etneo, ogni regione
         racconta una storia di terra, clima e umanità che nessun altro paese può imitare.</p>

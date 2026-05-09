@@ -5,12 +5,13 @@ const URLS_DA_CACHARE = [
   '/Calice/index.html',
   '/Calice/scansiona.html',
   '/Calice/cantine.html',
+  '/Calice/cantina.html',
   '/Calice/top-vini-2025.html',
   '/Calice/abbinamenti.html',
   '/Calice/regioni.html',
-  '/Calice/cantina.html',
   '/Calice/storia-del-vino.html',
-  '/Calice/blog.html'
+  '/Calice/blog.html',
+  '/Calice/admin/index.html'
 ];
 
 // Installazione — salva le pagine principali in cache
