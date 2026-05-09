@@ -1,0 +1,23 @@
+{
+  "name": "Calice — Il social del vino",
+  "short_name": "Calice",
+  "description": "Scopri, degusta e condividi i migliori vini italiani.",
+  "start_url": "/Calice/",
+  "scope": "/Calice/",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#A0293B",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/Calice/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Calice/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1526,6 +1526,13 @@
         }
     </style>
 </head>
+<link rel="manifest" href="{{ site.baseurl }}/manifest.json">
+<meta name="theme-color" content="#A0293B">
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/Calice/service-worker.js');
+    }
+</script>
 
 <body>
 
