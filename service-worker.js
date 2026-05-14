@@ -11,6 +11,7 @@ const URLS_DA_CACHARE = [
   '/Calice/regioni.html',
   '/Calice/storia-del-vino.html',
   '/Calice/blog.html',
+  '/Calice/community.html',
   '/Calice/admin/index.html'
 ];
 
