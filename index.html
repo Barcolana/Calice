@@ -1,4 +1,4 @@
-﻿---
+---
 ---
 <!DOCTYPE html>
 <html lang="it">
@@ -1525,14 +1525,14 @@
             }
         }
     </style>
+    <link rel="manifest" href="{{ site.baseurl }}/manifest.json">
+    <meta name="theme-color" content="#A0293B">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('{{ site.baseurl }}/service-worker.js');
+        }
+    </script>
 </head>
-<link rel="manifest" href="{{ site.baseurl }}/manifest.json">
-<meta name="theme-color" content="#A0293B">
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/Calice/service-worker.js');
-    }
-</script>
 
 <body>
 
@@ -1546,9 +1546,9 @@
         </div>
         <ul class="nav-links">
             <li><a href="#" class="active">Scopri</a></li>
-            <li><a href="{{ site.baseurl }}/cantine">Cantine</a></li>
-            <li><a href="{{ site.baseurl }}/community">Community</a></li>
-            <li><a href="{{ site.baseurl }}/abbinamenti">Abbinamenti</a></li>
+            <li><a href="{{ site.baseurl }}/cantine.html">Cantine</a></li>
+            <li><a href="{{ site.baseurl }}/community.html">Community</a></li>
+            <li><a href="{{ site.baseurl }}/abbinamenti.html">Abbinamenti</a></li>
         </ul>
         <div class="nav-cta">
             <button class="btn-outline">Accedi</button>
@@ -1570,7 +1570,7 @@
             <p class="hero-update">🔨 Sito in costante costruzione — nuovi vini ogni settimana</p>
             <div class="hero-actions">
                 <button class="btn-hero">📱 Scarica l'app gratis</button>
-                <a href="{{ site.baseurl }}/scansiona" class="btn-scan">📷 Scansiona etichetta</a>
+                <a href="{{ site.baseurl }}/scansiona.html" class="btn-scan">📷 Scansiona etichetta</a>
             </div>
             <div class="hero-trust">
                 <div class="trust-avatars">
@@ -1992,7 +1992,7 @@
     </footer>
 
     <!-- FAB SCAN -->
-    <a href="{{ site.baseurl }}/scansiona" class="fab">📷 Scansiona etichetta</a>
+    <a href="{{ site.baseurl }}/scansiona.html" class="fab">📷 Scansiona etichetta</a>
     <!-- ============================================================
      ISTRUZIONI: incolla questo blocco appena prima di </body>
      in tutte le pagine HTML del sito (index.html, blog.html, ecc.)
@@ -2165,8 +2165,6 @@
         })();
     </script>
 
-
-</body>
 <script>
     // ── Ricerca testuale ──
     function cercaVino(query) {
@@ -2257,7 +2255,4 @@
 
 
 </body>
-
-</html>
-
 </html>
