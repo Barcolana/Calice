@@ -1,4 +1,4 @@
----
+﻿---
 ---
 <!DOCTYPE html>
 <html lang="it">
@@ -1427,7 +1427,7 @@
         }
 
         /* ── FLOATING SCAN ── */
-        /* ── FLOATING SCAN ── */
+
         .fab {
             position: fixed;
             bottom: 80px;
@@ -1524,6 +1524,89 @@
                 font-size: 44px;
             }
         }
+
+        /* ── HAMBURGER MENU ── */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            margin-left: auto;
+            padding: 8px;
+            border: none;
+            background: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--ink);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--silver);
+            padding: 16px 24px;
+            z-index: 99;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--ink);
+            padding: 14px 0;
+            border-bottom: 1px solid var(--silver);
+            transition: color 0.2s;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--wine);
+        }
+
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
     </style>
     <link rel="manifest" href="{{ site.baseurl }}/manifest.json">
     <meta name="theme-color" content="#A0293B">
@@ -1554,7 +1637,22 @@
             <button class="btn-outline">Accedi</button>
             <button class="btn-wine">Registrati gratis</button>
         </div>
+        <!-- Hamburger — dentro la nav -->
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+    <!-- Menu mobile — fuori dalla nav -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="{{ site.baseurl }}/">🏠 Scopri</a>
+        <a href="{{ site.baseurl }}/cantine">🏰 Cantine</a>
+        <a href="{{ site.baseurl }}/community.html">🍷 Community</a>
+        <a href="{{ site.baseurl }}/abbinamenti">🍽️ Abbinamenti</a>
+        <a href="{{ site.baseurl }}/scansiona">📷 Scansiona etichetta</a>
+        <a href="{{ site.baseurl }}/top-vini-2025.html">🏆 Top Vini 2025</a>
+    </div>
 
     <!-- HERO -->
     <div class="hero">
@@ -2122,6 +2220,22 @@
     </style>
 
     <script>
+        function toggleMenu() {
+            const hamburger = document.getElementById('hamburger');
+            const menu = document.getElementById('mobileMenu');
+            hamburger.classList.toggle('open');
+            menu.classList.toggle('open');
+        }
+
+        // Chiudi menu cliccando fuori
+        document.addEventListener('click', e => {
+            const hamburger = document.getElementById('hamburger');
+            const menu = document.getElementById('mobileMenu');
+            if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+                hamburger.classList.remove('open');
+                menu.classList.remove('open');
+            }
+        });
         // ── Carica Analytics solo se l'utente ha accettato ──
         function caricaAnalytics() {
             if (document.getElementById('ga-script')) return;
@@ -2165,94 +2279,95 @@
         })();
     </script>
 
-<script>
-    // ── Ricerca testuale ──
-    function cercaVino(query) {
-        const q = query.toLowerCase().trim();
-        document.querySelectorAll('.wine-card').forEach(card => {
-            const testo = card.innerText.toLowerCase();
-            card.style.display = (q === '' || testo.includes(q)) ? '' : 'none';
+    <script>
+        // ── Ricerca testuale ──
+        function cercaVino(query) {
+            const q = query.toLowerCase().trim();
+            document.querySelectorAll('.wine-card').forEach(card => {
+                const testo = card.innerText.toLowerCase();
+                card.style.display = (q === '' || testo.includes(q)) ? '' : 'none';
+            });
+        }
+
+        // ── Filtro chip categorie ──
+        let filtroAttivo = '';
+
+        document.querySelectorAll('.cat-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                filtroAttivo = chip.dataset.filtro || '';
+                applicaFiltro();
+            });
         });
-    }
 
-    // ── Filtro chip categorie ──
-    let filtroAttivo = '';
+        const MAPPA_FILTRI = {
+            'spumante': ['spumante', 'metodo classico', 'prosecco', 'franciacorta'],
+            'dolce': ['dolce', 'passito', 'moscato'],
+            'bio': ['bio', 'naturale', 'biodinamico'],
+            'premiati': ['top 2025'],  // ← solo questa riga
+        };
 
-    document.querySelectorAll('.cat-chip').forEach(chip => {
-        chip.addEventListener('click', () => {
-            document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
-            chip.classList.add('active');
-            filtroAttivo = chip.dataset.filtro || '';
-            applicaFiltro();
-        });
-    });
+        function applicaFiltro() {
+            document.querySelectorAll('.wine-card').forEach(card => {
+                const tipo = (card.dataset.tipo || '').toLowerCase();
+                const badge = (card.dataset.badge || '').toLowerCase();
+                let mostra = filtroAttivo === '';
+                if (!mostra) {
+                    const filtroLow = filtroAttivo.toLowerCase();
+                    const sinonimi = MAPPA_FILTRI[filtroLow] || [filtroLow];
+                    mostra = sinonimi.some(s => tipo.includes(s) || badge.includes(s));
+                }
+                card.classList.toggle('filtrato', !mostra);
+                if (!mostra) card.classList.add('nascosto');
+            });
+            viniMostrati = VINI_PER_PAGINA;
+            let count = 0;
+            document.querySelectorAll('.wine-card').forEach(card => {
+                if (card.classList.contains('filtrato')) return;
+                card.classList.toggle('nascosto', count >= VINI_PER_PAGINA);
+                count++;
+            });
+            aggiornaBottone();
+        }
 
-    const MAPPA_FILTRI = {
-        'spumante': ['spumante', 'metodo classico', 'prosecco', 'franciacorta'],
-        'dolce': ['dolce', 'passito', 'moscato'],
-        'bio': ['bio', 'naturale', 'biodinamico'],
-        'premiati': ['top 2025'],  // ← solo questa riga
-    };
+        // ── Paginazione ──
+        const VINI_PER_PAGINA = 12;
+        let viniMostrati = VINI_PER_PAGINA;
 
-    function applicaFiltro() {
-        document.querySelectorAll('.wine-card').forEach(card => {
-            const tipo = (card.dataset.tipo || '').toLowerCase();
-            const badge = (card.dataset.badge || '').toLowerCase();
-            let mostra = filtroAttivo === '';
-            if (!mostra) {
-                const filtroLow = filtroAttivo.toLowerCase();
-                const sinonimi = MAPPA_FILTRI[filtroLow] || [filtroLow];
-                mostra = sinonimi.some(s => tipo.includes(s) || badge.includes(s));
-            }
-            card.classList.toggle('filtrato', !mostra);
-            if (!mostra) card.classList.add('nascosto');
-        });
-        viniMostrati = VINI_PER_PAGINA;
-        let count = 0;
-        document.querySelectorAll('.wine-card').forEach(card => {
-            if (card.classList.contains('filtrato')) return;
-            card.classList.toggle('nascosto', count >= VINI_PER_PAGINA);
-            count++;
-        });
-        aggiornaBottone();
-    }
+        function inizializzaPaginazione() {
+            document.querySelectorAll('.wine-card').forEach((card, i) => {
+                if (i >= VINI_PER_PAGINA) card.classList.add('nascosto');
+            });
+            aggiornaBottone();
+        }
 
-    // ── Paginazione ──
-    const VINI_PER_PAGINA = 12;
-    let viniMostrati = VINI_PER_PAGINA;
+        function caricaAltri() {
+            let mostrati = 0;
+            document.querySelectorAll('.wine-card:not(.filtrato).nascosto').forEach(card => {
+                if (mostrati < VINI_PER_PAGINA) {
+                    card.classList.remove('nascosto');
+                    mostrati++;
+                }
+            });
+            viniMostrati += mostrati;
+            aggiornaBottone();
+        }
 
-    function inizializzaPaginazione() {
-        document.querySelectorAll('.wine-card').forEach((card, i) => {
-            if (i >= VINI_PER_PAGINA) card.classList.add('nascosto');
-        });
-        aggiornaBottone();
-    }
+        function aggiornaBottone() {
+            const rimasti = document.querySelectorAll('.wine-card:not(.filtrato).nascosto').length;
+            const btn = document.getElementById('btnCaricaAltri');
+            if (btn) btn.style.display = rimasti > 0 ? 'block' : 'none';
+        }
 
-    function caricaAltri() {
-        let mostrati = 0;
-        document.querySelectorAll('.wine-card:not(.filtrato).nascosto').forEach(card => {
-            if (mostrati < VINI_PER_PAGINA) {
-                card.classList.remove('nascosto');
-                mostrati++;
-            }
-        });
-        viniMostrati += mostrati;
-        aggiornaBottone();
-    }
+        function scrollCarousel(dir) {
+            document.getElementById('carouselTrack').scrollBy({ left: dir * 220, behavior: 'smooth' });
+        }
 
-    function aggiornaBottone() {
-        const rimasti = document.querySelectorAll('.wine-card:not(.filtrato).nascosto').length;
-        const btn = document.getElementById('btnCaricaAltri');
-        if (btn) btn.style.display = rimasti > 0 ? 'block' : 'none';
-    }
-
-    function scrollCarousel(dir) {
-        document.getElementById('carouselTrack').scrollBy({ left: dir * 220, behavior: 'smooth' });
-    }
-
-    document.addEventListener('DOMContentLoaded', inizializzaPaginazione);
-</script>
+        document.addEventListener('DOMContentLoaded', inizializzaPaginazione);
+    </script>
 
 
 </body>
+
 </html>
