@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#FAFAF8",
   "theme_color": "#A0293B",
-  "orientation": "portrait",
+  "orientation": "any",
   "icons": [
     {
       "src": "/Calice/images/icon-192.png",
