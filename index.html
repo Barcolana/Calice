@@ -1,4 +1,4 @@
-﻿---
+---
 ---
 <!DOCTYPE html>
 <html lang="it">
@@ -1647,10 +1647,10 @@
     <!-- Menu mobile — fuori dalla nav -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="{{ site.baseurl }}/">🏠 Scopri</a>
-        <a href="{{ site.baseurl }}/cantine">🏰 Cantine</a>
+        <a href="{{ site.baseurl }}/cantine.html">🏰 Cantine</a>
         <a href="{{ site.baseurl }}/community.html">🍷 Community</a>
-        <a href="{{ site.baseurl }}/abbinamenti">🍽️ Abbinamenti</a>
-        <a href="{{ site.baseurl }}/scansiona">📷 Scansiona etichetta</a>
+        <a href="{{ site.baseurl }}/abbinamenti.html">🍽️ Abbinamenti</a>
+        <a href="{{ site.baseurl }}/scansiona.html">📷 Scansiona etichetta</a>
         <a href="{{ site.baseurl }}/top-vini-2025.html">🏆 Top Vini 2025</a>
     </div>
 
@@ -1765,7 +1765,7 @@
                             </div>
                             <div class="wc-price">€{{ vino.prezzo }} <small>/bt</small></div>
                         </div>
-                        <a href="{{ site.baseurl }}/vini/{{ vino.slug }}" class="wc-add">→ Scopri questo vino</a>
+                        <a href="{{ site.baseurl }}/vini/{{ vino.slug }}.html" class="wc-add">→ Scopri questo vino</a>
                     </div>
                 </div>
                 {% endfor %}
@@ -1929,9 +1929,9 @@
     <div class="blog-section">
         <div class="section-hdr">
             <h2>Dal nostro <span>blog</span></h2>
-            <a href="{{ site.baseurl }}/storia-del-vino">Leggi tutti gli articoli →</a>
+            <a href="{{ site.baseurl }}/storia-del-vino.html">Leggi tutti gli articoli →</a>
         </div>
-        <a href="{{ site.baseurl }}/storia-del-vino" class="blog-card">
+        <a href="{{ site.baseurl }}/storia-del-vino.html" class="blog-card">
             <div class="blog-card-emoji">📖</div>
             <div class="blog-card-body">
                 <div class="blog-card-tag">La Storia</div>
@@ -1941,7 +1941,7 @@
                 <div class="blog-card-cta">Leggi l'articolo →</div>
             </div>
         </a>
-        <a href="{{ site.baseurl }}/blog/est-est-est" class="blog-card">
+        <a href="{{ site.baseurl }}/blog/est-est-est.html" class="blog-card">
             <div class="blog-card-emoji">🏺</div>
             <div class="blog-card-body">
                 <div class="blog-card-tag">Leggende del Vino</div>
@@ -1952,7 +1952,7 @@
             </div>
         </a>
 
-        <a href="{{ site.baseurl }}/blog/brunello" class="blog-card">
+        <a href="{{ site.baseurl }}/blog/brunello.html" class="blog-card">
             <div class="blog-card-emoji">🍷</div>
             <div class="blog-card-body">
                 <div class="blog-card-tag">Storie di Vino</div>
@@ -1970,10 +1970,10 @@
     <div class="regions-section">
         <div class="section-hdr">
             <h2>Esplora per <span>regione</span></h2>
-            <a href="{{ site.baseurl }}/regioni">Vedi tutte le regioni →</a>
+            <a href="{{ site.baseurl }}/regioni.html">Vedi tutte le regioni →</a>
         </div>
         <div class="regions-grid">
-            <div class="region-card rc-bg-1" onclick="window.location.href='{{ site.baseurl }}/regioni?regione=Toscana'"
+            <div class="region-card rc-bg-1" onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Toscana'"
                 style="cursor:pointer;">
                 <span class="rc-emoji">🌹</span>
                 <div class="rc-info">
@@ -1983,7 +1983,7 @@
                 </div>
             </div>
             <div class="region-card rc-bg-2"
-                onclick="window.location.href='{{ site.baseurl }}/regioni?regione=Piemonte'" style="cursor:pointer;">
+                onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Piemonte'" style="cursor:pointer;">
                 <span class="rc-emoji">🍇</span>
                 <div class="rc-info">
                     <div class="rc-name">Piemonte</div>
@@ -1991,7 +1991,7 @@
                     <div class="rc-wines">Barolo · Barbaresco · Moscato</div>
                 </div>
             </div>
-            <div class="region-card rc-bg-3" onclick="window.location.href='{{ site.baseurl }}/regioni?regione=Veneto'"
+            <div class="region-card rc-bg-3" onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Veneto'"
                 style="cursor:pointer;">
                 <span class="rc-emoji">🍾</span>
                 <div class="rc-info">
@@ -2000,7 +2000,7 @@
                     <div class="rc-wines">Amarone · Prosecco · Soave</div>
                 </div>
             </div>
-            <div class="region-card rc-bg-4" onclick="window.location.href='{{ site.baseurl }}/regioni?regione=Sicilia'"
+            <div class="region-card rc-bg-4" onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Sicilia'"
                 style="cursor:pointer;">
                 <span class="rc-emoji">🌊</span>
                 <div class="rc-info">
@@ -2010,7 +2010,7 @@
                 </div>
             </div>
             <div class="region-card rc-bg-5"
-                onclick="window.location.href='{{ site.baseurl }}/regioni?regione=Sardegna'" style="cursor:pointer;">
+                onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Sardegna'" style="cursor:pointer;">
                 <span class="rc-emoji">☀️</span>
                 <div class="rc-info">
                     <div class="rc-name">Sardegna</div>
@@ -2020,7 +2020,7 @@
             </div>
         </div>
         <div style="text-align:center; margin-top:24px;">
-            <a href="{{ site.baseurl }}/regioni"
+            <a href="{{ site.baseurl }}/regioni.html"
                 style="font-size:14px; color:var(--wine); font-weight:600; text-decoration:none;">Esplora tutte le 20
                 regioni →</a>
         </div>
@@ -2048,9 +2048,9 @@
                     <li><a href="{{ site.baseurl }}/abbinamenti.html">Abbinamenti</a></li>
                     <li><a href="{{ site.baseurl }}/blog.html">Guide al vino</a></li>
                     <li><a href="{{ site.baseurl }}/cantine.html">Cantine d'Italia</a></li>
-                    <li><a href="{{ site.baseurl }}/storia-del-vino">La storia del vino</a></li>
-                    <li><a href="{{ site.baseurl }}/blog/est-est-est">Est! Est!! Est!!! — La leggenda</a></li>
-                    <li><a href="{{ site.baseurl }}/blog">Blog</a></li>
+                    <li><a href="{{ site.baseurl }}/storia-del-vino.html">La storia del vino</a></li>
+                    <li><a href="{{ site.baseurl }}/blog/est-est-est.html">Est! Est!! Est!!! — La leggenda</a></li>
+                    <li><a href="{{ site.baseurl }}/blog.html">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-col">
