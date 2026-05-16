@@ -1,4 +1,4 @@
----
+﻿---
 ---
 <!DOCTYPE html>
 <html lang="it">
@@ -1607,6 +1607,17 @@
                 display: flex;
             }
         }
+        @media (max-width: 1024px) {
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
     <link rel="manifest" href="{{ site.baseurl }}/manifest.json">
     <meta name="theme-color" content="#A0293B">
