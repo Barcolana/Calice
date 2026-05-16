@@ -1607,17 +1607,18 @@
                 display: flex;
             }
         }
-        @media (max-width: 1024px) {
-    .footer-top {
-        grid-template-columns: 1fr 1fr;
-    }
-}
 
-@media (max-width: 600px) {
-    .footer-top {
-        grid-template-columns: 1fr;
-    }
-}
+        @media (max-width: 1024px) {
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
     <link rel="manifest" href="{{ site.baseurl }}/manifest.json">
     <meta name="theme-color" content="#A0293B">
@@ -1984,7 +1985,8 @@
             <a href="{{ site.baseurl }}/regioni.html">Vedi tutte le regioni →</a>
         </div>
         <div class="regions-grid">
-            <div class="region-card rc-bg-1" onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Toscana'"
+            <div class="region-card rc-bg-1"
+                onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Toscana'"
                 style="cursor:pointer;">
                 <span class="rc-emoji">🌹</span>
                 <div class="rc-info">
@@ -1994,7 +1996,8 @@
                 </div>
             </div>
             <div class="region-card rc-bg-2"
-                onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Piemonte'" style="cursor:pointer;">
+                onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Piemonte'"
+                style="cursor:pointer;">
                 <span class="rc-emoji">🍇</span>
                 <div class="rc-info">
                     <div class="rc-name">Piemonte</div>
@@ -2002,8 +2005,8 @@
                     <div class="rc-wines">Barolo · Barbaresco · Moscato</div>
                 </div>
             </div>
-            <div class="region-card rc-bg-3" onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Veneto'"
-                style="cursor:pointer;">
+            <div class="region-card rc-bg-3"
+                onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Veneto'" style="cursor:pointer;">
                 <span class="rc-emoji">🍾</span>
                 <div class="rc-info">
                     <div class="rc-name">Veneto</div>
@@ -2011,7 +2014,8 @@
                     <div class="rc-wines">Amarone · Prosecco · Soave</div>
                 </div>
             </div>
-            <div class="region-card rc-bg-4" onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Sicilia'"
+            <div class="region-card rc-bg-4"
+                onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Sicilia'"
                 style="cursor:pointer;">
                 <span class="rc-emoji">🌊</span>
                 <div class="rc-info">
@@ -2021,7 +2025,8 @@
                 </div>
             </div>
             <div class="region-card rc-bg-5"
-                onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Sardegna'" style="cursor:pointer;">
+                onclick="window.location.href='{{ site.baseurl }}/regioni.html?regione=Sardegna'"
+                style="cursor:pointer;">
                 <span class="rc-emoji">☀️</span>
                 <div class="rc-info">
                     <div class="rc-name">Sardegna</div>
