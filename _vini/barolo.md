@@ -7,7 +7,7 @@ tipo: Rosso
 punteggio: 96
 prezzo: 95
 badge: "TOP 2025"
-emoji: 🍾
+emoji: ⛰️
 gradazione: 14
 annata: 2018
 descrizione: Espressione elegante del Nebbiolo dal cru Cannubi. Note di rosa appassita, frutti rossi maturi e spezie dolci. Struttura tannica importante ma setosa, con un finale interminabile.
