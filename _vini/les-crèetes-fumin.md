@@ -4,7 +4,6 @@ nome: Vallée d'Aoste Fumin
 produttore: Les Crêtes
 regione: Valle d'Aosta · DOP
 tipo: Rosso
-vitigno: Fumin
 punteggio: 94
 prezzo: 38
 badge: ""
@@ -18,3 +17,4 @@ abbinamenti:
   - 🧀 Fontina d'alpeggio stagionata
   - 🍄 Polenta con funghi porcini
 ---
+
