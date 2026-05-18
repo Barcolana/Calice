@@ -2,7 +2,7 @@
 layout: vino
 nome: Vallée d'Aoste Fumin
 produttore: Les Crêtes
-regione: Valle d'Aosta · Vallée d'Aoste DOP
+regione: Valle d'Aosta · DOP
 tipo: Rosso
 vitigno: Fumin
 punteggio: 94
