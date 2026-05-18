@@ -7,7 +7,7 @@ tipo: Rosso
 vitigno: Fumin
 punteggio: 94
 prezzo: 38
-badge: "⛰️"
+badge: ""
 emoji: 🏔️
 gradazione: 14
 annata: 2021
