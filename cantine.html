@@ -436,32 +436,41 @@
         </div>
 
         <div class="cantine-grid" id="cantineGrid">
-
-            {% assign cantine_pulite = "" | split: "" %}
-            {% for vino in site.vini %}
-            {% assign nome_cantina = vino.produttore | split: ' · ' | first | strip %}
+        {% assign cantine_pulite = "" | split: "," %}
+        {% for vino in site.vini %}
+        {% assign nome_cantina = vino.produttore | split: ' · ' | first | strip %}
+        {% if nome_cantina and nome_cantina != "" %}
             {% unless cantine_pulite contains nome_cantina %}
             {% assign cantine_pulite = cantine_pulite | push: nome_cantina %}
             {% endunless %}
-            {% endfor %}
-            {% assign cantine = cantine_pulite | sort %}
+        {% endif %}
+        {% endfor %}
+        {% assign cantine = cantine_pulite | sort %}
 
-            {% for nome_cantina in cantine %}
-            {% assign vini_cantina = site.vini | where_exp: "v", "v.produttore contains nome_cantina" %}
-            {% assign primo_vino = vini_cantina | first %}
+        {% for nome_cantina in cantine %}
+            {% assign count = 0 %}
+            {% assign primo_vino = nil %}
+            {% for v in site.vini %}
+                {% if v.produttore contains nome_cantina %}
+                    {% assign count = count | plus: 1 %}
+                    {% if primo_vino == nil %}
+                        {% assign primo_vino = v %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
 
             <div class="cantina-card" onclick="mostraVini(this)" data-cantina="{{ nome_cantina | downcase | escape }}"
                 data-cantina-display="{{ nome_cantina | escape }}">
                 <div class="cantina-nome">{{ nome_cantina }}</div>
                 <div class="cantina-regione">{{ primo_vino.regione }}</div>
                 <div class="cantina-count">
-                    {{ vini_cantina | size }}
-                    {% if vini_cantina.size == 1 %}vino{% else %}vini{% endif %}
+                    {{ count }}
+                    {% if count == 1 %}vino{% else %}vini{% endif %}
                     in catalogo
                 </div>
             </div>
 
-            {% endfor %}
+        {% endfor %}
 
         </div>
 
