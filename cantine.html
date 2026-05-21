@@ -448,6 +448,9 @@
         {% assign cantine = cantine_pulite | sort %}
 
         {% for nome_cantina in cantine %}
+            {% if nome_cantina == blank or nome_cantina == "" %}
+                {% continue %}
+            {% endif %}
             {% assign count = 0 %}
             {% assign primo_vino = nil %}
             {% for v in site.vini %}
