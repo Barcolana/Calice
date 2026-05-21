@@ -536,7 +536,7 @@
 
                 if (!nomeDato) return;
 
-                if (cantinaDato === cantina) {
+                if (cantinaDato.includes(cantina) && cantina.length > 4) {
                     trovati++;
                     const card = document.createElement('div');
                     card.className = 'wine-card';
