@@ -1,4 +1,4 @@
-﻿---
+---
 ---
 <!DOCTYPE html>
 <html lang="it">
@@ -436,32 +436,32 @@
         </div>
 
         <div class="cantine-grid" id="cantineGrid">
-            {% assign cantine_pulite = "" | split: "," %}
-            {% for vino in site.vini %}
-            {% if vino.nome == nil or vino.nome == "" %}{% continue %}{% endif %}
-            {% assign nome_cantina = vino.produttore | split: ' · ' | first | strip %}
-            {% if nome_cantina and nome_cantina != "" %}
+        {% assign cantine_pulite = "" | split: "," %}
+        {% for vino in site.vini %}
+        {% if vino.nome == nil or vino.nome == "" %}{% continue %}{% endif %}
+        {% assign nome_cantina = vino.produttore | split: ' · ' | first | strip %}
+        {% if nome_cantina and nome_cantina != "" %}
             {% unless cantine_pulite contains nome_cantina %}
             {% assign cantine_pulite = cantine_pulite | push: nome_cantina %}
             {% endunless %}
-            {% endif %}
-            {% endfor %}
-            {% assign cantine = cantine_pulite | sort %}
+        {% endif %}
+        {% endfor %}
+        {% assign cantine = cantine_pulite | sort %}
 
-            {% for nome_cantina in cantine %}
+        {% for nome_cantina in cantine %}
             {% if nome_cantina == blank or nome_cantina == "" %}
-            {% continue %}
+                {% continue %}
             {% endif %}
             {% assign count = 0 %}
             {% assign primo_vino = nil %}
             {% for v in site.vini %}
-            {% if v.nome == nil or v.nome == "" %}{% continue %}{% endif %}
-            {% if v.produttore contains nome_cantina %}
-            {% assign count = count | plus: 1 %}
-            {% if primo_vino == nil %}
-            {% assign primo_vino = v %}
-            {% endif %}
-            {% endif %}
+                {% if v.nome == nil or v.nome == "" %}{% continue %}{% endif %}
+                {% if v.produttore contains nome_cantina %}
+                    {% assign count = count | plus: 1 %}
+                    {% if primo_vino == nil %}
+                        {% assign primo_vino = v %}
+                    {% endif %}
+                {% endif %}
             {% endfor %}
 
             <div class="cantina-card" onclick="mostraVini(this)" data-cantina="{{ nome_cantina | downcase | escape }}"
@@ -475,7 +475,7 @@
                 </div>
             </div>
 
-            {% endfor %}
+        {% endfor %}
 
         </div>
 
@@ -533,10 +533,10 @@
             viniDati.forEach(v => {
                 const cantinaDato = (v.getAttribute('data-cantina') || '').toLowerCase().trim();
                 const nomeDato = v.getAttribute('data-nome') || '';
-
+                
                 if (!nomeDato) return;
 
-                if (cantinaDato.includes(cantina) && cantina.length > 4) {
+                if (cantinaDato.includes(cantina) || cantina.includes(cantinaDato)) {
                     trovati++;
                     const card = document.createElement('div');
                     card.className = 'wine-card';
