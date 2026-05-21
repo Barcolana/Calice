@@ -438,6 +438,7 @@
         <div class="cantine-grid" id="cantineGrid">
         {% assign cantine_pulite = "" | split: "," %}
         {% for vino in site.vini %}
+        {% if vino.nome == nil or vino.nome == "" %}{% continue %}{% endif %}
         {% assign nome_cantina = vino.produttore | split: ' · ' | first | strip %}
         {% if nome_cantina and nome_cantina != "" %}
             {% unless cantine_pulite contains nome_cantina %}
@@ -454,6 +455,7 @@
             {% assign count = 0 %}
             {% assign primo_vino = nil %}
             {% for v in site.vini %}
+                {% if v.nome == nil or v.nome == "" %}{% continue %}{% endif %}
                 {% if v.produttore contains nome_cantina %}
                     {% assign count = count | plus: 1 %}
                     {% if primo_vino == nil %}
@@ -492,6 +494,7 @@
     <!-- Dati vini nascosti per JavaScript -->
     <div id="datiVini" style="display:none;">
         {% for vino in site.vini %}
+        {% if vino.nome == nil or vino.nome == "" %}{% continue %}{% endif %}
         <div data-nome="{{ vino.nome | escape }}" data-produttore="{{ vino.produttore | escape }}"
             data-cantina="{{ vino.produttore | split: ' · ' | first | downcase | escape }}"
             data-regione="{{ vino.regione | escape }}" data-tipo="{{ vino.tipo }}" data-punteggio="{{ vino.punteggio }}"
@@ -529,6 +532,10 @@
 
             viniDati.forEach(v => {
                 const cantinaDato = (v.getAttribute('data-cantina') || '').toLowerCase().trim();
+                const nomeDato = v.getAttribute('data-nome') || '';
+                
+                if (!nomeDato) return;
+
                 if (cantinaDato.includes(cantina) || cantina.includes(cantinaDato)) {
                     trovati++;
                     const card = document.createElement('div');
