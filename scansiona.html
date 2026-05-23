@@ -669,19 +669,34 @@
             try {
                 const imgMigliorata = await miglioraImmagine(imgBase64);
 
-                const { data: { text } } = await Tesseract.recognize(
-                    imgMigliorata,
-                    'ita',
-                    {
-                        logger: m => console.log(m),
-                        load_punc_dawg: false,
-                        load_number_dawg: false,
-                        load_unambig_dawg: false,
-                        load_bigram_dawg: false
-                    }
-                );
+                let testo = '';
 
-                const testo = text || '';
+                // Prova prima la Cloud Function (se deployata). Sostituisci l'URL.
+                try {
+                    const resp = await fetch('REPLACE_WITH_YOUR_FUNCTION_URL', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ image: imgMigliorata })
+                    });
+                    if (resp.ok) {
+                        const vdata = await resp.json();
+                        testo = vdata.responses?.[0]?.fullTextAnnotation?.text || '';
+                    } else {
+                        console.warn('Vision function returned', resp.status);
+                    }
+                } catch (e) {
+                    console.warn('Vision function error', e);
+                }
+
+                // Fallback client-side con Tesseract se la Function non è disponibile
+                if (!testo) {
+                    const { data: { text } } = await Tesseract.recognize(
+                        imgMigliorata,
+                        'ita',
+                        { logger: m => console.log(m) }
+                    );
+                    testo = text || '';
+                }
 
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('risultati').style.display = 'block';
