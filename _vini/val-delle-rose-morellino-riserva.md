@@ -1,7 +1,7 @@
 ---
 layout: vino
 nome: Morellino di Scansano Riserva
-produttore: Val delle Rose
+produttore: Cecchi
 regione: Toscana · Morellino di Scansano DOCG
 tipo: Rosso
 vitigno: Sangiovese
