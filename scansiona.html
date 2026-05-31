@@ -630,6 +630,17 @@
         }
     </style>
     <script defer>
+        function escapeHTML(str) {
+            if (!str) return '';
+            return String(str).replace(/[&<>'"]/g, tag => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag] || tag));
+        }
+
         // 📌 1) Migliora immagine per OCR
         function miglioraImmagine(imgBase64) {
             return new Promise(resolve => {
@@ -842,13 +853,13 @@
                 card.className = 'vino-risultato';
                 card.href = `${baseurl}/vini/${v.getAttribute('data-slug')}`;
                 card.innerHTML = `
-        <div class="vino-emoji">${v.getAttribute('data-emoji')}</div>
+        <div class="vino-emoji">${escapeHTML(v.getAttribute('data-emoji'))}</div>
         <div class="vino-info">
-            <div class="vino-nome">${v.getAttribute('data-nome-display')}</div>
-            <div class="vino-produttore">${v.getAttribute('data-produttore-display')}</div>
-            <div class="vino-regione">${v.getAttribute('data-regione')}</div>
+            <div class="vino-nome">${escapeHTML(v.getAttribute('data-nome-display'))}</div>
+            <div class="vino-produttore">${escapeHTML(v.getAttribute('data-produttore-display'))}</div>
+            <div class="vino-regione">${escapeHTML(v.getAttribute('data-regione'))}</div>
         </div>
-        <div class="vino-score">${v.getAttribute('data-punteggio')}</div>
+        <div class="vino-score">${escapeHTML(v.getAttribute('data-punteggio'))}</div>
     `;
                 viniFindati.appendChild(card);
             });

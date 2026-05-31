@@ -345,6 +345,17 @@
     </div>
 
     <script>
+        function escapeHTML(str) {
+            if (!str) return '';
+            return String(str).replace(/[&<>'"]/g, tag => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag] || tag));
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('cantina-container');
             const baseurl = document.querySelector('#datiVini div')?.getAttribute('data-baseurl') || '';
@@ -395,10 +406,10 @@
 
                 html += `
         <div class="wine-card">
-          <div class="wc-img">${emoji}</div>
+          <div class="wc-img">${escapeHTML(emoji)}</div>
           <div class="wc-body">
-            <div class="wc-name">${nome}</div>
-            <div class="wc-producer">${produttore}</div>
+            <div class="wc-name">${escapeHTML(nome)}</div>
+            <div class="wc-producer">${escapeHTML(produttore)}</div>
             <div class="wc-actions">
               <a href="${baseurl}/vini/${slug}" class="wc-link">→ Scheda vino</a>
               <button class="wc-remove" onclick="rimuoviVino('${slug}')">🗑️</button>

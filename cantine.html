@@ -505,6 +505,17 @@
     </div>
 
     <script>
+        function escapeHTML(str) {
+            if (!str) return '';
+            return String(str).replace(/[&<>'"]/g, tag => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag] || tag));
+        }
+
         // Conta cantine
         const totCantine = document.querySelectorAll('.cantina-card').length;
         document.getElementById('cantineCount').textContent = totCantine + ' cantine';
@@ -542,14 +553,14 @@
                     const card = document.createElement('div');
                     card.className = 'wine-card';
                     card.innerHTML = `
-              <div class="wc-img">${v.getAttribute('data-emoji')}</div>
+              <div class="wc-img">${escapeHTML(v.getAttribute('data-emoji'))}</div>
               <div class="wc-body">
-                <div class="wc-region">${v.getAttribute('data-regione')}</div>
-                <div class="wc-name">${v.getAttribute('data-nome')}</div>
-                <div class="wc-producer">${v.getAttribute('data-produttore')}</div>
+                <div class="wc-region">${escapeHTML(v.getAttribute('data-regione'))}</div>
+                <div class="wc-name">${escapeHTML(v.getAttribute('data-nome'))}</div>
+                <div class="wc-producer">${escapeHTML(v.getAttribute('data-produttore'))}</div>
                 <div class="wc-footer">
-                  <span class="wc-score">${v.getAttribute('data-punteggio')}</span>
-                  <div class="wc-price">€${v.getAttribute('data-prezzo')} <small>/bt</small></div>
+                  <span class="wc-score">${escapeHTML(v.getAttribute('data-punteggio'))}</span>
+                  <div class="wc-price">€${escapeHTML(v.getAttribute('data-prezzo'))} <small>/bt</small></div>
                 </div>
                 <a href="${baseurl}/vini/${v.getAttribute('data-slug')}" class="wc-link">→ Scopri questo vino</a>
               </div>
